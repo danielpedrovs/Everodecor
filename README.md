@@ -1,2 +1,2 @@
-this is a website first was uploaded as dielandCO.
-We change the name to everodecor to be more precise on our business
+# DielandCO
+We are a Painting trader company with huge experience in a perfect finishing. We have the right team to get your dream work done. Reach out to us today and equire now
