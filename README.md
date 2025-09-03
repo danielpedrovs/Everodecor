@@ -22,7 +22,7 @@ Screenshots
 License
 
 You can view the website live at:
-Everodecor.uk
+https://www.Everodecor.uk
 
 Tip for mobile users: You can add this website to your home screen for quick access (see Installation below).
 
