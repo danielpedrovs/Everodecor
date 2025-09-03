@@ -16,17 +16,31 @@ body {
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
-
+ html {
+    scroll-behavior: smooth;
+  }
   </style>
   <!-- Header -->
 <header class="bg-white shadow-sm py-6 px-6 sm:px-10 flex justify-between items-center">
-  <h1 class="text-3xl font-bold primary">EveroDecor</h1>
-  <nav class="space-x-6">
-    <a href="#services" class="text-gray-700 hover:primary transition">Services</a>
-    <a href="#gallery" class="text-gray-700 hover:primary transition">Gallery</a>
-    <a href="#contact" class="text-gray-700 hover:primary transition">Contact</a>
-    <a href="#" class="text-gray-700 hover:primary transition">Color consultation</a>
+  <!-- Logo -->
+  <h1 class="text-3xl font-bold text-[#74852F]">EveroDecor</h1>
 
+  <!-- Hamburger button (only shows on mobile) -->
+  <button id="menu-btn" href="mailto:dielandco@gmail.com" class="sm:hidden text-gray-700 focus:outline-none">
+    <!-- Hamburger icon -->
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+
+  <!-- Nav links -->
+  <nav id="menu" class="hidden sm:flex space-x-6 flex-col sm:flex-row absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-sm sm:shadow-none p-6 sm:p-0">
+    <a href="#home" class="text-gray-700 hover:text-[#74852F] transition">home</a>
+    <a href="#services" class="text-gray-700 hover:text-[#74852F] transition">Services</a>
+    <a href="#gallery" class="text-gray-700 hover:text-[#74852F] transition">Gallery</a>
+    <a href="#contact" class="text-gray-700 hover:text-[#74852F] transition">Contact</a>
+    <a href="#contact" class="text-gray-700 hover:text-[#74852F] transition">Color Consultation</a>
   </nav>
 </header>
   <!-- Hero Section -->
@@ -66,20 +80,16 @@ h1, h2, h3 {
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-white shadow-sm py-6 px-4 sm:px-10 flex flex-col sm:flex-row sm:justify-between items-center">
-    <div class="flex items-center space-x-4">
-    
-    </div>
-  </header>
+
 
   <!-- Welcome Message -->
-  <section class="h-screen bg-white bg-[url('./images/room_red_FBColor.png')] bg-no-repeat bg-no-repeat bg-left  py-16 text-center shadow-sm">
+  <section id="home" class="h-screen bg-white bg-[url('./images/room_red_FBColor.png')] bg-no-repeat bg-no-repeat bg-left  py-16 text-center shadow-sm">
     <h2 class="text-4xl font-bold text-white">Welcome!</h2>
     <p class="max-w-md mr-12 p-6 absolute right-0 bg-white/70 backdrop-blur-sm text-[#243a30] shadow-lg">
       At EveroDecor, we bring life back to your walls and ceilings. Whether you're looking to refresh a room or repair damage, 
       we’re here to provide high-quality, detail-oriented painting and restoration work tailored to your space.
     </p>
+
   </section>
 
   <!-- About the Business -->
@@ -90,10 +100,11 @@ h1, h2, h3 {
       with marvelous attention to detail and top-quality craftsmanship. Whether it’s refreshing your interiors or expert surface restoration, 
       we deliver tailored solutions using premium materials and a commitment to excellence. 
     </p>
+   
   </section>
 
   <!-- Image Gallery -->
-  <section class="h-screen max-w-6xl mx-auto py-16 px-6">
+  <section id="gallery" class="h-screen max-w-6xl mx-auto py-16 px-6">
     <h2 class="text-3xl font-semibold mb-10 text-center">Gallery</h2>
     <div class="relative group">
       <!-- Carousel Track -->
@@ -120,6 +131,13 @@ h1, h2, h3 {
         ▶
       </button>
     </div>
+
+    
+<a href="#menu" 
+   class="inline-block mt-6 px-4 py-2 rounded-md text-sm font-medium text-gray-600 bg-gray-100 hover:bg-[#74852F] hover:text-white shadow-sm transition">
+  Return to Menu
+</a>
+ 
   </section>
 
   <!-- Image Modal -->
@@ -196,10 +214,11 @@ h1, h2, h3 {
 
     </div>
   </div>
+ 
 </section>
 
     <!-- Services Offered -->
-  <section class=" h-screen bg-[#74852F] py-16 text-center bg-no-repeat  ">
+  <section id="services" class=" h-screen bg-[#74852F] bg-[url('./images/men_improved.png')] bg-no-repeat bg-left bg-contain sm:bg-[length:400px] py-16 text-center bg-no-repeat  ">
     <h2 class="text-3xl font-semibold mb-6">Services Offered</h2>
     <ul class="inline-block text-left text-lg space-y-3">
       <li>✔️ Interior Painting</li>
@@ -208,28 +227,38 @@ h1, h2, h3 {
       <li>✔️ Wallpaper Removal & Prep</li>
       <li>✔️ Surface Priming & Finishing</li>
     </ul>
+
   </section>
 
-  <!-- Call to Action -->
-  <section class="h-screen bg-[#74852F] bg-[url('./images/men_improved.png')]  text-white py-16 text-center bg-no-repeat bg-left bg-[length:400px] ">
-    <h2 class="text-4xl font-bold mb-4">Need a Professional Painter?</h2>
-    <p class="mb-8 text-lg">Let’s bring your space to life! Contact us now for a free consultation.</p>
-    <a href="mailto:dielandco@gmail.com" class="bg-white text-[#007AFF] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
-      📧 Get in Touch
-    </a>
-    <div class="flex justify-center gap-6 mt-8">
-      <a href="#" class="hover:opacity-80 transition">TaskRabbit</a>
-      <a href="#" class="hover:opacity-80 transition">Instagram</a>
-      <a href="#" class="hover:opacity-80 transition">MyBuilder</a>
-      <a href="#" class="hover:opacity-80 transition">Airtasker</a>
-      <a href="#" class="hover:opacity-80 transition">Oscar</a>
-    </div>
-  </section>
+<!-- Call to Action -->
+<section id="contact" class="h-screen bg-white  text-white py-16 text-center bg-no-repeat bg-left bg-contain sm:bg-[length:400px]">
+  <h2 class="text-4xl text-[#74852F]  md:text-5xl font-bold mb-4">Need a Painter?</h2>
+  <p class="mb-8 text-lg text-[#74852F] px-4 md:px-0">Let’s bring your space to life! Contact us now for a free consultation.</p>
+
+  <a href="mailto:dielandco@gmail.com" class="bg-white text-[#007AFF] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
+    📧 Get in Touch
+  </a>
+
+ <div class="flex flex-wrap justify-center gap-6 mt-8 text-sm md:text-base">
+  <a href="https://tr.co/daniel-s--559" target="_blank">
+    <img src="./images/taskrabbit new logo.jpg" alt="TaskRabbit" class="h-10 w-auto hover:opacity-80 transition" />
+  </a>
+  <a href="https://www.instagram.com/everodecor" target="_blank">
+    <img src="./images/instagram-logo-11716322843gm1jnosicz.png" alt="Instagram" class="h-10 w-auto hover:opacity-80 transition" />
+  </a>
+  <a href="https://www.mybuilder.com/send-request-to/diel-co" target="_blank">
+    <img src="./images/mybuiderLogo.jpg" alt="MyBuilder" class="h-10 w-auto hover:opacity-80 transition" />
+</div>
+<a href="#menu" 
+   class="inline-block mt-6 px-4 py-2 rounded-md text-sm font-medium text-gray-600 bg-gray-100 hover:bg-[#74852F] hover:text-white shadow-sm transition">
+  Return to Menu
+</a>
+</section>
 
 
   <!-- Footer -->
   <footer class="bg-white py-6 text-center text-sm text-gray-500 border-t">
-    © 2025 EveroDecor Painting & Decorating. All rights reserved.
+    © 2022 EveroDecor Painting & Decorating. All rights reserved.
   </footer>
 
   <!-- JavaScript -->
@@ -291,6 +320,11 @@ h1, h2, h3 {
 
     // start at first slide
     showSlide(0);
+  });
+
+   document.getElementById("menu-btn").addEventListener("click", function () {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("hidden");
   });
   </script>
 </body>
