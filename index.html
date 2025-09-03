@@ -7,50 +7,58 @@
   <title>EveroDecor - Painting & Decorating</title>
   <script src="https://cdn.tailwindcss.com"></script>
     <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
 
   </style>
+  <!-- Header -->
+<header class="bg-white shadow-sm py-6 px-6 sm:px-10 flex justify-between items-center">
+  <h1 class="text-3xl font-bold primary">EveroDecor</h1>
+  <nav class="space-x-6">
+    <a href="#services" class="text-gray-700 hover:primary transition">Services</a>
+    <a href="#gallery" class="text-gray-700 hover:primary transition">Gallery</a>
+    <a href="#contact" class="text-gray-700 hover:primary transition">Contact</a>
+    <a href="#" class="text-gray-700 hover:primary transition">Color consultation</a>
+
+  </nav>
+</header>
   <!-- Hero Section -->
-<section class="bg-[#838e75]">
-  <div class="max-w-7xl  mx-auto px-6 py-0 grid md:grid-cols-2 gap-10 items-center">
-    
+<section>
+<div class=" h-screen max-w-7xl mx-auto px-6 bg-[#74852F] bg-[url('./images/main_room_green.jpg')] bg-no-repeat  bg-left   grid md:grid-cols-2 gap-10 items-center">
     <!-- Left Text -->
-    <div>
-        <div>
-        <h1 class="text-3xl font-bold text-[#F9D64A]">EveroDecor</h1>
+    <div class="max-w-md mr-12 p-6 absolute bg-white/70 backdrop-blur-sm text-[#243a30] shadow-lg">
+      <div>
         <p class="text-lg text-gray-500">Painting & Decorating Services</p>
       </div>
       <p class="text-lg font-semibold text-gray-800">
         <span class="text-yellow-500">★★★★★</span> 5.0 / 5 • 100+ happy clients
       </p>
       <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
-        Professional painting & decorating 
-        <span class="text-[#838e75-500]">done right</span>
+        Painting & decorating 
+        <span class="text-[#838e75]">done right</span>
       </h1>
-      <p class="text-lg text-gray-700 mt-4">
+      <p class="text-lg text-gray-500 mt-4">
         Skip the stress. Get beautiful walls, expert finishes, and friendly service — at a fair price.
       </p>
       <button class="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
         Get Your Free Quote
       </button>
-</div>
- 
- <div class="flex items-end items-center">
-      <img 
-        src="./images/men_improved.png" 
-        alt="Decorator at work"
-        class="h-auto w-auto object-contain"
-      >
-    </div>
     </div>
     
-  
+    <!-- Right Side (empty, can be used for image or content) -->
+    <div class="flex items-center justify-center">
+      <!-- optional: keep for spacing or add another image -->
+    </div>
 
- 
-</section>
-  
+  </div>
+</section>  
 
 
   <!-- Google Font: Poppins -->
@@ -66,17 +74,18 @@
   </header>
 
   <!-- Welcome Message -->
-  <section class="bg-white py-16 text-center shadow-sm">
-    <h2 class="text-4xl font-bold text-[#007AFF]">Welcome!</h2>
-    <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+  <section class="h-screen bg-white bg-[url('./images/room_red_FBColor.png')] bg-no-repeat bg-no-repeat bg-left  py-16 text-center shadow-sm">
+    <h2 class="text-4xl font-bold text-white">Welcome!</h2>
+    <p class="max-w-md mr-12 p-6 absolute right-0 bg-white/70 backdrop-blur-sm text-[#243a30] shadow-lg">
       At EveroDecor, we bring life back to your walls and ceilings. Whether you're looking to refresh a room or repair damage, 
       we’re here to provide high-quality, detail-oriented painting and restoration work tailored to your space.
     </p>
   </section>
 
   <!-- About the Business -->
-  <section class="bg-gray-50 py-16 text-center max-w-4xl mx-auto px-6">
-    <p class="text-lg text-gray-700 leading-relaxed">
+  <section class="h-screen bg-white bg-[url('./images/room_pink_03.09.png')] bg-no-repeat bg-left  py-16 text-center shadow-sm  mx-auto px-6">
+      <h2 class="text-4xl font-bold text-[#74852F]">Who we are?</h2>
+    <p class="max-w-md mr-12 p-6 absolute right-0 bg-white/70 backdrop-blur-sm text-[#243a30] shadow-lg">
       We are an professional service dedicated to transforming your home and business spaces 
       with marvelous attention to detail and top-quality craftsmanship. Whether it’s refreshing your interiors or expert surface restoration, 
       we deliver tailored solutions using premium materials and a commitment to excellence. 
@@ -84,7 +93,7 @@
   </section>
 
   <!-- Image Gallery -->
-  <section class="max-w-6xl mx-auto py-16 px-6">
+  <section class="h-screen max-w-6xl mx-auto py-16 px-6">
     <h2 class="text-3xl font-semibold mb-10 text-center">Gallery</h2>
     <div class="relative group">
       <!-- Carousel Track -->
@@ -98,9 +107,9 @@
         <img src="./images/IMG_8888.jpeg" class="object-cover rounded-lg shadow snap-center" />
         <img src="./images/IMG_8897.jpeg" class="object-cover rounded-lg shadow snap-center" />
         <img src="./images/IMG_8908.jpeg" class="object-cover rounded-lg shadow snap-center" />
-        <img src="./images/1.png" class="object-cover rounded-lg shadow snap-center" />
-        <img src="./images/2(1).png" class="object-cover rounded-lg shadow snap-center" />
-        <img src="./images/3(1).png" class="object-cover rounded-lg shadow snap-center" />
+        <img src="./images/afterBefore/1.png" class="object-cover rounded-lg shadow snap-center" />
+        <img src="./images/afterBefore/2(1).png" class="object-cover rounded-lg shadow snap-center" />
+        <img src="./images/afterBefore/3(1).png" class="object-cover rounded-lg shadow snap-center" />
       </div>
 
       <!-- Carousel Arrows -->
@@ -119,72 +128,78 @@
     <img id="modalImage" src="" class="max-h-[90vh] max-w-[90vw] rounded shadow-lg" />
   </div>
 
-  
   <!-- Testimonials -->
-<section class="bg-white py-12 mt-16 shadow-sm text-center max-w-5xl mx-auto px-4 rounded-lg">
-  <h2 class="text-2xl font-semibold mb-4">Trusted Services</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    
-    <!-- TaskRabbit Testimonial -->
-    <div class="bg-gray-50 p-4 rounded shadow">
-      <div class="flex items-center justify-center mb-2">
-        <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
-        <p class="text-yellow-500 text-xl">★★★★★</p>
-      </div>
-      <p class="text-gray-700 italic">“Dan is Fantastic. Hard working and did an excellent Job.”</p>
-      <p class="mt-2 text-sm text-gray-500">Mg</p>
-    </div>
-      <!-- TaskRabbit Testimonial -->
-    <div class="bg-gray-50 p-4 rounded shadow">
-      <div class="flex items-center justify-center mb-2">
-        <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
-        <p class="text-yellow-500 text-xl">★★★★★</p>
-      </div>
-      <p class="text-gray-700 italic">“Dan painted our new flat and did a fantastic job.
-        He's hardworking, reliable and takes real care with his work. On top of that,
-        he's just a really lovelly person to have around - friendly, respectful around
-        easy to communicate with throughout. We're really happy with the results and 
-        would definitely hire him again. Highly recommend!”</p>
-      <p class="mt-2 text-sm text-gray-500">A A</p>
-    </div>
+<section class="h-screen py-12 mt-16 shadow-sm text-center max-w-5xl mx-auto px-4 rounded-lg overflow-hidden">
+  <h2 class="text-2xl font-semibold mb-6">Trusted Services</h2>
 
-        <!-- TaskRabbit Testimonial -->
-    <div class="bg-gray-50 p-4 rounded shadow">
-      <div class="flex items-center justify-center mb-2">
-        <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
-        <p class="text-yellow-500 text-xl">★★★★★</p>
+  <!-- Carousel wrapper -->
+  <div class=" w-full overflow-hidden">
+    <!-- Slides -->
+    <div id="testimonial-carousel" class="flex transition-transform duration-700 ease-in-out">
+      
+      <!-- Each testimonial is one slide -->
+      <div class="min-w-full px-4">
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="flex items-center justify-center mb-2">
+            <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
+            <p class="text-yellow-500 text-xl">★★★★★</p>
+          </div>
+          <p class="text-gray-700 italic">“Dan is Fantastic. Hard working and did an excellent Job.”</p>
+          <p class="mt-2 text-sm text-gray-500">Mg</p>
+        </div>
       </div>
-      <p class="text-gray-700 italic">“Dan was AMAZING! Incredibly respectful, 
-        hard working painter who painted two walls and 1 ceiling for me. Great craftsmanship 
-        and very nice person. Would definitely hire him again, great 
-        to have round.”</p>
-      <p class="mt-2 text-sm text-gray-500">Mel</p>
-    </div>
-          <!-- TaskRabbit Testimonial -->
-    <div class="bg-gray-50 p-4 rounded shadow">
-      <div class="flex items-center justify-center mb-2">
-        <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
-        <p class="text-yellow-500 text-xl">★★★★★</p>
-      </div>
-      <p class="text-gray-700 italic">“Awesome”</p>
-      <p class="mt-2 text-sm text-gray-500">Stephen</p>
-    </div>
-  
-    <!-- CheckMyBuilder Testimonial -->
-    <div class="bg-gray-50 p-4 rounded shadow">
-      <div class="flex items-center justify-center mb-2">
-        <img src="./images/light.svg" alt="CheckMyBuilder Logo" class="h-6 mr-2">
-        <p class="text-yellow-500 text-xl">★★★★★</p>
-      </div>
-      <p class="text-gray-700 italic">“Punctual, polite, and highly skilled. Would definitely hire again for any future decorating work.”</p>
-      <p class="mt-2 text-sm text-gray-500">— Olivia K.</p>
-    </div>
 
+      <div class="min-w-full px-4">
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="flex items-center justify-center mb-2">
+            <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
+            <p class="text-yellow-500 text-xl">★★★★★</p>
+          </div>
+          <p class="text-gray-700 italic">“Dan painted our new flat and did a fantastic job. 
+            He's hardworking, reliable and takes real care with his work...”</p>
+          <p class="mt-2 text-sm text-gray-500">A A</p>
+        </div>
+      </div>
+
+      <div class="min-w-full  px-4">
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="flex items-center justify-center mb-2">
+            <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
+            <p class="text-yellow-500 text-xl">★★★★★</p>
+          </div>
+          <p class="text-gray-700 italic">“Dan was AMAZING! Incredibly respectful, hard working painter...”</p>
+          <p class="mt-2 text-sm text-gray-500">Mel</p>
+        </div>
+      </div>
+
+      <div class="min-w-full px-4">
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="flex items-center justify-center mb-2">
+            <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
+            <p class="text-yellow-500 text-xl">★★★★★</p>
+          </div>
+          <p class="text-gray-700 italic">“Awesome”</p>
+          <p class="mt-2 text-sm text-gray-500">Stephen</p>
+        </div>
+      </div>
+
+      <div class="min-w-full px-4">
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="flex items-center justify-center mb-2">
+            <img src="./images/light.svg" alt="CheckMyBuilder Logo" class="h-6 mr-2">
+            <p class="text-yellow-500 text-xl">★★★★★</p>
+          </div>
+          <p class="text-gray-700 italic">“Punctual, polite, and highly skilled. Would definitely hire again.”</p>
+          <p class="mt-2 text-sm text-gray-500">— Olivia K.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
-  </section>
+</section>
 
     <!-- Services Offered -->
-  <section class="bg-gray-50 py-16 text-center">
+  <section class=" h-screen bg-[#74852F] py-16 text-center bg-no-repeat  ">
     <h2 class="text-3xl font-semibold mb-6">Services Offered</h2>
     <ul class="inline-block text-left text-lg space-y-3">
       <li>✔️ Interior Painting</li>
@@ -196,18 +211,18 @@
   </section>
 
   <!-- Call to Action -->
-  <section class="bg-[#007AFF] text-white py-16 text-center">
+  <section class="h-screen bg-[#74852F] bg-[url('./images/men_improved.png')]  text-white py-16 text-center bg-no-repeat bg-left bg-[length:400px] ">
     <h2 class="text-4xl font-bold mb-4">Need a Professional Painter?</h2>
     <p class="mb-8 text-lg">Let’s bring your space to life! Contact us now for a free consultation.</p>
     <a href="mailto:dielandco@gmail.com" class="bg-white text-[#007AFF] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
       📧 Get in Touch
     </a>
     <div class="flex justify-center gap-6 mt-8">
-      <a href="https://tr.co/daniel-s--559" class="hover:opacity-80 transition">TaskRabbit</a>
-      <a href="https://www.instagram.com/everodecor?igsh=MWVtMXVIdDg1OHcxbA%3D%3D&utm_source=qr" class="hover:opacity-80 transition">Instagram</a>
-      <a href="https://www.mybuilder.com/send-request-to/diel-co" class="hover:opacity-80 transition">MyBuilder</a>
-      <a href="https://www.airtasker.com/uk/" class="hover:opacity-80 transition">Airtasker</a>
-      <a href="https://www.oscar-app.com/en/task/clean_house/e6628e23-361f-4dc9-84c5-82e5374834fd" class="hover:opacity-80 transition">Oscar</a>
+      <a href="#" class="hover:opacity-80 transition">TaskRabbit</a>
+      <a href="#" class="hover:opacity-80 transition">Instagram</a>
+      <a href="#" class="hover:opacity-80 transition">MyBuilder</a>
+      <a href="#" class="hover:opacity-80 transition">Airtasker</a>
+      <a href="#" class="hover:opacity-80 transition">Oscar</a>
     </div>
   </section>
 
@@ -243,6 +258,40 @@
       if (currentIndex >= slides.length) currentIndex = 0;
       updateCarousel();
     });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("testimonial-carousel");
+    const slides = carousel.children;
+    const totalSlides = slides.length;
+    let index = 0;
+    const intervalMs = 6000;
+
+    function showSlide(i) {
+      index = (i + totalSlides) % totalSlides; // wrap index
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      showSlide(index + 1);
+    }
+
+    // autoplay
+    let timer = setInterval(nextSlide, intervalMs);
+
+    // pause on hover/touch
+    carousel.parentElement.addEventListener("mouseenter", () => clearInterval(timer));
+    carousel.parentElement.addEventListener("mouseleave", () => {
+      timer = setInterval(nextSlide, intervalMs);
+    });
+
+    carousel.parentElement.addEventListener("touchstart", () => clearInterval(timer), { passive: true });
+    carousel.parentElement.addEventListener("touchend", () => {
+      timer = setInterval(nextSlide, intervalMs);
+    });
+
+    // start at first slide
+    showSlide(0);
+  });
   </script>
 </body>
 </html>
