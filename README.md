@@ -21,10 +21,8 @@ Screenshots
 
 License
 
-Live Demo
-
 You can view the website live at:
-EveroDecor Website Live
+Everodecor.uk
 
 Tip for mobile users: You can add this website to your home screen for quick access (see Installation below).
 
