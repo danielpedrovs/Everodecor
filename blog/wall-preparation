@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evero Decor | Professional Painting & Decorating</title>
 
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      line-height:1.6;
+    }
+
+    header{
+      background:#222;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    section{
+      padding:40px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .wall-images{
+      display:flex;
+      gap:20px;
+      margin-bottom:20px;
+    }
+
+    .wall-images img{
+      width:30%;
+      border-radius:8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Evero Decor</h1>
+  <p>Professional Painting & Decorating</p>
+</header>
+<section id="wall-preparation">
+  <h2>Wall Preparation</h2>
+
+  <div class="wall-images">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Sanding_wall_before_painting.jpg" alt="Sanding wall before painting">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Applying_wall_filler.jpg" alt="Applying filler to wall cracks">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Wall_repair_putty_knife.jpg" alt="Repairing wall with putty knife">
+  </div>
+
+  <h3>Professional Wall Preparation for a Perfect Finish</h3>
+
+  <p>
+    Proper wall preparation is the most important step in achieving a smooth,
+    durable and professional paint finish. Before any painting begins, surfaces
+    must be cleaned, repaired and prepared to ensure the new paint adheres
+    correctly and looks flawless.
+  </p>
+
+  <h3>Our Wall Preparation Process</h3>
+
+  <ul>
+    <li><strong>Surface Cleaning:</strong> Removing dust, grease and dirt from the wall.</li>
+    <li><strong>Repairing Cracks and Holes:</strong> Filling imperfections with professional filler.</li>
+    <li><strong>Sanding:</strong> Smoothing the surface for better paint adhesion.</li>
+    <li><strong>Removing Loose Paint:</strong> Eliminating peeling or damaged areas.</li>
+    <li><strong>Priming:</strong> Applying primer to ensure an even and long-lasting finish.</li>
+  </ul>
+
+  <h3>Why Preparation Matters</h3>
+
+  <p>
+    Good preparation prevents paint from peeling or cracking and ensures the
+    final finish looks smooth and professional. Skipping this stage can result
+    in visible imperfections and shorter paint durability.
+  </p>
+
+</section>
+
+
+</body>
+</html>
