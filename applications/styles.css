@@ -1,4 +1,15 @@
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap');
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+ html {
+    scroll-behavior: smooth;
+  }
 .reveal{
   opacity: 0;
   transform: translateY(40px);
@@ -9,3 +20,4 @@
   opacity: 1;
   transform: translateY(0);
 }
+
