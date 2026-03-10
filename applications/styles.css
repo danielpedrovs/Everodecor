@@ -2,7 +2,22 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: red !important;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: auto;
+
+  background-image: url("../images/main_room_green.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: grid;
+  gap: 40px;
 }
 
 h1, h2, h3 {
