@@ -10,4 +10,3 @@ if(chatbox.style.display === "block"){
 }
 
 });
-
