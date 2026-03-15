@@ -110,7 +110,9 @@ h1,h2,h3{
 
 #chatbox{
   position:absolute;
-  bottom:80px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
   right:20px;
   width:420px;
   max-width:calc(100vw - 40px);
