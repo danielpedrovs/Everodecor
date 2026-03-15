@@ -109,7 +109,7 @@ h1,h2,h3{
 /* Chatbox */
 
 #chatbox{
-  position:fixed;
+  position:absolute;
   bottom:80px;
   right:20px;
   width:420px;
@@ -120,6 +120,7 @@ h1,h2,h3{
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  pointer-events:auto;
   z-index:1000;
   transition:all .25s ease;
   backdrop-filter: blur(8px);
@@ -132,6 +133,12 @@ h1,h2,h3{
   display:block;
   
 }
+#chat-wrapper{
+  position:fixed;
+  insert:0;
+  pointer-events:none;
+  z-index:1000;
+}
 
 @media (max-width:768px){
 #chatbox{
@@ -139,8 +146,10 @@ h1,h2,h3{
  left:10px;
  width:auto;
 
- bottom:70px;
+ bottom:20px;
  height:65dvh;
+ will-change:trasform;
+
 }
  
 }
