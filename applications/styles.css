@@ -123,3 +123,16 @@ h1,h2,h3{
   border:none;
   border-radius:12px;
 }
+
+@media (max-width:768px){
+#chatbox{
+ right:10px;
+ left:10px;
+ width:auto;
+ max-width:none;
+
+ height:60vh;
+ bottom:70px;
+}
+ 
+}
