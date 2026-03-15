@@ -109,7 +109,7 @@ h1,h2,h3{
 /* Chatbox */
 
 #chatbox{
-  position:absolute;
+  position:fixed;
   top:50%;
   left:50%;
   transform: translate(-50%, -50%);
