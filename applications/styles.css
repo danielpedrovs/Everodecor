@@ -111,7 +111,7 @@ h1,h2,h3{
 #chatbox{
   position:fixed;
   left:50%;
-  transform:translate(-10%, -20%);
+  transform:translate(-5%, -20%);
   width:min(420px, 92vw);
   height:70dvh;
   max-height:600px;
