@@ -109,6 +109,7 @@ h1,h2,h3{
 /* Chatbox */
 
 #chatbox{
+ display:none;
  position:fixed;
   top:50%;
   left:50%;
@@ -117,7 +118,6 @@ h1,h2,h3{
  max-width:900px;
   height:85vh;
   max-height:700px;
-  display:flex;
   flex-direction:column;
   border-radius:12px;
   overflow:hidden;
