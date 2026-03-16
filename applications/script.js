@@ -1,4 +1,4 @@
-const openButton = document.getElementById("openAI");
+const openBtn = document.getElementById("openAI");
 const chatbox = document.getElementById("chatbox");
 const closeBtn = document.getElementById("closeChat");
 
