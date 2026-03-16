@@ -135,11 +135,12 @@ h1,h2,h3{
 }
 #chat-wrapper{
   position:fixed;
-  insert:0;
   pointer-events:none;
   z-index:1000;
 }
 
+
+/*
 @media (max-width:1020px){
 #chatbox{
  right:10px;
@@ -149,7 +150,4 @@ h1,h2,h3{
  bottom:20px;
  height:65dvh;
  will-change:trasform;
-
-}
- 
-}
+*/
