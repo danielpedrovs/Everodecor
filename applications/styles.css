@@ -157,7 +157,7 @@ h1,h2,h3{
 }
 #chat-wrapper{
   position:fixed;
-  pointer-events:none;
+  pointer-events:auto;
   z-index:1000;
 }
 
