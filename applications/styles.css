@@ -140,14 +140,15 @@ h1,h2,h3{
 }
 
 
-/*
+
 @media (max-width:1020px){
 #chatbox{
  right:10px;
  left:10px;
  width:auto;
-
  bottom:20px;
  height:65dvh;
- will-change:trasform;
-*/
+ will-change:transform;
+
+}
+}
