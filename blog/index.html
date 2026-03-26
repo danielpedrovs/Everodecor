@@ -1,53 +1,170 @@
-<div class="grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Design Blog | Panelling & Painting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="card">
-    <a href="Panelling.html">
-      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
-      <div class="card-content">
-        <h3>Panelling: How to Choose a Style You Won’t Regret</h3>
-        <p>Learn how to create a timeless interior without overwhelming your space.</p>
-      </div>
-    </a>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #666;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media(min-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .cta {
+      margin-top: 40px;
+      background: #222;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .cta button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Interior Design & Painting Blog</h1>
+    <p>
+      Discover how to transform your space with panelling, colours, and smart design decisions.
+      Simple ideas that bring long-term comfort and value.
+    </p>
+  </header>
+
+  <div class="grid">
+
+    <!-- BLOG CARD 1 -->
+    <div class="card">
+      <a href="panelling.html">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
+        <div class="card-content">
+          <h3>Panelling: How to Choose a Style You Won’t Regret</h3>
+          <p>Learn how to avoid overwhelming designs and create a timeless interior.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- BLOG CARD 2 -->
+    <div class="card">
+      <a href="#">
+        <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a">
+        <div class="card-content">
+          <h3>Choosing the Right Colours for Your Home</h3>
+          <p>Understand how colours affect mood and how to choose the right palette.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- BLOG CARD 3 -->
+    <div class="card">
+      <a href="#">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+        <div class="card-content">
+          <h3>How to Make a Small Room Feel Bigger</h3>
+          <p>Simple techniques used by professionals to improve space perception.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- BLOG CARD 4 -->
+    <div class="card">
+      <a href="#">
+        <img src="https://images.unsplash.com/photo-1617104551722-3b2d513664b5">
+        <div class="card-content">
+          <h3>Modern vs Classic Interiors</h3>
+          <p>Find the balance between timeless and trendy design styles.</p>
+        </div>
+      </a>
+    </div>
+
   </div>
 
-  <div class="card">
-    <a href="paintcolours.html">
-      <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a">
-      <div class="card-content">
-        <h3>Choosing the Right Colours</h3>
-        <p>Understand how colours affect mood and your environment.</p>
-      </div>
-    </a>
-  </div>
-
-  <div class="card">
-    <a href="small-room-tips.html">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-      <div class="card-content">
-        <h3>How to Make a Small Room Feel Bigger</h3>
-        <p>Professional tricks to improve space and light.</p>
-      </div>
-    </a>
-  </div>
-
-  <div class="card">
-    <a href="wall-preparation.html">
-      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
-      <div class="card-content">
-        <h3>Wall Preparation Guide</h3>
-        <p>The most important step before painting — often ignored.</p>
-      </div>
-    </a>
-  </div>
-
-  <div class="card">
-    <a href="How-to-choose-decorator-london.html">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-      <div class="card-content">
-        <h3>How to Choose a Decorator in London</h3>
-        <p>A practical guide to avoid bad experiences and wasted money.</p>
-      </div>
-    </a>
+  <div class="cta">
+    <h2>Need help with your space?</h2>
+    <p>We help you design and paint interiors that feel right for years.</p>
+    <button onclick="window.location.href='contact.html'">Get a Quote</button>
   </div>
 
 </div>
+
+</body>
+</html>
