@@ -19,6 +19,16 @@ p {
   color: #444;
 }
 
+.site-header a {
+  color: #374151; /* gray-700 */
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.site-header a:hover {
+  color: #74852F;
+}
+
 body{
   font-family:'Inter', sans-serif;
  font-weight: 400;
@@ -27,7 +37,7 @@ body{
 /* Typography */
 
 h1,h2,h3{
-  font-family:'Playfair Display', serif;
+  font-family:'Cormorant Garamond', sans-serif;
  font-weight: 600;
 }
 
@@ -51,6 +61,31 @@ h1,h2,h3{
   box-shadow:0 1px 4px rgba(0,0,0,0.05);
 }
 
+/* Glass card text box */
+.text-box {
+  font-size: large;
+  max-width: 28rem; /* same as max-w-md */
+  padding: 1.5rem; /* p-6 */
+  background: rgba(255, 255, 255, 0.7); /* bg-white/70 */
+  backdrop-filter: blur(4px); /* backdrop-blur-sm */
+  color: #243a30;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* shadow-lg */
+  border-radius: 0.5rem; /* rounded */
+}
+
+/* Responsive sizes (like Tailwind md: lg:) */
+@media (min-width: 768px) {
+  .text-box {
+    max-width: 36rem; /* md:max-w-xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-box {
+    max-width: 42rem; /* lg:max-w-2xl */
+  }
+}
+
 /* Hero */
 
 .hero-section{
@@ -67,6 +102,84 @@ h1,h2,h3{
 
   display:grid;
   gap:40px;
+}
+
+/* COVERAGE SECTION */
+.coverage {
+  padding: 4rem 1.5rem;
+  background: #f9fafb;
+}
+
+.coverage-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .coverage-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* LEFT SIDE */
+.coverage-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.coverage-text p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.coverage-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+/* BADGES */
+.coverage-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.coverage-badges span {
+  background: #111;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* RIGHT SIDE */
+.coverage-locations {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.coverage-locations div {
+  background: #fff;
+  color: #374151;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* FULL WIDTH ITEM */
+.coverage-locations .full {
+  grid-column: span 2;
 }
 
 .hero-section::before{
