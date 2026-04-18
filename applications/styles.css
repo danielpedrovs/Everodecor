@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap');
 /* Reset */
 
 *{
@@ -14,14 +14,21 @@ html{
   scroll-behavior:smooth;
 }
 
+p {
+  line-height: 1.6;
+  color: #444;
+}
+
 body{
   font-family:'Inter', sans-serif;
+ font-weight: 400;
 }
 
 /* Typography */
 
 h1,h2,h3{
   font-family:'Playfair Display', serif;
+ font-weight: 600;
 }
 
 /* Layout */
