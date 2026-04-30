@@ -1,206 +1,404 @@
 <!DOCTYPE html>
-   <link rel="canonical" href="https://everodecor.uk/blog/index.html">
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home Design Blog | Panelling & Painting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ✅ SEO: Page title with keyword -->
+  <title>Painting & Decorating Blog | Tips & Advice | EveroDecor London</title>
+
+  <!-- ✅ SEO: Meta description shown in Google results -->
+  <meta name="description" content="Expert painting and decorating tips from EveroDecor, London. Advice on wall panelling, paint colours, wall preparation, and more to help transform your home.">
+
+  <!-- ✅ SEO: Keywords -->
+  <meta name="keywords" content="painter decorator London, wall panelling, paint colours, interior decorating tips, home painting advice, EveroDecor">
+
+  <!-- ✅ SEO: Canonical URL -->
+  <link rel="canonical" href="https://everodecor.uk/blog/index.html">
+
+  <!-- ✅ SEO: Robots -->
+  <meta name="robots" content="index, follow">
+
+  <!-- ✅ SEO: Open Graph (for sharing on social media) -->
+  <meta property="og:title" content="Painting & Decorating Blog | EveroDecor London">
+  <meta property="og:description" content="Expert tips on paint colours, wall panelling, surface preparation and more from professional decorators in London.">
+  <meta property="og:url" content="https://everodecor.uk/blog/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://everodecor.uk/images/everodecor04.09.jpeg">
+
+  <!-- ✅ SEO: LocalBusiness + Blog structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "EveroDecor Painting & Decorating Blog",
+    "url": "https://everodecor.uk/blog/index.html",
+    "description": "Expert painting and decorating tips from EveroDecor, a professional painting and decorating service based in West London.",
+    "publisher": {
+      "@type": "LocalBusiness",
+      "name": "EveroDecor",
+      "url": "https://everodecor.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      }
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --cream: #f7f4ef;
+      --warm-grey: #A9A49A;
+      --dark: #1e1e1e;
+      --text: #444;
+      --accent: #7a6f63;
+      --card-bg: #fff;
+      --tag-bg: #ede9e3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #333;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
+    /* ── NAV ── */
+    nav {
+      background: var(--dark);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    header {
+    nav a.logo {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+
+    nav a.back {
+      color: var(--warm-grey);
+      text-decoration: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    nav a.back:hover { color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--dark);
+      color: #fff;
       text-align: center;
-      padding: 40px 20px;
+      padding: 80px 24px 60px;
     }
 
-    header h1 {
-      margin-bottom: 10px;
+    .hero-tag {
+      display: inline-block;
+      background: var(--warm-grey);
+      color: #fff;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
     }
 
-    header p {
-      color: #666;
-      max-width: 600px;
-      margin: auto;
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: #aaa;
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* ── GRID ── */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 60px 24px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 28px;
     }
 
-    @media(min-width: 700px) {
-      .grid {
-        grid-template-columns: 1fr 1fr;
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 1fr 1fr; }
+      .card.featured {
+        grid-column: span 2;
       }
+      .card.featured img { height: 320px; }
+      .card.featured .card-content { padding: 28px; }
+      .card.featured h2 { font-size: 1.5rem; }
     }
 
+    /* ── CARD ── */
     .card {
-      background: #fff;
-      border-radius: 10px;
+      background: var(--card-bg);
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      display: block;
     }
 
     .card-content {
-      padding: 15px;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
-    .card h3 {
-      margin-top: 0;
+    .tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--accent);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      width: fit-content;
     }
 
-    .card a {
-      text-decoration: none;
-      color: #000;
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.4;
     }
 
+    .card p {
+      font-size: 0.875rem;
+      color: #777;
+      flex: 1;
+    }
+
+    .read-more {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── CTA ── */
     .cta {
-      margin-top: 40px;
-      background: #222;
+      margin-top: 60px;
+      background: var(--dark);
       color: #fff;
-      padding: 30px;
+      padding: 50px 32px;
       text-align: center;
-      border-radius: 10px;
+      border-radius: 16px;
     }
 
-    .cta button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      border: none;
-      background: #fff;
-      color: #000;
-      cursor: pointer;
-      border-radius: 5px;
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
+
+    .cta p {
+      color: #aaa;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: var(--warm-grey);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .cta a:hover { background: #8a847a; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    footer a { color: var(--warm-grey); text-decoration: none; }
   </style>
 </head>
 
 <body>
 
-<div class="container">
+  <!-- Navigation -->
+  <nav>
+    <a href="https://everodecor.uk" class="logo">EveroDecor</a>
+    <a href="https://everodecor.uk" class="back">← Back to website</a>
+  </nav>
 
-  <header>
-    <h1>Interior Design & Painting Blog</h1>
-    <p>
-      Discover how to transform your space with panelling, colours, and smart design decisions.
-      Simple ideas that bring long-term comfort and value.
-    </p>
-  </header>
+  <!-- Hero -->
+  <div class="hero">
+    <span class="hero-tag">Tips & Advice</span>
+    <h1>Painting & Decorating Blog</h1>
+    <p>Expert advice on colours, panelling, wall preparation and more — from professional decorators in London.</p>
+  </div>
 
-  <div class="grid">
+  <!-- Blog Grid -->
+  <div class="container">
+    <div class="grid">
 
-    <!-- BLOG CARD 1 -->
-    <div class="card">
-      <a href="./Panelling.html">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
-        <div class="card-content">
-          <h3>Panelling: How to Choose a Style You Won’t Regret</h3>
-          <p>Learn how to avoid overwhelming designs and create a timeless interior.</p>
-        </div>
-      </a>
-    </div>
+      <!-- CARD 1 — Featured -->
+      <div class="card featured">
+        <a href="./Panelling.html">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6" alt="Wall panelling ideas for London homes">
+          <div class="card-content">
+            <span class="tag">Panelling</span>
+            <h2>Panelling: How to Choose a Style You Won't Regret</h2>
+            <p>Learn how to avoid overwhelming designs and create a timeless interior that adds real value to your home.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
 
-    <!-- BLOG CARD 2 -->
-    <div class="card">
-      <a href="./paintcolours.html">
-        <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a">
-        <div class="card-content">
-          <h3>Choosing the Right Colours for Your Home</h3>
-          <p>Understand how colours affect mood and how to choose the right palette.</p>
-        </div>
-      </a>
-    </div>
+      <!-- CARD 2 -->
+      <div class="card">
+        <a href="./paintcolours.html">
+          <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a" alt="Choosing the right paint colour for your home">
+          <div class="card-content">
+            <span class="tag">Colour</span>
+            <h2>Choosing the Right Colours for Your Home</h2>
+            <p>Understand how colours affect mood and how to choose the right palette for every room.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
 
-    <!-- BLOG CARD 3 -->
-    <div class="card">
-      <a href="./small-room-tips.html">
-        <img src="/images/blog-colours.jpg.png">
-        <div class="card-content">
-          <h3>How to Make a Small Room Feel Bigger</h3>
-          <p>Simple techniques used by professionals to improve space perception.</p>
-        </div>
-      </a>
-    </div>
+      <!-- CARD 3 -->
+      <div class="card">
+        <a href="./small-room-tips.html">
+          <img src="/images/blog-colours.jpg.png" alt="How to make a small room look bigger">
+          <div class="card-content">
+            <span class="tag">Design Tips</span>
+            <h2>How to Make a Small Room Feel Bigger</h2>
+            <p>Simple techniques used by professional decorators to improve space perception through colour and finish.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
 
-    <!-- BLOG CARD 4 -->
-    <div class="card">
-      <a href="./wall-preparation.html">
-        <img src="/images/blog-preparation.jpg.png">
-        <div class="card-content">
-          <h3>wall preparation</h3>
-          <p>how to prepair a wall</p>
-        </div>
-      </a>
-    </div>
+      <!-- CARD 4 -->
+      <div class="card">
+        <a href="./wall-preparation.html">
+          <img src="/images/blog-preparation.jpg.png" alt="Wall preparation before painting">
+          <div class="card-content">
+            <span class="tag">Preparation</span>
+            <h2>Wall Preparation: Why It Matters Before You Paint</h2>
+            <p>Good preparation is the foundation of a perfect finish. Here's how to prepare your walls like a professional.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
 
         <!-- BLOG CARD 5 -->
     <div class="card">
       <a href="./panelling_guide.html">
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
         <div class="card-content">
-          <h3>Panelling Guide</h3>
+          <h3>Panelling_Guide</h3>
           <p>Find the balance between timeless and trendy design styles.</p>
         </div>
       </a>
     </div>
-     
 <!-- BLOG CARD 6 -->
        <div class="card">
-      <a href="./best-paint-brand.html">
-        <img src="../images/paint-brands.png">
+      <a href="./panelling_guide.html">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=80">
         <div class="card-content">
-          <h3>Paint brands review</h3>
-          <p>what to look out when choose your paint brand.</p>
+          <h3>How to choose decorator in longon</h3>
+          <p>what to look out in your trader skills.</p>
         </div>
       </a>
     </div>
 
-
+      <!-- CARD 7 -->
       <div class="card">
-      <a href="../index.html">
-        <img src="../images/main_room_green.jpg">
-        <div class="card-content">
-          <h3>Main website</h3>
-          <p>Main website</p>
-        </div>
-      </a>
+        <a href="./best-paint-brand.html">
+          <img src="../images/paint-brands.png" alt="Best paint brands for home decorating UK">
+          <div class="card-content">
+            <span class="tag">Products</span>
+            <h2>Best Paint Brands Reviewed: What to Look For</h2>
+            <p>Not all paints are equal. Here's what professional decorators look for when choosing a paint brand.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
+
     </div>
-    
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Need a professional decorator?</h2>
+      <p>Based in West London — we cover all of Greater London. Free quotes within 48 hours.</p>
+      <a href="https://everodecor.uk#contact">Get a Free Quote</a>
+    </div>
   </div>
 
-  <div class="cta">
-    <h2>Need help with your space?</h2>
-    <p>We help you design and paint interiors that feel right for years.</p>
-    <button onclick="window.location.href='../index.html#contact'">
-  Get a Quote
-</button>
-  </div>
-
-</div>
+  <footer>
+    <p>© 2025 <a href="https://everodecor.uk">EveroDecor</a> — Painter & Decorator Services in London</p>
+  </footer>
 
 </body>
 </html>

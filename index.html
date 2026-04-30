@@ -1,74 +1,128 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="stylesheet" href="applications/styles.css">
-<link rel="stylesheet" href="applications/layout.css">
-<link rel="stylesheet" href="applications/components.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="canonical" href="https://everodecor.uk/index.html">
-  
-  <title>EveroDecor | Painter & Decorator Services in London </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO: Core ═══ -->
+  <title>Painter & Decorator in London | EveroDecor</title>
+  <meta name="description" content="Professional painter and decorator based in West London. Interior painting, wall panelling, crack filling and end-of-tenancy prep across all of Greater London. Free quotes within 48 hours.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://everodecor.uk/">
   <link rel="icon" href="/images/everodecor04.09.jpeg">
+
+  <!-- ═══ SEO: Geo ═══ -->
+  <meta name="geo.region" content="GB-LND">
+  <meta name="geo.placename" content="London">
+
+  <!-- ═══ SEO: Open Graph ═══ -->
+  <meta property="og:title" content="Painter & Decorator in London | EveroDecor">
+  <meta property="og:description" content="Professional painter and decorator in West London. Free quotes within 48 hours. 5★ rated on TaskRabbit.">
+  <meta property="og:url" content="https://everodecor.uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://everodecor.uk/images/everodecor04.09.jpeg">
+
+  <!-- ═══ SEO: Schema ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "EveroDecor",
+    "url": "https://everodecor.uk",
+    "description": "Professional painter and decorator based in West London, covering all of Greater London.",
+    "telephone": "",
+    "email": "dielandco@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "West London",
+      "addressRegion": "London",
+      "addressCountry": "GB"
+    },
+    "areaServed": [
+      "Hammersmith","Chelsea","Fulham","Kensington","Notting Hill",
+      "Chiswick","Ealing","Acton","Shepherd's Bush","Pimlico","Greater London"
+    ],
+    "priceRange": "££",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "100"
+    },
+    "sameAs": [
+      "https://www.instagram.com/everodecor",
+      "https://www.linkedin.com/company/everodecoruk/"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./applications/styles.css">
 </head>
-  <script src="/applications/ai.js"></script>
-  
-  <body class="bg-gray-50 text-gray-800">
 
-  <!-- Header -->
-<header class="site-header">
-  <!-- Logo -->
-  <h1 class="text-3xl font-bold text-[#74852F]">EveroDecor</h1>
+<body>
 
-  <!-- Hamburger button (only shows on mobile) -->
-  <button id="menu-btn" class="sm:hidden text-gray-700 focus:outline-none">
-    <!-- Hamburger icon -->
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-  </button>
-
-  <!-- Nav links -->
-  <nav id="menu" class="hidden sm:flex space-x-6 flex-col sm:flex-row absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-sm sm:shadow-none p-6 sm:p-0 z-50">
-    <a href="#home" >Home</a>
-    <a href="#services" >Services</a>
-    <a href="#gallery" >Gallery</a>
-    <a href="#contact" >Contact</a>
-    <a href="#contact" >Consulting</a>
-    <a href="./blog/index.html" >Blog</a>
-  </nav>
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">Evero<span>Decor</span></a>
+    <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+      <svg width="22" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 22 16">
+        <line x1="0" y1="1" x2="22" y2="1"/>
+        <line x1="0" y1="8" x2="22" y2="8"/>
+        <line x1="0" y1="15" x2="22" y2="15"/>
+      </svg>
+    </button>
+    <nav id="menu">
+      <a href="#welcome">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#blog">Blog</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </nav>
+  </div>
 </header>
-  <!-- Hero Section -->
-<section>
-<div class="hero-section grid md:grid-cols-2 items-center">
-   <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
-    <div class="relative max-w-lg p-8 bg-white/60 backdrop-blur-md text-[#243a30] shadow-xl rounded-xl border border-white/30">
-      <div>
-        <p class="text-lg text-gray-500">Painter & Decorator Services in London</p>
-      </div>
-      <p class="text-lg font-semibold text-gray-800">
-        <span class="text-yellow-500">★★★★★</span> 5.0 / 5 • 100+ happy clients
-      </p>
-      <h1 class="text-4xl md:text-5xl lg:text-6Xl font-bold mt-4 leading-tight">
-        Painting & decorating
-        <span class="text-[#838e75]">done right</span>
-      </h1>
-      <p class="text-lg text-gray-600 mt-4 leading-tight">
-        Skip the stress. Get beautiful walls, expert finishes, and friendly service — at a fair price.
-      </p>
-    <button 
-onclick="window.open('https://www.taskrabbit.co.uk/book/2182/hire/17812660?form_referrer=profile&uuid=a3b0cfa1-2fec-4d74-93d6-6ffc179d80d9&funnel_id=a288a97e-4d69-40ce-bcdf-f5dd7eb57a6c_1773055445878','_blank')" 
-class="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
-Get Your Free Quote
-</button>
-    </div>
-    
-    <div class="flex items-center justify-center"></div>
 
+<!-- ═══ HERO ═══ -->
+<section id="home">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span class="pill-stars">★★★★★</span>
+          4.9 / 5 &nbsp;·&nbsp; 50+ happy clients in London
+        </div>
+        <h1>Painter &amp; decorator<br><em>in Londo n</em></h1>
+        <p class="hero-sub">Beautiful walls, expert finishes, and reliable service — across West London and Greater London. Free quotes within 48 hours.</p>
+        <div class="hero-actions">
+          <a href="https://www.taskrabbit.co.uk/book/2182/hire/17812660" target="_blank" class="btn btn-sage">Get a Free Quote</a>
+          <a href="#gallery" class="btn btn-ghost">See Our Work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WELCOME ═══ -->
+<section class="welcome" id="welcome">
+  <div class="container">
+    <div class="welcome-grid">
+      <img src="./images/everodecor04.09.jpeg"
+           alt="EveroDecor interior painting service in West London"
+           width="540" height="480"
+           class="welcome-img">
+      <div>
+        <span class="label">Welcome</span>
+        <h2>We bring life back to your rooms</h2>
+        <p>At EveroDecor, we are a professional painting and decorating service dedicated to transforming homes and businesses across London.</p>
+        <p>Whether you need a fresh coat of paint, crack repairs, or a complete room transformation — we deliver high-quality, detail-oriented work tailored to your space.</p>
+        <p>Our aim is simple: do great work, build lasting relationships, and leave every space better than we found it.</p>
+        <a href="#contact" class="btn btn-sage" style="margin-top:28px;">Start Your Project</a>
+      </div>
+    </div>
   </div>
   
 </section>  
@@ -84,85 +138,22 @@ Get Your Free Quote
   <p class="text-box">
       At EveroDecor, we are a Painter and Decorator Services where we bring life back to your rooms. Whether you're looking to refresh a room or repair damage, 
       we’re here to provide high-quality, detail-oriented painting and restoration work tailored to your space.
-   Our Aim it's to make friends and long last relationships offering a professional service.
+   Our Aim it's to make friends and long last relationships offering a professional restauration service.
     </p>
     </div>
-
-  </section>
-
-  <!-- About the Business -->
-<section class="min-h-screen bg-[#A9A49A] relative overflow-hidden py-24 px-6">
-  
-  <!-- Background image with overlay -->
-  <div class="absolute inset-0 bg-[url('./images/IMG_8908.jpeg')] bg-no-repeat bg-right bg-[length:600px_600px] opacity-30 md:opacity-50"></div>
-  
-  <!-- Dark overlay for readability -->
-  <div class="absolute inset-0 bg-[#A9A49A]/60"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-    
-    <!-- Left: Text -->
-    <div class="text-left">
-      <p class="text-sm uppercase tracking-widest text-white/70 mb-3">About Us</p>
-      <h2 class="text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-6 leading-tight">
-        Crafting beautiful spaces in London
-      </h2>
-      <p class="text-white/90 text-lg leading-relaxed mb-6">
-        EveroDecor is a professional painting and decorating service based in West London. 
-        We specialise in transforming homes and business spaces with meticulous attention 
-        to detail, premium materials, and finishes that last.
-      </p>
-      <p class="text-white/80 text-base leading-relaxed mb-10">
-        Whether you need a fresh coat of paint, crack filling, surface restoration, 
-        or a full end-of-tenancy refresh — we deliver tailored solutions with care, 
-        reliability, and a personal touch.
-      </p>
-
-      <!-- Trust badges -->
-      <div class="flex flex-wrap gap-6 text-white/90 text-sm mb-10">
-        <div class="flex items-center gap-2">
-          <span class="text-2xl">⭐</span>
-          <span>5.0 rated on TaskRabbit</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-2xl">🏠</span>
-          <span>100+ happy clients</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-2xl">📍</span>
-          <span>Based in West London</span>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <a href="#contact" class="inline-block bg-white text-[#A9A49A] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 shadow-md">
-        Get a Free Quote
-      </a>
-    </div>
-
-    <!-- Right: Stats or highlight cards -->
-    <div class="grid grid-cols-2 gap-4">
-      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-white">
-        <p class="text-4xl font-bold mb-1">5+</p>
-        <p class="text-sm text-white/80">Years of experience</p>
-      </div>
-      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-white">
-        <p class="text-4xl font-bold mb-1">100+</p>
-        <p class="text-sm text-white/80">Projects completed</p>
-      </div>
-      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-white">
-        <p class="text-4xl font-bold mb-1">5★</p>
-        <p class="text-sm text-white/80">Average rating</p>
-      </div>
-      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-white">
-        <p class="text-4xl font-bold mb-1">48h</p>
-        <p class="text-sm text-white/80">Quote turnaround</p>
-      </div>
-    </div>
-
   </div>
 </section>
+
+  <!-- About the Business -->
+  <section class="h-screen bg-[#A9A49A] bg-[url('./images/IMG_8908.jpeg')] bg-no-repeat bg-right bg-[length:600px_600px] py-16 text-center shadow-sm  mx-auto px-6">
+      <h2 class="text-5xl md:text-7xl lg:text-8xl font-semibold text-white mb-10 text-center">Who we are?</h2>
+    <p class="text-box">
+      We are an professional service dedicated to restore your home and business spaces 
+      with marvelous attention to detail and top-quality of paint and equipaments as brushes, caulk fillers. Whether it’s refreshing your interiors or expert surface restoration, 
+      we deliver tailored solutions using premium materials and a commitment to excellence. 
+    </p>
+   
+  </section>
 
   <!-- Image Gallery -->
   <section id="gallery" class="h-screen max-w-6xl mx-auto py-16 px-6">
@@ -183,222 +174,191 @@ Get Your Free Quote
         <img src="./images/2(1).png" class="object-cover rounded-lg shadow snap-center" />
         <img src="./images/3(1).png" class="object-cover rounded-lg shadow snap-center" />
       </div>
-
-      <!-- Carousel Arrows -->
-      <button id="prevBtn" class="absolute top-1/2 left-3 -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-2 shadow opacity-0 group-hover:opacity-100 transition">
-        ◀
-      </button>
-      <button id="nextBtn" class="absolute top-1/2 right-3 -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-2 shadow opacity-0 group-hover:opacity-100 transition">
-        ▶
-      </button>
     </div>
 
-    
-<a href="#menu" 
-   class="inline-block mt-6 px-4 py-2 rounded-md text-sm font-medium text-gray-600 bg-gray-100 hover:bg-[#74852F] hover:text-white shadow-sm transition">
-  Return to Menu
-</a>
- 
-  </section>
-
-  <!-- Image Modal -->
-  <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-    <span id="closeModal" class="absolute top-5 right-8 text-white text-4xl cursor-pointer">&times;</span>
-    <img id="modalImage" src="" class="max-h-[90vh] max-w-[90vw] rounded shadow-lg" />
-  </div>
-
-  <!-- Testimonials -->
-<section class="h-screen py-12 mt-16 shadow-sm text-center max-w-5xl mx-auto px-4 rounded-lg overflow-hidden">
-  <h2 class="text-2xl font-semibold mb-6">Trusted Services</h2>
-
-  <!-- Carousel wrapper -->
-  <div class=" w-full overflow-hidden">
-    <!-- Slides -->
-    <div id="testimonial-carousel" class="flex transition-transform duration-700 ease-in-out">
-      
-      <!-- Each testimonial is one slide -->
-      <div class="min-w-full px-4">
-        <div class="bg-gray-50 p-6 rounded shadow">
-          <div class="flex items-center justify-center mb-2">
-            <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo Interior painting service in Hammersmith London" class="h-6 mr-2">
-            <p class="text-yellow-500 text-xl">★★★★★</p>
-          </div>
-          <p class="text-gray-700 italic">“Dan is Fantastic. Hard working and did an excellent Job.”</p>
-          <p class="mt-2 text-sm text-gray-500">Mg</p>
-        </div>
-      </div>
-
-      <div class="min-w-full px-4">
-        <div class="bg-gray-50 p-6 rounded shadow">
-          <div class="flex items-center justify-center mb-2">
-            <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo" class="h-6 mr-2">
-            <p class="text-yellow-500 text-xl">★★★★★</p>
-          </div>
-          <p class="text-gray-700 italic">“Dan painted our new flat and did a fantastic job. 
-            He's hardworking, reliable and takes real care with his work...”</p>
-          <p class="mt-2 text-sm text-gray-500">A A</p>
-        </div>
-      </div>
-
-      <div class="min-w-full  px-4">
-        <div class="bg-gray-50 p-6 rounded shadow">
-          <div class="flex items-center justify-center mb-2">
-            <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo Interior painting service in Hammersmith London" class="h-6 mr-2">
-            <p class="text-yellow-500 text-xl">★★★★★</p>
-          </div>
-          <p class="text-gray-700 italic">“Dan was AMAZING! Incredibly respectful, hard working painter...”</p>
-          <p class="mt-2 text-sm text-gray-500">Mel</p>
-        </div>
-      </div>
-
-      <div class="min-w-full px-4">
-        <div class="bg-gray-50 p-6 rounded shadow">
-          <div class="flex items-center justify-center mb-2">
-            <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit Logo Interior painting service in Hammersmith London" class="h-6 mr-2">
-            <p class="text-yellow-500 text-xl">★★★★★</p>
-          </div>
-          <p class="text-gray-700 italic">“Awesome”</p>
-          <p class="mt-2 text-sm text-gray-500">Stephen</p>
-        </div>
-      </div>
-
-      <div class="min-w-full px-4">
-        <div class="bg-gray-50 p-6 rounded shadow">
-          <div class="flex items-center justify-center mb-2">
-            <img src="./images/light.svg" alt="CheckMyBuilder Logo Interior painting service in Hammersmith London" class="h-6 mr-2">
-            <p class="text-yellow-500 text-xl">★★★★★</p>
-          </div>
-          <p class="text-gray-700 italic">“Punctual, polite, and highly skilled. Would definitely hire again.”</p>
-          <p class="mt-2 text-sm text-gray-500">— Olivia K.</p>
-        </div>
-      </div>
-
+    <div class="gallery-track" id="gallery-track">
+      <img src="./images/IMG_2551.JPG" width="300" height="240" alt="Interior painting project London" onclick="openModal(this.src)">
+      <img src="./images/IMG_2573.JPG" width="300" height="240" alt="Wall decoration West London" onclick="openModal(this.src)">
+      <img src="./images/IMG_2617.JPG" width="300" height="240" alt="Painted room Hammersmith" onclick="openModal(this.src)">
+      <img src="./images/IMG_2618.JPG" width="300" height="240" alt="Decorator work Chelsea" onclick="openModal(this.src)">
+      <img src="./images/IMG_2621.JPG" width="300" height="240" alt="Professional painting Fulham" onclick="openModal(this.src)">
+      <img src="./images/IMG_3190.JPG" width="300" height="240" alt="Interior finish Kensington" onclick="openModal(this.src)">
+      <img src="./images/IMG_8888.jpeg" width="300" height="240" alt="Painting service Chiswick" onclick="openModal(this.src)">
+      <img src="./images/IMG_8897.jpeg" width="300" height="240" alt="Decorator Ealing" onclick="openModal(this.src)">
+      <img src="./images/IMG_8908.jpeg" width="300" height="240" alt="Wall panelling London" onclick="openModal(this.src)">
+      <img src="./images/1.png"       width="300" height="240" alt="Paint finish project London" onclick="openModal(this.src)">
+      <img src="./images/2(1).png"    width="300" height="240" alt="Decorating project London" onclick="openModal(this.src)">
+      <img src="./images/3(1).png"    width="300" height="240" alt="Interior painting London" onclick="openModal(this.src)">
     </div>
-  </div>
- 
-  </section>
-  
-<section id="services" class="h-screen bg-[#74852F] bg-[url('./images/men_improved.png')] bg-no-repeat bg-left bg-contain sm:bg-[length:400px] flex items-center justify-center py-16">
-  <div class="text-box">
-    <h2 class="text-3xl font-semibold mb-6">Services Offered</h2>
-    <ul class="text-left text-lg space-y-3">
-      <li>✔️ Interior Painter</li>
-      <li>✔️ General Consultation</li>
-      <li>✔️ Crack Filling & Smoothing</li>
-      <li>✔️ Surface Priming & Finishing</li>
-      <li>✔️ Project management</li>
-      <li>✔️ End-of-Tenancy Prep</li>
-      <li>✔️ caulking</li>
-      <li>✔️ flooring</li>
-    </ul>
   </div>
 </section>
 
-<!-- Blog Section -->
-<section id="blog" class="py-16 max-w-6xl mx-auto px-6">
-  <h2 class="text-3xl font-semibold text-center mb-10">Painter Blog </h2>
-
-  <div class="grid md:grid-cols-3 gap-8">
-
-    <!-- Article 1 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/blog-colours.jpg.png" class="rounded-t-lg object-cover h-48 w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">How to Choose the Right Paint Colour</h3>
-        <p class="text-gray-600 text-sm mb-4">
-          Choosing the right colour can completely transform a room. Here are some tips professional decorators use.
-        </p>
-        <a href="./blog/index.html" class="text-[#74852F] font-semibold">Read Article →</a>
-      </div>
-    </div>
-
-    <!-- Article 2 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/blog-preparation.jpg.png" class="rounded-t-lg object-cover h-48 w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">Why Wall Preparation Matters</h3>
-        <p class="text-gray-600 text-sm mb-4">
-          Professional painting always starts with proper preparation. Learn why filling and sanding is essential.
-        </p>
-        <a href="./blog/index.html" class="text-[#74852F] font-semibold">Read Article →</a>
-      </div>
-    </div>
-    <!-- Article 3 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/blog-small-room.jpg.png" class="rounded-t-lg object-cover h-48 w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">How to Make Small Rooms Look Bigger</h3>
-        <p class="text-gray-600 text-sm mb-4">
-          Colour choice, lighting and finishes can visually enlarge your space.
-        </p>
-        <a href="./blog/index.html" class="text-[#74852F] font-semibold">Read Article →</a>
-      </div>
-    </div>
-     <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="/images/wall-panneling.jpg" class="rounded-t-lg object-cover h-48 w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">Wall-panelling</h3>
-        <p class="text-gray-600 text-sm mb-4">
-         What is panelling and what's the benefits?
-        </p>
-        <a href="/blog/index.html" class="text-[#74852F] font-semibold">Read Article →</a>
-      </div>
-    </div>
-      <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="images/painter.png" class="rounded-t-lg object-cover h-48 w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">How Choose the best decorator in london?</h3>
-        <p class="text-gray-600 text-sm mb-4">
-        What's the best characteristics in painters and decorators across london?
-        </p>
-        <a href="blog/index.html" class="text-[#74852F] font-semibold">Read Article →</a>
-      </div>
-    </div>
-    <p class="text-xs mt-2">
-or <a href="./blog/index.html" class="underline">browse all articles</a>
-</p>
-<a href="#menu" 
-   class="inline-block mt-6 px-4 py-2 rounded-md text-sm font-medium text-gray-600 bg-gray-100 hover:bg-[#74852F] hover:text-white shadow-sm transition">
-  Return to Menu
-</a>
-  </div>
-</section>
-
-<!-- Call to Action -->
-
-<button id="openAI">💬 Ask Painter AI</button>
-
-<div id="chatbox">
-
-  <div id="chat-header">
-    <span>Painter AI</span>
-    <button id="closeChat">✕</button>
-  </div>
-
-  <iframe src="https://www.everodai.com"></iframe>
-
+<!-- Modal -->
+<div class="modal" id="modal">
+  <button class="modal-x" onclick="closeModal()" aria-label="Close">&#x2715;</button>
+  <img id="modal-img" src="" alt="Gallery image enlarged">
 </div>
 
-<section class="coverage">
-  <div class="coverage-container">
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <span class="label">Reviews</span>
+    <h2>What our clients say</h2>
+    <p class="testi-sub">Verified reviews from TaskRabbit and CheckMyBuilder.</p>
 
-    <!-- LEFT -->
-    <div class="coverage-text">
-      <p class="coverage-label">Coverage</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Dan is fantastic. Hard working and did an excellent job."</p>
+        <div class="testi-meta">
+          <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit" class="testi-logo">
+          Mg — TaskRabbit
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Dan painted our new flat and did a fantastic job. Hardworking, reliable and takes real care with his work."</p>
+        <div class="testi-meta">
+          <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit" class="testi-logo">
+          A.A. — TaskRabbit
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Dan was amazing! Incredibly respectful, hard working painter."</p>
+        <div class="testi-meta">
+          <img src="./images/TaskRabbit-Logo.jpg" alt="TaskRabbit" class="testi-logo">
+          Mel — TaskRabbit
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Punctual, polite, and highly skilled. Would definitely hire again."</p>
+        <div class="testi-meta">
+          Olivia K. — CheckMyBuilder
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <h2>
-        Painter and Decorator in London & Home Counties
-      </h2>
+<!-- ═══ SERVICES ═══ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head">
+      <span class="label">What We Do</span>
+      <h2>Services Offered</h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc">
+        <span class="svc-num">01</span>
+        <h3>Interior Painting</h3>
+        <p>Clean, professional finishes on walls, ceilings and woodwork using premium paints.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">02</span>
+        <h3>Crack Filling & Smoothing</h3>
+        <p>Plaster repairs and surface smoothing before painting for a flawless result.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">03</span>
+        <h3>Surface Priming & Finishing</h3>
+        <p>Correct priming for long-lasting, durable finishes that stand the test of time.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">04</span>
+        <h3>End-of-Tenancy Prep</h3>
+        <p>Full property refresh so your home is ready for new tenants or a sale.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">05</span>
+        <h3>Project Management</h3>
+        <p>We coordinate and manage the full decorating project from start to finish.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">06</span>
+        <h3>Free Consultation</h3>
+        <p>Not sure where to start? We'll advise on colours, finishes, and the best approach.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-num">07</span>
+        <h3>Caulking</h3>
+        <p>Sealing gaps and joints for a clean, professional finish throughout.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <p>
-        Based in westLondon, we cover a wide area across the capital and surrounding counties. 
-        Same reliability, same standard — wherever the property is.
-      </p>
+<!-- ═══ BLOG ═══ -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="blog-head">
+      <div>
+        <span class="label">Knowledge</span>
+        <h2>From the Blog</h2>
+      </div>
+      <a href="./blog/index.html" class="btn btn-ghost">Browse All</a>
+    </div>
+    <div class="blog-grid">
+      <a href="./blog/paintcolours.html" class="blog-card">
+        <img src="./images/blog-colours.jpg.png" width="400" height="190" alt="How to choose paint colours in London">
+        <div class="blog-body">
+          <span class="blog-tag">Colour</span>
+          <h3>How to Choose the Right Paint Colour</h3>
+          <p>Tips professional decorators use to pick colours that transform a room.</p>
+          <span class="blog-read">Read Article →</span>
+        </div>
+      </a>
+      <a href="./blog/wall-preparation.html" class="blog-card">
+        <img src="./images/blog-preparation.jpg.png" width="400" height="190" alt="Wall preparation before painting London">
+        <div class="blog-body">
+          <span class="blog-tag">Preparation</span>
+          <h3>Why Wall Preparation Matters</h3>
+          <p>Why filling and sanding is the foundation of a truly professional finish.</p>
+          <span class="blog-read">Read Article →</span>
+        </div>
+      </a>
+      <a href="./blog/Panelling.html" class="blog-card">
+        <img src="./images/wall-panneling.jpg" width="400" height="190" alt="Wall panelling London decorator">
+        <div class="blog-body">
+          <span class="blog-tag">Panelling</span>
+          <h3>Wall Panelling: Benefits & Styles</h3>
+          <p>How panelling adds character, depth and value to London homes.</p>
+          <span class="blog-read">Read Article →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
-      <div class="coverage-badges">
-        <span>⚡ We respond within 4 hours</span>
-        <span>📄 Quotes within 48 hours</span>
-        <span>🔧 No call-out fee</span>
+<!-- ═══ COVERAGE ═══ -->
+<section class="coverage" id="coverage">
+  <div class="container">
+    <div class="coverage-grid">
+      <div>
+        <span class="label">Where We Work</span>
+        <h2>Painter & Decorator across Greater London</h2>
+        <p style="color:var(--sand);margin-bottom:28px;font-size:0.97rem;">Based in West London, we cover the capital and surrounding areas. Same high standard — wherever the property is.</p>
+        <div class="badges">
+          <div class="badge"><span class="badge-dot"></span> We respond within 4 hours</div>
+          <div class="badge"><span class="badge-dot"></span> Quotes within 48 hours</div>
+          <div class="badge"><span class="badge-dot"></span> No call-out fee</div>
+        </div>
+      </div>
+      <div class="locs">
+        <div class="loc">West Kensington · W14</div>
+        <div class="loc">Bayswater · W2</div>
+        <div class="loc">Pimlico · SW1</div>
+        <div class="loc">Holborn · WC1</div>
+        <div class="loc">Notting Hill · W11</div>
+        <div class="loc">Kensington · W8</div>
+        <div class="loc">Chelsea · SW3</div>
+        <div class="loc">Fulham · SW6</div>
+        <div class="loc">Hammersmith · W6</div>
+        <div class="loc">Shepherd's Bush · W12</div>
+        <div class="loc">Chiswick · W4</div>
+        <div class="loc">Ealing · W5</div>
+        <div class="loc loc-all">📍 All of Greater London</div>
       </div>
     </div>
 
@@ -408,7 +368,7 @@ or <a href="./blog/index.html" class="underline">browse all articles</a>
       <div> Bayswater · W2</div>
       <div> Pimlico · SW1 </div>
       <div> Holborn · WC1 </div>
-      <div> Nothing Hill · W2, w9</div>
+      <div> NOthing Hill · W2, w9</div>
       <div> Kensington · W8</div>
       <div> Chelsea · SW3</div>
       <div> Fulham · SW6</div>
@@ -423,107 +383,90 @@ or <a href="./blog/index.html" class="underline">browse all articles</a>
 
   </div>
 </section>
-<section id="contact" class="h-screen bg-white  text-white py-16 text-center bg-no-repeat bg-left bg-contain sm:bg-[length:400px]">
-  <h2 class="text-4xl text-[#74852F]  md:text-5xl font-bold mb-4">Need a Painter?</h2>
-  <p class="mb-8 text-lg text-[#74852F] px-4 md:px-0">Let’s bring your space to life! Contact us now for a free consultation.</p>
-<script src="applications/script.js"></script>
 
-  <a href="mailto:dielandco@gmail.com" class="bg-white text-[#007AFF] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
-    📧 Get in Touch
-  </a>
-
- <div class="flex flex-wrap justify-center gap-6 mt-8 text-sm md:text-base">
-  <a href="https://www.taskrabbit.co.uk/book/2182/hire/17812660?form_referrer=profile&uuid=a3b0cfa1-2fec-4d74-93d6-6ffc179d80d9&funnel_id=a288a97e-4d69-40ce-bcdf-f5dd7eb57a6c_1773055445878" target="_blank">
-    <img src="./images/taskrabbit new logo.jpg" alt="TaskRabbit Interior painting service in Hammersmith London" class="h-10 w-auto hover:opacity-80 transition" />
-  </a>
-  <a href="https://www.instagram.com/everodecor" target="_blank">
-    <img src="./images/instagram-logo-11716322843gm1jnosicz.png" alt="Instagram Interior painting service in Hammersmith London" class="h-10 w-auto hover:opacity-80 transition" />
-  </a>
-  <a href="https://www.airtasker.com/users/c2315af16c8c-p-28463285/" target="_blank">
-    <img src="./images
-/airtasker-logo-png_seeklogo-466717.png" alt="Airtasker Interior painting service in Hammersmith London" class="h-10 w-auto hover:opacity-80 transition" />
-  </a>
-    <a href="https://www.linkedin.com/company/everodecoruk/" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="linkedin Interior painting service in Hammersmith London" class="h-10 w-auto hover:opacity-80 transition" />
-  </a>
-</div>
-<a href="#menu" 
-   class="inline-block mt-6 px-4 py-2 rounded-md text-sm font-medium text-gray-600 bg-gray-100 hover:bg-[#74852F] hover:text-white shadow-sm transition">
-  Return to Menu
-</a>
+<!-- ═══ CONTACT ═══ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <span class="label">Get in Touch</span>
+    <h2>Ready to transform your space?</h2>
+    <p class="contact-sub">Contact us now for a free consultation. We respond within 4 hours across Greater London.</p>
+    <div class="contact-actions">
+      <a href="mailto:dielandco@gmail.com" class="btn btn-light">Email Us</a>
+      <a href="https://www.taskrabbit.co.uk/book/2182/hire/17812660" target="_blank" class="btn btn-sage">Book on TaskRabbit</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.taskrabbit.co.uk/book/2182/hire/17812660" target="_blank" aria-label="TaskRabbit">
+        <img src="./images/taskrabbit new logo.jpg" alt="Book EveroDecor on TaskRabbit" height="28">
+      </a>
+      <a href="https://www.instagram.com/everodecor" target="_blank" aria-label="Instagram">
+        <img src="./images/instagram-logo-11716322843gm1jnosicz.png" alt="EveroDecor on Instagram" height="28">
+      </a>
+      <a href="https://www.airtasker.com/users/c2315af16c8c-p-28463285/" target="_blank" aria-label="Airtasker">
+        <img src="./images/airtasker-logo-png_seeklogo-466717.png" alt="EveroDecor on Airtasker" height="28">
+      </a>
+      <a href="https://www.linkedin.com/company/everodecoruk/" target="_blank" aria-label="LinkedIn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="EveroDecor on LinkedIn" height="28">
+      </a>
+    </div>
+  </div>
 </section>
 
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  © 2025 EveroDecor Painting & Decorating, London &nbsp;|&nbsp;
+  <a href="https://everodecor.uk">everodecor.uk</a> &nbsp;|&nbsp;
+  <a href="./blog/index.html">Blog</a>
+</footer>
 
+<!-- ═══ AI CHAT ═══ -->
+<button id="openAI" aria-label="Open Painter AI chat">Ask Painter AI</button>
+<div id="chatbox" role="dialog" aria-label="Painter AI">
+  <div id="chat-header">
+    <span>Painter AI</span>
+    <button id="closeChat" aria-label="Close chat">✕</button>
+  </div>
+  <iframe src="https://www.everodai.com" title="EveroDecor AI assistant"></iframe>
+</div>
 
-  <!-- Footer -->
-  <footer class="bg-white py-6 text-center text-sm text-gray-500 border-t">
-    © 2022 EveroDecor Painting & Decorating. All rights reserved.
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    const carousel = document.getElementById('carousel');
-    const slides = carousel.children;
-    const gap = 16;
-    let currentIndex = 0;
-
-    const updateCarousel = () => {
-      const slideWidth = slides[0].offsetWidth + gap;
-      carousel.scrollTo({
-        left: currentIndex * slideWidth,
-        behavior: 'smooth'
-      });
-    };
-
-    document.getElementById('prevBtn').addEventListener('click', () => {
-      currentIndex--;
-      if (currentIndex < 0) currentIndex = slides.length - 1;
-      updateCarousel();
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      currentIndex++;
-      if (currentIndex >= slides.length) currentIndex = 0;
-      updateCarousel();
-    });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.getElementById("testimonial-carousel");
-    const slides = carousel.children;
-    const totalSlides = slides.length;
-    let index = 0;
-    const intervalMs = 6000;
-
-    function showSlide(i) {
-      index = (i + totalSlides) % totalSlides; // wrap index
-      carousel.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextSlide() {
-      showSlide(index + 1);
-    }
-
-    // autoplay
-    let timer = setInterval(nextSlide, intervalMs);
-
-    // pause on hover/touch
-    carousel.parentElement.addEventListener("mouseenter", () => clearInterval(timer));
-    carousel.parentElement.addEventListener("mouseleave", () => {
-      timer = setInterval(nextSlide, intervalMs);
-    });
-
-    carousel.parentElement.addEventListener("touchstart", () => clearInterval(timer), { passive: true });
-    carousel.parentElement.addEventListener("touchend", () => {
-      timer = setInterval(nextSlide, intervalMs);
-    });
-
-    showSlide(0);
+<script>
+  // Nav toggle
+  document.getElementById('menu-btn').addEventListener('click', () => {
+    document.getElementById('menu').classList.toggle('open');
   });
 
-   document.getElementById("menu-btn").addEventListener("click", function () {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("hidden");
+  // Close nav on link click (mobile)
+  document.querySelectorAll('#menu a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('menu').classList.remove('open'));
   });
-  </script>
+
+  // Gallery scroll
+  const track = document.getElementById('gallery-track');
+  document.getElementById('nextBtn').addEventListener('click', () => track.scrollBy({ left: 316, behavior: 'smooth' }));
+  document.getElementById('prevBtn').addEventListener('click', () => track.scrollBy({ left: -316, behavior: 'smooth' }));
+
+  // Modal
+  function openModal(src) {
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('modal')) closeModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // AI chat
+  document.getElementById('openAI').addEventListener('click', () => {
+    document.getElementById('chatbox').classList.toggle('open');
+  });
+  document.getElementById('closeChat').addEventListener('click', () => {
+    document.getElementById('chatbox').classList.remove('open');
+  });
+</script>
+
 </body>
 </html>
