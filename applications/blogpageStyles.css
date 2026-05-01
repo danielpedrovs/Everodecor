@@ -52,7 +52,7 @@
 
     .site-nav .back-link {
       font-size: 0.875rem;
-      color: var(--muted);
+      color: var(--bg);
       text-decoration: none;
       font-weight: 500;
     }
