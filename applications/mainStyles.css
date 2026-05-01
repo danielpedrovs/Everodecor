@@ -159,7 +159,8 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('./images/everodecor04.09.jpeg') center/cover no-repeat;
+      background: 
+     url('/images/FIREPLACE_RED_bmBASKET_IMPROVED.png') center/cover no-repeat;
     }
 
     .hero-bg::after {
@@ -168,8 +169,8 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(10,10,9,0.95) 0%,
-        rgba(10,10,9,0.55) 50%,
+        rgba(10,10,9,0.95) 20%,
+        rgba(10,10,9,0.55) 70%,
         rgba(10,10,9,0.2) 100%
       );
     }
