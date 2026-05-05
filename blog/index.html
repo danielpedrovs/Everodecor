@@ -1,122 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ✅ SEO -->
+  <!-- ✅ SEO: Page title with keyword -->
   <title>Painting & Decorating Blog | Tips & Advice | EveroDecor London</title>
 
-  <meta name="description" content="Expert painting and decorating tips from EveroDecor, London. Advice on wall panelling, paint colours, and wall preparation.">
+  <!-- ✅ SEO: Meta description shown in Google results -->
+  <meta name="description" content="Expert painting and decorating tips from EveroDecor, London. Advice on wall panelling, paint colours, wall preparation, and more to help transform your home.">
 
+  <!-- ✅ SEO: Keywords -->
+  <meta name="keywords" content="painter decorator London, wall panelling, paint colours, interior decorating tips, home painting advice, EveroDecor">
+
+  <!-- ✅ SEO: Canonical URL -->
   <link rel="canonical" href="https://everodecor.uk/blog/index.html">
 
+  <!-- ✅ SEO: Robots -->
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph -->
+  <!-- ✅ SEO: Open Graph (for sharing on social media) -->
   <meta property="og:title" content="Painting & Decorating Blog | EveroDecor London">
-  <meta property="og:description" content="Expert decorating tips from professional painters in London.">
+  <meta property="og:description" content="Expert tips on paint colours, wall panelling, surface preparation and more from professional decorators in London.">
   <meta property="og:url" content="https://everodecor.uk/blog/index.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://everodecor.uk/images/everodecor04.09.jpeg">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="../applications/blogpageStyles.css">
-  <link rel="stylesheet" href="../applications/styles.css">
+  <!-- ✅ SEO: LocalBusiness + Blog structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "EveroDecor Painting & Decorating Blog",
+    "url": "https://everodecor.uk/blog/index.html",
+    "description": "Expert painting and decorating tips from EveroDecor, a professional painting and decorating service based in West London.",
+    "publisher": {
+      "@type": "LocalBusiness",
+      "name": "EveroDecor",
+      "url": "https://everodecor.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      }
+    }
+  }
+  </script>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../applications/styles.css">
+  
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav class="site-nav">
+  <!-- Navigation -->
+  <nav>
     <a href="https://everodecor.uk" class="logo">EveroDecor</a>
-    <a href="https://everodecor.uk" class="back-link">← Back to website</a>
+    <a href="https://everodecor.uk" class="back">← Back to website</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <div class="hero">
     <span class="hero-tag">Tips & Advice</span>
     <h1>Painting & Decorating Blog</h1>
     <p>Expert advice on colours, panelling, wall preparation and more — from professional decorators in London.</p>
   </div>
 
-  <!-- BLOG GRID -->
-  <main class="article-wrap">
-    <div class="container">
-      <div class="grid">
+  <!-- Blog Grid -->
+  <div class="container">
+    <div class="grid">
 
-        <!-- CARD 1 -->
-        <div class="card featured">
-          <a href="./Panelling.html">
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6" alt="Wall panelling ideas">
-            <div class="card-content">
-              <span class="tag">Panelling</span>
-              <h2>Panelling: How to Choose a Style You Won't Regret</h2>
-              <p>Learn how to avoid overwhelming designs and create a timeless interior.</p>
-              <span class="read-more">Read article →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="card">
-          <a href="./paintcolours.html">
-            <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a" alt="Paint colour ideas">
-            <div class="card-content">
-              <span class="tag">Colour</span>
-              <h2>Choosing the Right Colours</h2>
-              <p>How to select colours that improve mood and space.</p>
-              <span class="read-more">Read article →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="card">
-          <a href="./small-room-tips.html">
-            <img src="/images/blog-small-room.jpg.png" alt="Make room look bigger">
-            <div class="card-content">
-              <span class="tag">Design</span>
-              <h2>Make a Room Look Bigger</h2>
-              <p>Simple techniques to transform small spaces.</p>
-              <span class="read-more">Read article →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="card">
-          <a href="./wall-preparation.html">
-            <img src="/images/blog-preparation.jpg.png" alt="Wall preparation">
-            <div class="card-content">
-              <span class="tag">Preparation</span>
-              <h2>Wall Preparation Guide</h2>
-              <p>How to prepare walls for a professional finish.</p>
-              <span class="read-more">Read article →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="card">
-          <a href="./panelling_guide.html">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Panelling guide">
-            <div class="card-content">
-              <span class="tag">Guide</span>
-              <h2>Complete Panelling Guide</h2>
-              <p>Timeless vs trendy design explained.</p>
-              <span class="read-more">Read article →</span>
-            </div>
-          </a>
-        </div>
-
+      <!-- CARD 1 — Featured -->
+      <div class="card featured">
+        <a href="./Panelling.html">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6" alt="Wall panelling ideas for London homes">
+          <div class="card-content">
+            <span class="tag">Panelling</span>
+            <h2>Panelling: How to Choose a Style You Won't Regret</h2>
+            <p>Learn how to avoid overwhelming designs and create a timeless interior that adds real value to your home.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
       </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+        <a href="./paintcolours.html">
+          <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a" alt="Choosing the right paint colour for your home">
+          <div class="card-content">
+            <span class="tag">Colour</span>
+            <h2>Choosing the Right Colours for Your Home</h2>
+            <p>Understand how colours affect mood and how to choose the right palette for every room.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <a href="./small-room-tips.html">
+          <img src="/images/blog-colours.jpg.png" alt="How to make a small room look bigger">
+          <div class="card-content">
+            <span class="tag">Design Tips</span>
+            <h2>How to Make a Small Room Feel Bigger</h2>
+            <p>Simple techniques used by professional decorators to improve space perception through colour and finish.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card">
+        <a href="./wall-preparation.html">
+          <img src="/images/blog-preparation.jpg.png" alt="Wall preparation before painting">
+          <div class="card-content">
+            <span class="tag">Preparation</span>
+            <h2>Wall Preparation: Why It Matters Before You Paint</h2>
+            <p>Good preparation is the foundation of a perfect finish. Here's how to prepare your walls like a professional.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="card">
+        <a href="../blog/Panelling_Guide.html">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Complete guide to wall panelling styles">
+          <div class="card-content">
+            <span class="tag">Panelling</span>
+            <h2>Complete Panelling Guide: Timeless vs Trendy</h2>
+            <p>Find the balance between timeless and trendy design styles when choosing your panelling.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
+
+         <!-- CARD 6 -->
+      <div class="card">
+        <a href="./How-to-choose-decorator-london.html">
+          <img src="/images/Man Painting Wall with Roller.png" alt="complete guide to choose the best painter in london">
+          <div class="card-content">
+            <span class="tag">traders</span>
+            <h2>Complete Guide: Choosing the best decorator in london</h2>
+            <p>What's the characteristics to make you choose the best decorator in london/p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="card">
+        <a href="./best-paint-brand.html">
+          <img src="../images/paint-brands.png" alt="Best paint brands for home decorating UK">
+          <div class="card-content">
+            <span class="tag">Products</span>
+            <h2>Best Paint Brands Reviewed: What to Look For</h2>
+            <p>Not all paints are equal. Here's what professional decorators look for when choosing a paint brand.</p>
+            <span class="read-more">Read article →</span>
+          </div>
+        </a>
+      </div>
+
     </div>
-  </main>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Need a professional decorator?</h2>
+      <p>Based in West London — we cover all of Greater London. Free quotes within 48 hours.</p>
+      <a href="https://everodecor.uk#contact">Get a Free Quote</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 <a href="https://everodecor.uk">EveroDecor</a> — Painter & Decorator Services in London</p>
+  </footer>
 
 </body>
 </html>
