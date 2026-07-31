@@ -417,6 +417,7 @@
   © 2025 EveroDecor Painting & Decorating, London &nbsp;|&nbsp;
   <a href="https://everodecor.uk">everodecor.uk</a> &nbsp;|&nbsp;
   <a href="./blog/index.html">Blog</a>
+  <a href="#" id="openCookies">Cookie Settings</a>
 </footer>
 
 <!-- ═══ AI CHAT ═══ -->
@@ -428,7 +429,31 @@
   </div>
   <iframe src="https://www.everodai.com" title="EveroDecor AI assistant"></iframe>
 </div>
+<!-- Cookie Consent -->
+<div id="cookieConsent" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-icon">🍪</div>
 
+    <div class="cookie-text">
+      <h3>We value your privacy</h3>
+      <p>
+        We use cookies to improve your browsing experience, analyse traffic,
+        and personalise content. You can choose whether to accept or reject
+        non-essential cookies.
+      </p>
+    </div>
+
+    <div class="cookie-buttons">
+      <button id="acceptCookies" class="cookie-btn accept">
+        Accept
+      </button>
+
+      <button id="rejectCookies" class="cookie-btn reject">
+        Reject
+      </button>
+    </div>
+  </div>
+</div>
 <script>
   // Nav toggle
   document.getElementById('menu-btn').addEventListener('click', () => {
@@ -467,6 +492,43 @@
   document.getElementById('closeChat').addEventListener('click', () => {
     document.getElementById('chatbox').classList.remove('open');
   });
+
+  
+window.addEventListener("DOMContentLoaded", () => {
+
+setTimeout(() => {
+    banner.classList.add("show");
+    document.body.style.overflow = "hidden";
+}, 800);
+
+    const banner = document.getElementById("cookieConsent");
+
+    if (!localStorage.getItem("cookieConsent")) {
+        setTimeout(() => {
+            banner.classList.add("show");
+        }, 800);
+    }
+
+    document.getElementById("acceptCookies").addEventListener("click", () => {
+         localStorage.setItem("cookieConsent","accepted");
+    banner.classList.remove("show");
+    document.body.style.overflow = "";
+    });
+
+    document.getElementById("rejectCookies").addEventListener("click", () => {
+      localStorage.setItem("cookieConsent","rejected");
+    banner.classList.remove("show");
+     document.body.style.overflow = "";
+    });
+
+    document.getElementById("openCookies").addEventListener("click", function(e){
+      e.preventDefault();
+    banner.classList.add("show");
+    banner.removeAttribute("aria-hidden");
+    });
+
+
+});
 </script>
 
 </body>
