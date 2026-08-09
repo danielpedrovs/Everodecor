@@ -80,6 +80,7 @@
       <a href="./blog/index.html">Blog</a>
       <a href="#coverage">Coverage</a>
       <a href="#contact" class="nav-cta">Get a Quote</a>
+      <a href="#connect" class="nav-cta">Social Media</a>
     </nav>
   </div>
 </header>
@@ -97,7 +98,7 @@
         <h1>Painter &amp; decorator<br><em>in London</em></h1>
         <p class="hero-sub">Beautiful walls, expert finishes, and reliable service — across West London and Greater London. Quotes within 48 hours.</p>
         <div class="hero-actions">
-          <a href="https://www.taskrabbit.co.uk/book/2182/hire/17812660" target="_blank" class="btn btn-sage">Get a Quote</a>
+          <a href="#contact" class="btn btn-sage">Get a Quote</a>
           <a href="#gallery" class="btn btn-ghost">See Our Work</a>
         </div>
       </div>
@@ -385,32 +386,519 @@
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
-<section class="contact" id="contact">
+<!-- ═══ GET A QUOTE ═══ -->
+<section class="contact quote-section" id="contact">
   <div class="container">
-    <span class="label">Get in Touch</span>
-    <h2>Ready to transform your space?</h2>
-    <p class="contact-sub">Contact us now for a free consultation. We respond within 4 hours across Greater London.</p>
-    <div class="contact-actions">
-      <a href="mailto:dielandco@gmail.com" class="btn btn-light">Email Us</a>
-      <a href="https://www.taskrabbit.co.uk/book/2182/hire/17812660" target="_blank" class="btn btn-sage">Book on TaskRabbit</a>
+
+    <div class="quote-header">
+      <span class="label">Get in Touch</span>
+      <h2>Tell us about your project</h2>
+      <p class="contact-sub">
+        Tell us a little about the work you need. We'll review your enquiry
+        and get back to you as soon as possible.
+      </p>
     </div>
-    <div class="socials">
-      <a href="https://www.taskrabbit.co.uk/book/2182/hire/17812660" target="_blank" aria-label="TaskRabbit">
-        <img src="./images/taskrabbit new logo.jpg" alt="Book EveroDecor on TaskRabbit" height="28">
-      </a>
-      <a href="https://www.instagram.com/everodecor" target="_blank" aria-label="Instagram">
-        <img src="./images/instagram-logo-11716322843gm1jnosicz.png" alt="EveroDecor on Instagram" height="28">
-      </a>
-      <a href="https://www.airtasker.com/users/c2315af16c8c-p-28463285/" target="_blank" aria-label="Airtasker">
-        <img src="./images/airtasker-logo-png_seeklogo-466717.png" alt="EveroDecor on Airtasker" height="28">
-      </a>
-      <a href="https://www.linkedin.com/company/everodecoruk/" target="_blank" aria-label="LinkedIn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="EveroDecor on LinkedIn" height="28">
-      </a>
+
+    <div class="quote-layout">
+
+      <!-- LEFT SIDE -->
+      <div class="quote-intro">
+
+        <h3>Let's transform your space.</h3>
+
+        <p>
+          Whether you need one room refreshed or a complete decorating project,
+          send us a few details and we'll help you work out the best approach.
+        </p>
+
+        <div class="quote-benefits">
+
+          <div class="quote-benefit">
+            <span>✓</span>
+            <div>
+              <strong>Free consultation</strong>
+              <small>No obligation</small>
+            </div>
+          </div>
+
+          <div class="quote-benefit">
+            <span>✓</span>
+            <div>
+              <strong>Fast response</strong>
+              <small>We aim to respond within 4 hours</small>
+            </div>
+          </div>
+
+          <div class="quote-benefit">
+            <span>✓</span>
+            <div>
+              <strong>Professional advice</strong>
+              <small>Paint, preparation and finish recommendations</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+      <div class="quote-card">
+
+        <form id="quoteForm" enctype="multipart/form-data">
+
+          <!-- STEP 1 -->
+          <div class="quote-step active" data-step="1">
+
+            <div class="step-heading">
+              <span>01</span>
+              <div>
+                <h3>Your project</h3>
+                <p>What can we help you with?</p>
+              </div>
+            </div>
+
+            <label for="service">
+              What service do you need?
+            </label>
+
+            <select id="service" name="service" required>
+              <option value="">Please select</option>
+              <option value="Interior painting">Interior painting</option>
+              <option value="Ceiling painting">Ceiling painting</option>
+              <option value="Walls & woodwork">Walls & woodwork</option>
+              <option value="Crack filling & repairs">Crack filling & repairs</option>
+              <option value="Surface priming & finishing">Surface priming & finishing</option>
+              <option value="End-of-tenancy preparation">End-of-tenancy preparation</option>
+              <option value="Wall panelling">Wall panelling</option>
+              <option value="Project management">Project management</option>
+              <option value="Other">Other</option>
+            </select>
+
+
+            <label>
+              How large is the project?
+            </label>
+
+            <div class="option-grid">
+
+              <label class="choice">
+                <input type="radio" name="projectSize" value="1 room" required>
+                <span>1 room</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="projectSize" value="2 rooms">
+                <span>2 rooms</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="projectSize" value="3 rooms">
+                <span>3 rooms</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="projectSize" value="4+ rooms">
+                <span>4+ rooms</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="projectSize" value="Whole property">
+                <span>Whole property</span>
+              </label>
+
+            </div>
+
+
+            <label for="postcode">
+              Property postcode
+            </label>
+
+            <input
+              type="text"
+              id="postcode"
+              name="postcode"
+              placeholder="e.g. W6 8XX"
+              autocomplete="postal-code"
+              required
+            >
+
+
+            <label for="timeframe">
+              When would you like the work done?
+            </label>
+
+            <select id="timeframe" name="timeframe" required>
+              <option value="">Please select</option>
+              <option value="As soon as possible">As soon as possible</option>
+              <option value="Within 2 weeks">Within 2 weeks</option>
+              <option value="Within 1 month">Within 1 month</option>
+              <option value="1–3 months">1–3 months</option>
+              <option value="Flexible">I'm flexible</option>
+            </select>
+
+
+            <button type="button" class="quote-next btn btn-sage">
+              Continue →
+            </button>
+
+          </div>
+
+
+          <!-- STEP 2 -->
+          <div class="quote-step" data-step="2">
+
+            <div class="step-heading">
+              <span>02</span>
+              <div>
+                <h3>Tell us more</h3>
+                <p>A few details help us understand the job.</p>
+              </div>
+            </div>
+
+
+            <label for="message">
+              Describe the work
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="For example: I need my living room and hallway painted. The walls are currently white and there are a few cracks that need filling."
+              required
+            ></textarea>
+
+
+            <label for="photos">
+              Photos <small>(optional)</small>
+            </label>
+
+            <div class="upload-box">
+              <input
+                type="file"
+                id="photos"
+                name="photos"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+              >
+
+              <div class="upload-content">
+                <span class="upload-icon">＋</span>
+                <strong>Add photos</strong>
+                <small>
+                  Up to 5 images · JPG, PNG or WebP
+                </small>
+              </div>
+            </div>
+
+            <div id="photoPreview" class="photo-preview"></div>
+
+
+            <div class="form-buttons">
+              <button type="button" class="quote-back btn btn-outline">
+                ← Back
+              </button>
+
+              <button type="button" class="quote-next btn btn-sage">
+                Continue →
+              </button>
+            </div>
+
+          </div>
+
+
+          <!-- STEP 3 -->
+          <div class="quote-step" data-step="3">
+
+            <div class="step-heading">
+              <span>03</span>
+              <div>
+                <h3>Your details</h3>
+                <p>How can we contact you?</p>
+              </div>
+            </div>
+
+
+            <label for="name">
+              Your name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            >
+
+
+            <label for="phone">
+              Phone number
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="07xxx xxx xxx"
+              autocomplete="tel"
+              required
+            >
+
+
+            <label for="email">
+              Email address
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+
+
+            <!-- Honeypot anti-spam field -->
+            <div class="website-field" aria-hidden="true">
+              <label for="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              >
+            </div>
+
+
+            <label class="privacy-check">
+              <input type="checkbox" id="privacy" name="privacy" required>
+              <span>
+                I agree that EveroDecor can use these details to contact me
+                about my enquiry.
+              </span>
+            </label>
+
+
+            <div class="form-buttons">
+
+              <button type="button" class="quote-back btn btn-outline">
+                ← Back
+              </button>
+
+              <button
+                type="submit"
+                class="btn btn-sage quote-submit"
+              >
+                Request My Free Quote
+              </button>
+
+            </div>
+
+            <p class="form-note">
+              Your details are only used to respond to your enquiry.
+            </p>
+
+          </div>
+
+        </form>
+
+
+        <!-- SUCCESS -->
+        <div id="quoteSuccess" class="quote-success">
+
+          <div class="success-icon">✓</div>
+
+          <h3>Thank you!</h3>
+
+          <p>
+            Your project enquiry has been sent successfully.
+          </p>
+
+          <p>
+            We'll review the details and get back to you as soon as possible.
+          </p>
+
+          <button
+            type="button"
+            id="newQuote"
+            class="btn btn-sage"
+          >
+            Send another enquiry
+          </button>
+
+        </div>
+
+
+        <!-- ERROR -->
+        <div id="quoteError" class="quote-error">
+
+          <strong>Something went wrong.</strong>
+
+          <p>
+            We couldn't send your enquiry. Please try again or contact us
+            directly by email.
+          </p>
+
+          <a
+            href="mailto:dielandco@gmail.com"
+            class="btn btn-outline"
+          >
+            Email EveroDecor
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 </section>
+
+<!-- ═══ CONNECT WITH US ═══ -->
+<section class="social-connect" id="connect">
+
+  <div class="container">
+
+    <span class="label">Connect With Us</span>
+
+    <h2>See more of EveroDecor</h2>
+
+    <p class="social-connect-sub">
+      Explore our latest projects, reviews and professional profiles.
+      Follow us online or find us on trusted platforms.
+    </p>
+
+
+    <div class="social-connect-grid">
+
+      <!-- Instagram -->
+      <a
+        href="https://www.instagram.com/everodecor"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+        aria-label="Follow EveroDecor on Instagram"
+      >
+
+        <div class="social-icon">
+          <img
+            src="./images/instagram-logo-11716322843gm1jnosicz.png"
+            alt="Instagram"
+          >
+        </div>
+
+        <div class="social-card-content">
+          <h3>Instagram</h3>
+          <p>
+            See our latest painting and decorating projects.
+          </p>
+          <span>Follow us →</span>
+        </div>
+
+      </a>
+
+
+      <!-- TaskRabbit -->
+      <a
+        href="https://www.taskrabbit.co.uk/book/2182/hire/17812660"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+        aria-label="View EveroDecor on TaskRabbit"
+      >
+
+        <div class="social-icon">
+          <img
+            src="./images/taskrabbit new logo.jpg"
+            alt="TaskRabbit"
+          >
+        </div>
+
+        <div class="social-card-content">
+          <h3>TaskRabbit</h3>
+          <p>
+            See our TaskRabbit profile and customer reviews.
+          </p>
+          <span>View profile →</span>
+        </div>
+
+      </a>
+
+
+      <!-- Airtasker -->
+      <a
+        href="https://www.airtasker.com/users/c2315af16c8c-p-28463285/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+        aria-label="View EveroDecor on Airtasker"
+      >
+
+        <div class="social-icon">
+          <img
+            src="./images/airtasker-logo-png_seeklogo-466717.png"
+            alt="Airtasker"
+          >
+        </div>
+
+        <div class="social-card-content">
+          <h3>Airtasker</h3>
+          <p>
+            View our professional profile and previous work.
+          </p>
+          <span>View profile →</span>
+        </div>
+
+      </a>
+
+
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/company/everodecoruk/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+        aria-label="View EveroDecor on LinkedIn"
+      >
+
+        <div class="social-icon">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+            alt="LinkedIn"
+          >
+        </div>
+
+        <div class="social-card-content">
+          <h3>LinkedIn</h3>
+          <p>
+            Connect with EveroDecor professionally.
+          </p>
+          <span>Visit LinkedIn →</span>
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <div class="social-connect-footer">
+      <p>
+        Prefer to contact us directly?
+        <a href="#quote">Request a free quote</a>
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
@@ -530,6 +1018,8 @@ setTimeout(() => {
 
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="module" src="./applications/quoteform.js"></script>
 
 </body>
 </html>
