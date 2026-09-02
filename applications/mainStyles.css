@@ -272,7 +272,7 @@ nav a.nav-cta:hover { background: var(--sage); color: var(--white); }
   display: flex;
   gap: 16px;
   flex-shrink: 0;
-  animation: scroll-left-testi 120s linear infinite;
+  animation: scroll-left-testi 180s linear infinite;
   animation-direction:normal; /* optional: makes it scroll the opposite way to the image gallery, nice visual variety */
 }
 

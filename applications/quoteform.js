@@ -399,3 +399,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+function initCarousel({ name, speed = 0.4, step = 320 }) {
+  const track = document.querySelector(`[data-carousel="${name}"]`);
+  const inner = track.querySelector(':scope > div');
+  const prevBtn = document.querySelector(`[data-carousel-prev="${name}"]`);
+  const nextBtn = document.querySelector(`[data-carousel-next="${name}"]`);
+
+  let pos = 0;
+  let paused = false;
+  let resumeTimer = null;
+  const halfWidth = inner.scrollWidth / 2; // half = one full set of images (before duplicate)
+
+  function tick() {
+    if (!paused) {
+      pos -= speed;
+      if (Math.abs(pos) >= halfWidth) pos = 0; // seamless loop reset
+      inner.style.transform = `translateX(${pos}px)`;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  function nudge(direction) {
+    pos += direction * -step;
+    if (pos > 0) pos -= halfWidth;
+    if (Math.abs(pos) >= halfWidth) pos = 0;
+    inner.style.transform = `translateX(${pos}px)`;
+
+    paused = true;
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => { paused = false; }, 1200); // resume autoplay after a short pause
+  }
+
+  prevBtn?.addEventListener('click', () => nudge(-1));
+  nextBtn?.addEventListener('click', () => nudge(1));
+
+  track.addEventListener('mouseenter', () => paused = true);
+  track.addEventListener('mouseleave', () => {
+    clearTimeout(resumeTimer);
+    paused = false;
+  });
+}
+
+initCarousel({ name: 'main',  speed: 0.35, step: 320 }); // main gallery: slow
+initCarousel({ name: 'testi', speed: 0.5,  step: 320 }); // testimonials: slightly faster, or match as you like
