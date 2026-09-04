@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painter &amp; Decorator in London | EveroDecor</title>
+<meta name="description" content="Professional painter and decorating services across Central and Greater London. Interior painting, wall panelling, crack filling and end-of-tenancy prep. Quotes within 48 hours.">
+<meta name="geo.placename" content="London">
+<meta name="geo.region" content="GB-LND">
+<meta property="og:title" content="Painter &amp; Decorator in London | EveroDecor">
+<meta property="og:description" content="Professional painter and decorator covering Central and Greater London. Quotes within 48 hours. 5★ rated on TaskRabbit.">
+<meta property="og:image" content="https://everodecor.uk/images/everodecor04.09.jpeg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://everodecor.uk/locations/painter-london.html">
+<link rel="canonical" href="https://everodecor.uk/locations/painter-london.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4EFE6;
+    --paper:#FBF8F2;
+    --charcoal:#2B2620;
+    --sage:#4B5940;
+    --sage-wash:#E7EBE2;
+    --terracotta:#C1683F;
+    --terracotta-wash:#F3E1D4;
+    --border:#E1D6C4;
+    --muted:#6B6457;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--charcoal);font-family:'DM Sans', Helvetica, sans-serif;line-height:1.6}
+  h1,h2,.display{font-family:'Cormorant Garamond', serif;font-weight:600;color:var(--charcoal);margin:0 0 .4em}
+  h1 em, h2 em{font-style:italic;font-weight:500}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:2px solid var(--terracotta);outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+  .eyebrow{font-size:13px;font-weight:500;color:var(--terracotta);margin-bottom:8px}
+
+  header.site{background:var(--paper);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;text-decoration:none}
+  nav.links{display:flex;gap:26px;align-items:center}
+  nav.links a{font-size:15px;text-decoration:none}
+  nav.links a:hover{color:var(--terracotta)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 24px;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid transparent;cursor:pointer}
+  .btn-primary{background:var(--terracotta);color:var(--paper)}
+  .btn-primary:hover{background:#a8542f}
+  .btn-outline{background:transparent;border-color:var(--sage);color:var(--sage)}
+  .btn-outline:hover{background:var(--sage);color:var(--paper)}
+
+  .breadcrumb{font-size:13px;color:var(--muted);padding:16px 0 0}
+  .breadcrumb a{color:var(--sage);text-decoration:none}
+
+  /* Hero */
+  .hero{padding:32px 0 64px}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .rating-line{font-size:14px;color:var(--muted);margin-bottom:14px}
+  .rating-line .stars{color:var(--terracotta)}
+  .hero h1{font-size:42px;line-height:1.12}
+  .hero p.lead{font-size:17px;color:var(--muted);max-width:46ch;margin:0 0 26px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-img{border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+
+  /* Stats */
+  .stats{background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:36px 0}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--terracotta)}
+  .stat span{font-size:13px;color:var(--muted)}
+
+  /* Intro */
+  .intro{padding:64px 0}
+  .intro .wrap{max-width:760px}
+  .intro p{font-size:16px;color:var(--charcoal)}
+
+  /* Services */
+  .services{padding:64px 0;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .services .head{max-width:600px;margin-bottom:36px}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .service-item .num{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--sage);margin-bottom:6px;display:block}
+  .service-item h3{font-size:17px;margin:0 0 6px;font-weight:700;font-family:'DM Sans',sans-serif}
+  .service-item p{font-size:14px;color:var(--muted);margin:0}
+
+  /* Team */
+  .team{padding:64px 0}
+  .team .head{max-width:640px;margin-bottom:36px}
+  .team .head p{color:var(--muted);font-size:16px}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .team-card{background:var(--paper);border:1px solid var(--border);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px}
+  .team-photo{width:72px;height:72px;border-radius:50%;overflow:hidden;background:var(--sage-wash)}
+  .team-photo img{width:100%;height:100%;object-fit:cover}
+  .team-name{font-size:18px;font-weight:700;margin:0}
+  .team-rating{font-size:13px;color:var(--muted)}
+  .team-rating .stars{color:var(--terracotta)}
+  .team-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .team-tag{background:var(--terracotta-wash);color:var(--terracotta);font-size:12px;font-weight:500;padding:4px 10px;border-radius:999px}
+  .team-bio{font-size:14px;color:var(--muted);margin:0;flex:1}
+  .team-card.placeholder{
+    border-style:dashed;align-items:center;justify-content:center;text-align:center;color:var(--muted);
+  }
+  .team-card.placeholder .avatar-empty{
+    width:56px;height:56px;border-radius:50%;border:1px dashed var(--border);
+    display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--sage);margin-bottom:6px;
+  }
+
+  /* Gallery strip */
+  .gallery-strip{padding:64px 0;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .gallery-strip .head{margin-bottom:28px}
+  .g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .g-grid figure{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:1/1}
+  .g-grid img{width:100%;height:100%;object-fit:cover}
+
+  /* Testimonials */
+  .testimonials{padding:64px 0}
+  .t-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .t-card{background:var(--paper);border:1px solid var(--border);border-radius:16px;padding:22px}
+  .t-card .stars{color:var(--terracotta);font-size:14px;margin-bottom:10px;display:block}
+  .t-card p{font-size:14px;margin:0 0 12px;color:var(--charcoal)}
+  .t-name{font-size:13px;color:var(--muted)}
+
+  /* FAQ */
+  .faq{padding:64px 0;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .faq .wrap{max-width:760px}
+  details{border-bottom:1px solid var(--border);padding:18px 0}
+  details summary{font-size:17px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:'+';font-size:22px;color:var(--terracotta);flex:none}
+  details[open] summary::after{content:'–'}
+  details p{color:var(--muted);margin:14px 0 0;font-size:15px}
+
+  /* Coverage */
+  .coverage{padding:64px 0}
+  .coverage .head{max-width:560px;margin-bottom:28px}
+  .coverage .head p{color:var(--muted)}
+  .area-list{display:flex;flex-wrap:wrap;gap:10px}
+  .area-list a{font-size:14px;text-decoration:none;color:var(--sage);background:var(--sage-wash);padding:7px 16px;border-radius:999px}
+  .area-list a:hover{background:var(--sage);color:var(--paper)}
+
+  /* CTA */
+  .cta-banner{background:var(--sage);color:var(--paper);padding:60px 0;text-align:center}
+  .cta-banner h2{color:var(--paper)}
+  .cta-banner p{max-width:46ch;margin:0 auto 26px;opacity:.9}
+  .cta-banner .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cta-banner .btn-primary{background:var(--terracotta)}
+  .cta-banner .btn-outline{border-color:var(--paper);color:var(--paper)}
+  .cta-banner .btn-outline:hover{background:var(--paper);color:var(--sage)}
+
+  footer.site{padding:36px 0;font-size:13px;color:var(--muted)}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr}
+    .hero-img{order:-1}
+    .stats .wrap{grid-template-columns:1fr 1fr}
+    .service-grid{grid-template-columns:1fr 1fr}
+    .team-grid{grid-template-columns:1fr}
+    .g-grid{grid-template-columns:1fr 1fr}
+    .t-grid{grid-template-columns:1fr 1fr}
+    nav.links{display:none}
+  }
+  @media (max-width:520px){
+    .stats .wrap{grid-template-columns:1fr 1fr}
+    .service-grid{grid-template-columns:1fr}
+    .g-grid{grid-template-columns:1fr 1fr}
+    .t-grid{grid-template-columns:1fr}
+    .hero h1{font-size:32px}
+  }
+</style>
+</head>
+<body>
+
+<!-- This header matches the nav on your other /locations/ pages — links go back to index.html anchors -->
+<header class="site">
+  <div class="nav-row">
+    <a class="logo" href="https://everodecor.uk/index.html">EveroDecor</a>
+    <nav class="links">
+      <a href="https://everodecor.uk/index.html#welcome">About</a>
+      <a href="https://everodecor.uk/index.html#services">Services</a>
+      <a href="https://everodecor.uk/index.html#gallery">Gallery</a>
+      <a href="https://everodecor.uk/blog/index.html">Blog</a>
+      <a href="https://everodecor.uk/index.html#coverage">Coverage</a>
+    </nav>
+    <a class="btn btn-primary" href="https://everodecor.uk/index.html#contact">Get a Quote</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="breadcrumb"><a href="https://everodecor.uk/index.html">Home</a> &gt; <a href="https://everodecor.uk/index.html#coverage">Coverage</a> &gt; London</p>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="rating-line"><span class="stars">★★★★★</span> 4.9 / 5 · 100+ happy clients in London</p>
+        <h1>Painter &amp; decorator<em>services in London</em></h1>
+        <p class="lead">Interior painting, wall panelling, crack filling and end-of-tenancy prep — covering Central and Greater London. Quotes within 48 hours.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://everodecor.uk/index.html#contact">Get a Quote</a>
+          <a class="btn btn-outline" href="https://everodecor.uk/index.html#gallery">See Our Work</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://everodecor.uk/images/everodecor04.09.jpeg" alt="EveroDecor interior painting service in London">
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap">
+      <div class="stat"><b>3+</b><span>Years experience</span></div>
+      <div class="stat"><b>100+</b><span>Projects done</span></div>
+      <div class="stat"><b>4.98★</b><span>Average rating</span></div>
+      <div class="stat"><b>48h</b><span>Quote turnaround</span></div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="wrap">
+      <p class="eyebrow">London-Wide</p>
+      <h2>Painting across the whole of Greater London</h2>
+      <p>Whether it's a full room refresh, a single wall, or the fiddly bits — skirting boards, window frames, a fresh front door — EveroDecor covers Central and Greater London with the same standard on every job.</p>
+      <p>We also cover a lot of end-of-tenancy work given the density of rental flats across the city: full repaints, crack filling and touch-ups turned around quickly without cutting corners on prep.</p>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">What We Do</p>
+        <h2>Services offered across London</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-item"><span class="num">01</span><h3>Interior Painting</h3><p>Clean, professional finishes on walls, ceilings and woodwork.</p></div>
+        <div class="service-item"><span class="num">02</span><h3>Crack Filling &amp; Smoothing</h3><p>Plaster repairs and surface smoothing before painting begins.</p></div>
+        <div class="service-item"><span class="num">03</span><h3>Surface Priming &amp; Finishing</h3><p>Correct priming for long-lasting, durable finishes.</p></div>
+        <div class="service-item"><span class="num">04</span><h3>End-of-Tenancy Prep</h3><p>Full property refresh, ready for new tenants or a sale.</p></div>
+        <div class="service-item"><span class="num">05</span><h3>Wall Panelling</h3><p>Panelling installed and finished to add character and value.</p></div>
+        <div class="service-item"><span class="num">06</span><h3>Caulking</h3><p>Sealing gaps and joints for a clean, professional finish.</p></div>
+        <div class="service-item"><span class="num">07</span><h3>Project Management</h3><p>We coordinate the full decorating project start to finish.</p></div>
+        <div class="service-item"><span class="num">08</span><h3>Free Consultation</h3><p>Advice on colours, finishes, and the best approach for your space.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Who's Doing The Work</p>
+        <h2>Meet the team</h2>
+        <p>Right now that's Dan — as the network of trusted decorators grows, more profiles will appear here.</p>
+      </div>
+      <div class="team-grid">
+
+        <!-- ============================================
+             LIVE CARD — replace the photo, then keep this
+             card's copy up to date as your stats change
+             ============================================ -->
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="https://everodecor.uk/images/IMG_8908.jpeg" alt="Dan, EveroDecor painter and decorator">
+          </div>
+          <p class="team-name">Dan</p>
+          <p class="team-rating"><span class="stars">★★★★★</span> 4.98 · 100+ projects</p>
+          <div class="team-tags">
+            <span class="team-tag">Interior Painting</span>
+            <span class="team-tag">Wall Panelling</span>
+            <span class="team-tag">End-of-Tenancy</span>
+          </div>
+          <p class="team-bio">Founder of EveroDecor. Hands-on decorating experience across London, from Victorian terraces to new-build riverside flats.</p>
+        </div>
+
+        <!-- ============================================
+             PLACEHOLDER CARD — duplicate and fill in as you
+             bring people from the trader network on board.
+             Swap class="team-card placeholder" for
+             class="team-card" and add photo/name/tags/bio
+             once you have a real profile to show.
+             ============================================ -->
+       <div class="team-card">
+          <div class="team-photo">
+            <img src="https://everodecor.uk/images/IMG_8908.jpeg" alt="Dan, EveroDecor painter and decorator">
+          </div>
+          <p class="team-name">Harry</p>
+          <p class="team-rating"><span class="stars">★★★★★</span> 4.98 · 20+ projects</p>
+          <div class="team-tags">
+            <span class="team-tag">Interior Paint</span>
+            <span class="team-tag">Wall Panelling</span>
+            <span class="team-tag">End-of-Tenancy</span>
+          </div>
+          <p class="team-bio">Hands-on decorating experience across London, from Victorian terraces to new-build riverside flats.</p>
+        </div>
+
+        <!-- ============================================ END TEAM ============================================ -->
+
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-strip">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Our Work</p>
+        <h2>Recent projects across London</h2>
+      </div>
+      <div class="g-grid">
+        <figure><img src="https://everodecor.uk/images/IMG_2617.JPG" alt="Painted room, Hammersmith"></figure>
+        <figure><img src="https://everodecor.uk/images/IMG_2621.JPG" alt="Professional Painter Fulham"></figure>
+        <figure><img src="https://everodecor.uk/images/IMG_3190.JPG" alt="Interior finish, Kensington"></figure>
+        <figure><img src="https://everodecor.uk/images/IMG_8888.jpeg" alt="Painting service, Chiswick"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Reviews</p>
+        <h2>What our clients say</h2>
+      </div>
+      <div class="t-grid">
+        <div class="t-card"><span class="stars">★★★★★</span><p>"Dan is fantastic. Hard working and did an excellent job."</p><span class="t-name">Mg — TaskRabbit</span></div>
+        <div class="t-card"><span class="stars">★★★★★</span><p>"Dan painted our new flat and did a fantastic job. Hardworking, reliable and takes real care with his work."</p><span class="t-name">A.A. — TaskRabbit</span></div>
+        <div class="t-card"><span class="stars">★★★★★</span><p>"Dan was amazing! Incredibly respectful, hard working painter."</p><span class="t-name">Mel — TaskRabbit</span></div>
+        <div class="t-card"><span class="stars">★★★★★</span><p>"Punctual, polite, and highly skilled. Would definitely hire again."</p><span class="t-name">Olivia K. — TaskRabbit</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Good To Know</p>
+        <h2>Frequently asked questions</h2>
+      </div>
+
+      <details open>
+        <summary>How much does decorator cost in London?</summary>
+        <p>It depends on the size and condition of the job — a single wall or skirting boards costs far less than a full room. Send a few details through the quote form and you'll have a price within 48 hours.</p>
+      </details>
+
+      <details>
+        <summary>Do I need to buy the paint myself?</summary>
+        <p>No — all tools and equipment are included. You're welcome to supply your own paint if you've already chosen a colour, or ask for advice on brands and finishes during the free consultation.</p>
+      </details>
+
+      <details>
+        <summary>Which areas of London do you cover?</summary>
+        <p>All of Greater London, with regular work across Kensington, Notting Hill, Chelsea, Hammersmith, Bayswater, Pimlico, Holborn, Fulham, Shepherd's Bush, Chiswick and Ealing. See the full list below.</p>
+      </details>
+
+      <details>
+        <summary>How quickly can you start?</summary>
+        <p>Enquiries get a response within 4 hours, and a quote within 48 hours. Availability depends on the size of the job and time of year — the earlier you get in touch, the more flexibility there is.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="coverage">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Where We Work</p>
+        <h2>Painter &amp; decorator across Greater London</h2>
+        <p>Same high standard, wherever the property is. Pick your area for local details, or use the quote form above if you're anywhere else in London.</p>
+      </div>
+      <div class="area-list">
+        <a href="https://everodecor.uk/locations/painter-kensington.html">Kensington · W14</a>
+        <a href="https://everodecor.uk/locations/painter-notting-hill.html">Notting Hill · W11</a>
+        <a href="https://everodecor.uk/locations/painter-chelsea.html">Chelsea · SW3</a>
+        <a href="https://everodecor.uk/locations/painter-hammersmith.html">Hammersmith · W6</a>
+        <a href="https://everodecor.uk/locations/painter-Bayswater.html">Bayswater · W2</a>
+        <a href="https://everodecor.uk/locations/painter-pimlico.html">Pimlico · SW1</a>
+        <a href="https://everodecor.uk/locations/painter-Holborn.html">Holborn · WC1</a>
+        <a href="https://everodecor.uk/locations/painter-fulham.html">Fulham · SW6</a>
+        <a href="https://everodecor.uk/locations/painter-shepherds-bush.html">Shepherd's Bush · W12</a>
+        <a href="https://everodecor.uk/locations/painter-chiswick.html">Chiswick · W4</a>
+        <a href="https://everodecor.uk/locations/painter-ealing.html">Ealing · W5</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" id="quote">
+    <div class="wrap">
+      <h2>Ready to transform your space?</h2>
+      <p>Send a few details and you'll have a quote within 48 hours — no call-out fee.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://everodecor.uk/index.html#contact">Request My Free Quote</a>
+        <a class="btn btn-outline" href="mailto:dielandco@gmail.com">Email Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 EveroDecor Painter &amp; Decorator, London | <a href="https://everodecor.uk">everodecor.uk</a> | <a href="https://everodecor.uk/blog/index.html">Blog</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
