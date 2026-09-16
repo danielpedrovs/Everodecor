@@ -242,3 +242,424 @@
 
     footer a { color: var(--warm-grey); text-decoration: none; }
   
+   /* ==========================================================================
+   Article page styles: mesh-for-wall-cracks.html and similar blog articles
+   Breadcrumb, figures, takeaway box, numbered method, FAQ, CTA, related links
+   Self-contained: does not assume any other stylesheet has run first.
+   Everything is scoped under .article-page so it is safe to append
+   straight onto the end of your existing styles.css.
+   ========================================================================== */
+
+.article-page {
+  --cream: #F4EFE6;
+  --charcoal: #2B2620;
+  --sage: #4B5940;
+  --terracotta: #C1683F;
+  --rule: rgba(43, 38, 32, 0.14);
+  --measure: 34rem;
+
+  box-sizing: border-box;
+  background: var(--cream);
+  color: var(--charcoal);
+}
+
+.article-page,
+.article-page *,
+.article-page *::before,
+.article-page *::after {
+  box-sizing: inherit;
+}
+
+.article-page img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article-page ul,
+.article-page ol {
+  margin: 0;
+  padding: 0;
+}
+
+.article-page a {
+  color: inherit;
+}
+
+/* Breadcrumb */
+
+.article-page .breadcrumb {
+  max-width: var(--measure);
+  margin: 2rem auto 0;
+  padding: 0 1.25rem;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: rgba(43, 38, 32, 0.65);
+}
+
+.article-page .breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.article-page .breadcrumb li {
+  display: inline-flex;
+}
+
+.article-page .breadcrumb li + li::before {
+  content: '/';
+  margin-right: 0.5rem;
+  color: rgba(43, 38, 32, 0.35);
+}
+
+.article-page .breadcrumb a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-page .breadcrumb a:hover {
+  color: var(--terracotta);
+}
+
+/* Article shell */
+
+.article-page .article {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem 5rem;
+}
+
+.article-page .article-head {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.article-page .article-head h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  margin: 0 0 1rem;
+}
+
+.article-page .standfirst {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: rgba(43, 38, 32, 0.8);
+  margin: 0 0 1.5rem;
+}
+
+.article-page .article-meta {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: rgba(43, 38, 32, 0.6);
+  margin: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.article-page .meta-sep::before {
+  content: '\2022';
+  margin: 0 0.5rem;
+  color: rgba(43, 38, 32, 0.3);
+}
+
+/* Body copy */
+
+.article-page .article-body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--charcoal);
+}
+
+.article-page .article-body p {
+  margin: 0 0 1.4rem;
+}
+
+.article-page .article-body h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.85rem;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin: 3rem 0 1rem;
+}
+
+.article-page .article-body h3 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+}
+
+.article-page .article-body a {
+  color: var(--sage);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.article-page .article-body a:hover {
+  color: var(--terracotta);
+}
+
+/* Figures */
+
+.article-page .article-figure {
+  margin: 2.5rem 0;
+}
+
+.article-page .article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.article-page .article-figure figcaption {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(43, 38, 32, 0.6);
+  margin-top: 0.65rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--terracotta);
+}
+
+.article-page .article-figure .credit {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  color: rgba(43, 38, 32, 0.45);
+}
+
+/* Takeaway box */
+
+.article-page .takeaway {
+  background: rgba(75, 89, 64, 0.07);
+  border-left: 3px solid var(--sage);
+  padding: 1.5rem 1.5rem 1.25rem;
+  margin: 2.5rem 0;
+}
+
+.article-page .takeaway h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+.article-page .takeaway ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.article-page .takeaway li {
+  margin-bottom: 0.5rem;
+}
+
+/* Numbered method */
+
+.article-page .method {
+  list-style: none;
+  counter-reset: step;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.article-page .method > li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.75rem;
+}
+
+.article-page .method > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--terracotta);
+  border-radius: 50%;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--terracotta);
+}
+
+.article-page .method h3 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+}
+
+.article-page .method p {
+  margin: 0;
+}
+
+/* FAQ */
+
+.article-page .faq {
+  margin: 3.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.article-page .faq h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.85rem;
+  line-height: 1.2;
+  margin: 3rem 0 1rem;
+}
+
+.article-page .faq details {
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-page .faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.1rem 2rem 1.1rem 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  position: relative;
+}
+
+.article-page .faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-page .faq summary::after {
+  content: '+';
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: var(--terracotta);
+}
+
+.article-page .faq details[open] summary::after {
+  content: '\2013';
+}
+
+.article-page .faq details p {
+  margin: 0 0 1.2rem;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: rgba(43, 38, 32, 0.82);
+}
+
+.article-page .faq summary:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+/* Call to action */
+
+.article-page .cta-block {
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 2rem 1.75rem;
+  margin: 3rem 0;
+}
+
+.article-page .cta-block h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  color: var(--cream);
+  margin: 0 0 0.75rem;
+  font-size: 1.6rem;
+}
+
+.article-page .cta-block p {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: rgba(244, 239, 230, 0.85);
+  margin: 0 0 1.4rem;
+}
+
+.article-page .cta-block p:last-child {
+  margin-bottom: 0;
+}
+
+.article-page .cta-link {
+  display: inline-block;
+  background: var(--terracotta);
+  color: var(--cream);
+  padding: 0.7rem 1.5rem;
+  border: 0;
+  text-decoration: none;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.article-page .cta-block a.cta-link:hover {
+  background: var(--cream);
+  color: var(--charcoal);
+}
+
+/* Related links */
+
+.article-page .related {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+}
+
+.article-page .related h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.article-page .related ul {
+  list-style: none;
+}
+
+.article-page .related li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+.article-page .related a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-page .related a:hover {
+  color: var(--terracotta);
+}
+
+/* Small screens */
+
+@media (max-width: 480px) {
+  .article-page .article {
+    padding-bottom: 3.5rem;
+  }
+
+  .article-page .cta-block {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .article-page .method > li {
+    padding-left: 2.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-page * {
+    transition: none !important;
+  }
+}
