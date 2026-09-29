@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Painter & Decorator in London | Interior Painting | EveroDecor</title>
+  <meta name="description" content="EveroDecor provides interior painting and decorating in London, with a focus on preparation, clean finishes and practical paint advice. Covering Hammersmith, Shepherd's Bush, Chiswick, Ealing and West London.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://everodecor.uk/locations/london/painting.html">
+
+  <meta property="og:title" content="Painter & Decorator in London | EveroDecor">
+  <meta property="og:description" content="Interior painting and decorating across West London. Walls, ceilings, woodwork, doors, preparation and repairs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://everodecor.uk/locations/london/painting.html">
+  <meta property="og:image" content="https://everodecor.uk/images/everodecor04.09.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --cream:#F4EFE6;
+      --stone:#E4DDD6;
+      --paper:#FFFCF7;
+      --ink:#292725;
+      --muted:#6F6963;
+      --sage:#4B5940;
+      --sage-dark:#35402E;
+      --terracotta:#B96748;
+      --line:#D8D0C7;
+      --max:1180px;
+      --serif:"Cormorant Garamond",Georgia,serif;
+      --sans:"Jost",Arial,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.65;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+
+    /* NAV */
+    .site-nav{
+      position:sticky;top:0;z-index:20;
+      background:rgba(244,239,230,.96);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(10px);
+    }
+    .nav-inner{
+      width:min(var(--max),calc(100% - 40px));
+      margin:auto;min-height:72px;
+      display:flex;align-items:center;justify-content:space-between;gap:25px;
+    }
+    .logo{
+      text-decoration:none;font-family:var(--serif);
+      font-size:2rem;font-weight:700;letter-spacing:.02em;
+    }
+    .nav-links{display:flex;gap:25px;align-items:center;font-size:.92rem}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover{text-decoration:underline}
+    .nav-cta{
+      background:var(--sage);color:white!important;
+      padding:11px 19px;border-radius:3px;text-decoration:none!important;
+      font-weight:600;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb{
+      padding:20px 0 0;font-size:.82rem;color:var(--muted);
+    }
+    .breadcrumb ol{
+      display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0;
+    }
+    .breadcrumb li:not(:last-child)::after{content:"/";margin-left:8px;color:#aaa}
+
+    /* HERO */
+    .hero{padding:18px 0 70px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.05fr .95fr;
+      min-height:610px;align-items:stretch;
+    }
+    .hero-copy{
+      background:var(--stone);
+      padding:clamp(42px,6vw,82px);
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .eyebrow{
+      text-transform:uppercase;letter-spacing:.16em;
+      font-size:.74rem;font-weight:700;color:var(--sage);
+      margin-bottom:16px;
+    }
+    h1,h2,h3{
+      font-family:var(--serif);
+      line-height:1.05;margin:0 0 18px;
+      font-weight:600;
+    }
+    h1{font-size:clamp(3.3rem,6vw,6.4rem);letter-spacing:-.025em}
+    h2{font-size:clamp(2.3rem,4vw,4rem)}
+    h3{font-size:1.8rem}
+    .hero-copy em{color:var(--sage);font-style:italic}
+    .hero-sub{
+      max-width:600px;font-size:1.08rem;color:#4f4943;margin:0 0 28px;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      display:inline-block;padding:13px 22px;border-radius:3px;
+      text-decoration:none;font-weight:600;font-size:.92rem;
+      border:1px solid transparent;
+    }
+    .btn-sage{background:var(--sage);color:white}
+    .btn-sage:hover{background:var(--sage-dark)}
+    .btn-outline{border-color:var(--sage);color:var(--sage)}
+    .btn-outline:hover{background:white}
+    .hero-image{
+      min-height:610px;
+      background:
+        linear-gradient(0deg,rgba(20,18,16,.08),rgba(20,18,16,.08)),
+        url("../../images/everodecor04.09.jpeg") center/cover no-repeat;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip{
+      background:var(--sage);color:white;
+      padding:20px 0;
+    }
+    .trust-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+      text-align:center;
+    }
+    .trust-item strong{display:block;font-size:1.05rem}
+    .trust-item span{display:block;font-size:.82rem;opacity:.82}
+
+    /* INTRO */
+    .section{padding:90px 0}
+    .intro-grid{
+      display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:center;
+    }
+    .section-label{
+      text-transform:uppercase;letter-spacing:.15em;color:var(--sage);
+      font-size:.74rem;font-weight:700;margin-bottom:12px;
+    }
+    .lead{font-size:1.18rem;line-height:1.7}
+    .muted{color:var(--muted)}
+    .feature-list{
+      list-style:none;padding:0;margin:25px 0 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:11px 25px;
+    }
+    .feature-list li::before{content:"✓";color:var(--sage);font-weight:700;margin-right:9px}
+
+    /* SERVICES */
+    .services{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .section-head{max-width:720px;margin-bottom:42px}
+    .services-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    }
+    .service-card{
+      background:var(--cream);border:1px solid var(--line);
+      padding:28px;min-height:235px;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .service-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(43,38,32,.08)}
+    .service-number{font-size:.75rem;letter-spacing:.12em;color:var(--terracotta);font-weight:700}
+    .service-card h3{font-size:1.55rem;margin-top:18px}
+    .service-card p{color:var(--muted);font-size:.93rem}
+
+    /* PROJECTS */
+    .projects-grid{
+      display:grid;grid-template-columns:1.35fr .65fr .65fr;gap:16px;
+    }
+    .project{
+      position:relative;min-height:420px;overflow:hidden;background:#ddd;
+    }
+    .project.small{min-height:250px}
+    .project img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .project:hover img{transform:scale(1.03)}
+    .project-info{
+      position:absolute;left:0;right:0;bottom:0;
+      padding:24px;color:white;
+      background:linear-gradient(transparent,rgba(0,0,0,.78));
+    }
+    .project-info h3{font-size:1.6rem;margin:0 0 5px}
+    .project-info p{margin:0;font-size:.85rem}
+
+    /* PAINT ADVICE */
+    .paint-advice{
+      background:var(--stone);
+    }
+    .paint-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center;
+    }
+    .paint-links{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;
+    }
+    .paint-link{
+      background:rgba(255,252,247,.78);padding:20px;
+      border:1px solid var(--line);text-decoration:none;
+    }
+    .paint-link strong{display:block;margin-bottom:5px}
+    .paint-link span{font-size:.82rem;color:var(--muted)}
+
+    /* COST */
+    .cost-box{
+      background:var(--paper);border:1px solid var(--line);
+      padding:35px;margin-top:30px;
+    }
+    .cost-table{width:100%;border-collapse:collapse}
+    .cost-table th,.cost-table td{
+      padding:16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;
+    }
+    .cost-table th{background:var(--stone)}
+    .cost-note{font-size:.84rem;color:var(--muted);margin-top:16px}
+
+    /* WHY */
+    .why-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+    }
+    .why-card{padding:28px;background:var(--paper);border:1px solid var(--line)}
+    .why-card h3{font-size:1.55rem}
+
+    /* REVIEWS */
+    .reviews{background:var(--sage);color:white}
+    .reviews .section-label{color:#D9E0D1}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .review{
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.17);
+      padding:27px;
+    }
+    .stars{letter-spacing:.12em;margin-bottom:15px}
+    .review p{font-family:var(--serif);font-size:1.45rem;line-height:1.25}
+    .review small{opacity:.78}
+
+    /* AREAS */
+    .areas-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .area{
+      padding:10px 15px;background:var(--paper);
+      border:1px solid var(--line);text-decoration:none;
+    }
+    .area:hover{border-color:var(--sage);color:var(--sage)}
+
+    /* HOW */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .step{border-top:2px solid var(--sage);padding-top:22px}
+    .step-num{font-size:.75rem;color:var(--terracotta);font-weight:700;letter-spacing:.1em}
+    .step h3{font-size:1.55rem;margin-top:12px}
+
+    /* FAQ */
+    .faq-wrap{max-width:900px}
+    details{border-top:1px solid var(--line);padding:20px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{
+      cursor:pointer;list-style:none;font-weight:600;
+      font-size:1.05rem;display:flex;justify-content:space-between;gap:20px;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";color:var(--sage);font-size:1.4rem}
+    details[open] summary::after{content:"−"}
+    details p{max-width:780px;color:var(--muted);margin:14px 0 0}
+
+    /* CTA */
+    .final-cta{padding:90px 0}
+    .cta{
+      background:var(--terracotta);color:white;
+      padding:clamp(35px,6vw,70px);
+      display:grid;grid-template-columns:1fr auto;gap:35px;align-items:center;
+    }
+    .cta h2{margin-bottom:10px}
+    .cta p{max-width:650px;margin:0;opacity:.9}
+    .cta .btn{background:white;color:var(--ink)}
+
+    /* FOOTER */
+    footer{background:#2d2925;color:#eee;padding:55px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}
+    footer h3{font-size:1.35rem}
+    footer a{color:#eee;text-decoration:none;display:block;margin:7px 0;font-size:.9rem;opacity:.84}
+    footer a:hover{opacity:1;text-decoration:underline}
+    .copyright{
+      margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);
+      font-size:.8rem;opacity:.65;
+    }
+
+    @media(max-width:950px){
+      .hero-grid,.intro-grid,.paint-grid{grid-template-columns:1fr}
+      .hero-image{min-height:420px;order:-1}
+      .services-grid{grid-template-columns:1fr 1fr}
+      .projects-grid{grid-template-columns:1fr 1fr}
+      .projects-grid .project:first-child{grid-column:1/-1}
+      .why-grid,.review-grid,.steps{grid-template-columns:1fr 1fr}
+      .trust-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:640px){
+      .container,.nav-inner{width:min(100% - 28px,var(--max))}
+      .nav-links a:not(.nav-cta){display:none}
+      .hero{padding-top:10px}
+      .hero-copy{padding:38px 25px}
+      .hero-image{min-height:330px}
+      .section{padding:65px 0}
+      .services-grid,.projects-grid,.why-grid,.review-grid,.steps,.footer-grid,
+      .trust-grid{grid-template-columns:1fr}
+      .projects-grid .project:first-child{grid-column:auto}
+      .project,.project.small{min-height:310px}
+      .feature-list,.paint-links{grid-template-columns:1fr}
+      .cta{grid-template-columns:1fr}
+      h1{font-size:3.25rem}
+    }
+  </style>
+
+  <!-- Local business + service structured data.
+       Remove any field that is not accurate before publishing. -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"LocalBusiness",
+        "@id":"https://everodecor.uk/#business",
+        "name":"EveroDecor",
+        "url":"https://everodecor.uk/",
+        "email":"dielandco@gmail.com",
+        "description":"Interior painting and decorating services in West London.",
+        "areaServed":[
+          "Hammersmith","Shepherd's Bush","Chiswick","Ealing","Acton",
+          "Fulham","Kensington","West London","London"
+        ],
+        "priceRange":"££"
+      },
+      {
+        "@type":"Service",
+        "@id":"https://everodecor.uk/locations/london/painting.html#service",
+        "name":"Interior Painting and Decorating in London",
+        "provider":{"@id":"https://everodecor.uk/#business"},
+        "areaServed":{"@type":"City","name":"London"},
+        "serviceType":"Interior painting and decorating"
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"How much does a painter and decorator cost in London?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"The price depends on the size of the project, preparation required, number of coats, paint specification, access and whether ceilings or woodwork are included. A written project quotation is usually more useful than relying on an hourly rate alone."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Do you supply paint?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"EveroDecor can discuss the paint specification with you and help you choose an appropriate product and finish. The quotation should make clear whether materials are supplied and included."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Do you repair walls before painting?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Preparation can include filling, sanding, caulking, spot priming and other surface preparation where appropriate. The condition of the surface is assessed before the work begins."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Which areas of London do you cover?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"EveroDecor is focused on West London, including Hammersmith, Shepherd's Bush, Chiswick, Ealing and nearby areas. Larger London projects can be discussed depending on the project."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="logo" href="https://everodecor.uk/">EveroDecor</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#paint-advice">Paint advice</a>
+      <a href="#faq">FAQs</a>
+      <a class="nav-cta" href="#quote">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="container breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="https://everodecor.uk/">Home</a></li>
+      <li><a href="https://everodecor.uk/locations/">Locations</a></li>
+      <li><a href="https://everodecor.uk/locations/london/">London</a></li>
+      <li aria-current="page">Painting</li>
+    </ol>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Painter & decorator · West London</div>
+        <h1>Painting<br><em>in London</em></h1>
+        <p class="hero-sub">
+          Interior painting and decorating for London homes — from a single room
+          refresh to walls, ceilings, woodwork and larger residential projects.
+          Careful preparation, clear communication and a clean finish.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-sage" href="#quote">Get a Quote</a>
+          <a class="btn btn-outline" href="#projects">See Our Work</a>
+        </div>
+      </div>
+      <div class="hero-image" role="img" aria-label="EveroDecor interior painting project in London"></div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust-strip" aria-label="EveroDecor highlights">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <strong>100+ London clients</strong>
+        <span>Residential decorating experience</span>
+      </div>
+      <div class="trust-item">
+        <strong>West London focused</strong>
+        <span>Hammersmith · Ealing · Chiswick</span>
+      </div>
+      <div class="trust-item">
+        <strong>Preparation first</strong>
+        <span>Filling · sanding · caulking · priming</span>
+      </div>
+      <div class="trust-item">
+        <strong>Paint advice</strong>
+        <span>Brands, finishes and colour choices</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container intro-grid">
+      <div>
+        <div class="section-label">Interior painting in London</div>
+        <h2>More than putting paint on a wall.</h2>
+      </div>
+      <div>
+        <p class="lead">
+          A good finish starts before the first coat. EveroDecor approaches each
+          project around the condition of the surfaces, the paint specification,
+          the lighting and the way the room will actually be used.
+        </p>
+        <p class="muted">
+          London homes can bring very different challenges: period plaster,
+          cracks, previous DIY work, high ceilings, compact rooms, woodwork and
+          rental turnarounds. The scope is discussed before work begins so you
+          understand what is being painted and what preparation is required.
+        </p>
+        <ul class="feature-list">
+          <li>Walls & ceilings</li>
+          <li>Doors & frames</li>
+          <li>Skirting & woodwork</li>
+          <li>Surface preparation</li>
+          <li>Crack filling</li>
+          <li>Colour & paint advice</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">London painting services</div>
+        <h2>Choose what your project needs.</h2>
+        <p class="muted">
+          From small finishing work to complete room repaints, the scope can be
+          adapted to the property rather than forcing every project into the same package.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <span class="service-number">01</span>
+          <h3>Walls & ceilings</h3>
+          <p>Room refreshes, colour changes and complete interior repaints with attention to cutting-in and consistent coverage.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">02</span>
+          <h3>Woodwork</h3>
+          <p>Skirting boards, doors, frames, windowsills and other interior woodwork where a fresh finish makes a visible difference.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">03</span>
+          <h3>Preparation & repairs</h3>
+          <p>Filling, sanding, caulking, smoothing and suitable priming before decorative coats are applied.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">04</span>
+          <h3>Small painting jobs</h3>
+          <p>Touch-ups, feature walls, individual doors and other smaller projects that do not require a whole-house repaint.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">05</span>
+          <h3>Rental refreshes</h3>
+          <p>Practical repainting for landlords, tenants and end-of-tenancy preparation, subject to the property's condition.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">06</span>
+          <h3>Colour changes</h3>
+          <p>Advice on finishes and colour choices, including how lighting and the existing surface can change the way a colour looks.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">07</span>
+          <h3>Furniture & selected items</h3>
+          <p>Painting of suitable furniture and decorative items can be discussed as part of a wider decorating project.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">08</span>
+          <h3>Project coordination</h3>
+          <p>For larger decorating jobs, the work can be planned around preparation, coats, drying time and access requirements.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">EveroDecor projects</div>
+        <h2>Real decorating work in London.</h2>
+        <p class="muted">
+          Replace the image paths below with your strongest original project photographs.
+          Authentic project photography is one of the most important trust signals on a
+          local painter's website.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project">
+          <img src="../../images/after_pink_singleroom (3).jpeg" alt="EveroDecor interior painting project in London" loading="lazy">
+          <div class="project-info">
+            <h3>Interior repaint</h3>
+            <p>Walls and finishing work · London</p>
+          </div>
+        </article>
+
+        <article class="project small">
+          <img src="../../images/2(1).png" alt="EveroDecor decorating project" loading="lazy">
+          <div class="project-info">
+            <h3>Detail work</h3>
+            <p>Preparation and finishing</p>
+          </div>
+        </article>
+
+        <article class="project small">
+          <img src="../../images/after_green (2).jpeg" alt="EveroDecor interior painting project" loading="lazy">
+          <div class="project-info">
+            <h3>Room refresh</h3>
+            <p>Interior painting</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINT ADVICE -->
+  <section class="section paint-advice" id="paint-advice">
+    <div class="container paint-grid">
+      <div>
+        <div class="section-label">Paint advice</div>
+        <h2>Not sure which paint to buy?</h2>
+        <p class="lead">
+          Paint is not simply about choosing a colour. The brand, finish, surface,
+          room conditions and expected wear all affect the result.
+        </p>
+        <p>
+          EveroDecor publishes practical guides to help homeowners understand the
+          choices before buying paint — whether you are comparing trade paints,
+          washable finishes or premium colour brands.
+        </p>
+        <a class="btn btn-sage" href="https://everodecor.uk/blog/best-paint-brand.html">
+          Explore paint guides
+        </a>
+      </div>
+
+      <div class="paint-links">
+        <a class="paint-link" href="https://everodecor.uk/blog/best-paint-brand.html">
+          <strong>Best Paint Brands UK</strong>
+          <span>Compare popular UK paint brands and finishes.</span>
+        </a>
+        <a class="paint-link" href="https://everodecor.uk/blog/paintcolours.html">
+          <strong>Paint Colours</strong>
+          <span>Understand colour, light and finish before choosing.</span>
+        </a>
+        <a class="paint-link" href="https://everodecor.uk/blog/blister-paint-buble.html">
+          <strong>Bubbling & blistering paint</strong>
+          <span>Why paint fails and what preparation may be needed.</span>
+        </a>
+        <a class="paint-link" href="https://everodecor.uk/blog/diy-or-hire-painter-decorator.html">
+          <strong>DIY or hire a painter?</strong>
+          <span>A practical guide to choosing the right approach.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">London painting costs</div>
+        <h2>How much does a painter cost?</h2>
+        <p class="muted">
+          There is no single London price because the amount of preparation, access,
+          surface condition and specification can change the job substantially.
+          Use the guide below as a framework rather than a fixed quotation.
+        </p>
+      </div>
+
+      <div class="cost-box">
+        <table class="cost-table">
+          <thead>
+            <tr>
+              <th>Project type</th>
+              <th>What can affect the price?</th>
+              <th>How to get a useful quote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Single room</strong></td>
+              <td>Room size, ceiling height, number of coats, colour change and wall condition.</td>
+              <td>Provide room dimensions and photographs of the walls, ceiling and woodwork.</td>
+            </tr>
+            <tr>
+              <td><strong>Multiple rooms</strong></td>
+              <td>Access, furniture, preparation, sequencing and whether ceilings and woodwork are included.</td>
+              <td>List the rooms and identify exactly which surfaces need painting.</td>
+            </tr>
+            <tr>
+              <td><strong>Small job</strong></td>
+              <td>Travel, setup and minimum booking requirements can matter more on smaller jobs.</td>
+              <td>Describe the exact item: door, feature wall, skirting, repair or touch-up.</td>
+            </tr>
+            <tr>
+              <td><strong>Preparation-heavy work</strong></td>
+              <td>Cracks, damaged plaster, loose paint, bubbling, old coatings and drying time.</td>
+              <td>Send close-up photographs so the likely preparation can be assessed.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="cost-note">
+          Final prices should be based on the actual project scope. Materials, preparation,
+          access and unexpected surface conditions can change the cost.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EVERODECOR -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">Why EveroDecor</div>
+        <h2>A local painter with a practical approach.</h2>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card">
+          <h3>Preparation matters</h3>
+          <p>Filling, sanding, caulking and suitable priming are considered part of the job where the surface requires them.</p>
+        </article>
+        <article class="why-card">
+          <h3>Paint knowledge</h3>
+          <p>EveroDecor works with different brands, colours and finishes and publishes independent guides to help clients make informed choices.</p>
+        </article>
+        <article class="why-card">
+          <h3>Clear scope</h3>
+          <p>The quotation should make clear which surfaces, preparation, coats and materials are included before work begins.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">Client feedback</div>
+        <h2>What clients have said.</h2>
+      </div>
+
+      <div class="review-grid">
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Dan is fantastic. Hard working and did an excellent job.”</p>
+          <small>Client review · TaskRabbit</small>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Hardworking, reliable and takes real care with his work.”</p>
+          <small>Client review · TaskRabbit</small>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Punctual, polite, and highly skilled. Would definitely hire again.”</p>
+          <small>Client review · TaskRabbit</small>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">Areas we cover</div>
+        <h2>Painters across West London.</h2>
+        <p class="muted">
+          EveroDecor is particularly focused on West London. For larger projects elsewhere
+          in London, availability can be discussed.
+        </p>
+      </div>
+
+      <div class="areas-grid">
+        <a class="area" href="https://everodecor.uk/locations/hammersmith/painter-decorator.html">Hammersmith</a>
+        <a class="area" href="https://everodecor.uk/locations/shepherds-bush/painter-decorator.html">Shepherd's Bush</a>
+        <a class="area" href="https://everodecor.uk/locations/chiswick/painter-decorator.html">Chiswick</a>
+        <a class="area" href="https://everodecor.uk/locations/ealing/painter-decorator.html">Ealing</a>
+        <a class="area" href="https://everodecor.uk/locations/acton/painter-decorator.html">Acton</a>
+        <a class="area" href="https://everodecor.uk/locations/fulham/painter-decorator.html">Fulham</a>
+        <a class="area" href="https://everodecor.uk/locations/kensington/painter-decorator.html">Kensington</a>
+        <span class="area">West London</span>
+        <span class="area">Greater London</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">How it works</div>
+        <h2>From first message to finished room.</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Tell us about the job</h3>
+          <p>Send the location, rooms, surfaces, photographs and anything unusual about the property.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Discuss the scope</h3>
+          <p>We identify the painting and preparation required and clarify the materials and finish.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Agree the quote</h3>
+          <p>The work, timing and expected costs are discussed before the project starts.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <h3>Paint & finish</h3>
+          <p>The surfaces are prepared, painted and checked as the project is completed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container faq-wrap">
+      <div class="section-label">Frequently asked questions</div>
+      <h2>Painting in London: FAQs</h2>
+
+      <details>
+        <summary>How much does a painter and decorator cost in London?</summary>
+        <p>
+          It depends on the project. Room size, surface condition, preparation,
+          number of coats, paint specification, access and whether ceilings or
+          woodwork are included can all affect the price. A project quotation
+          is normally more useful than assuming a fixed hourly price.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you charge by the hour or by the job?</summary>
+        <p>
+          Different decorators use different pricing structures. EveroDecor can
+          quote around the actual project scope so the client can understand what
+          work is included. The quotation should make clear what is included,
+          particularly where preparation is substantial.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you supply the paint?</summary>
+        <p>
+          Paint supply can be discussed as part of the quotation. If you already
+          have a paint brand or colour in mind, the specification can be checked
+          against the surface and intended use.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can you help me choose a paint brand?</summary>
+        <p>
+          Yes. EveroDecor publishes practical paint-brand and finish guides and
+          can discuss the suitability of a product for the room, surface and
+          expected wear. See the <a href="#paint-advice">paint advice section</a>.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you repair walls before painting?</summary>
+        <p>
+          Where required, preparation can include filling, sanding, caulking,
+          smoothing and suitable priming. The amount of preparation depends on
+          the condition of the existing surface.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you paint doors, skirting boards and woodwork?</summary>
+        <p>
+          Yes. Interior doors, frames, skirting boards, windowsills and other
+          suitable woodwork can be included in the scope of a decorating project.
+        </p>
+      </details>
+
+      <details>
+        <summary>How long does it take to paint a room?</summary>
+        <p>
+          There is no reliable single answer. Preparation, drying time, room size,
+          number of coats, furniture and access can all change the duration.
+          A project can be assessed more accurately from photographs and details
+          of the room.
+        </p>
+      </details>
+
+      <details>
+        <summary>Which parts of London do you cover?</summary>
+        <p>
+          EveroDecor is focused on Hammersmith, Shepherd's Bush, Chiswick, Ealing,
+          Acton and nearby West London areas. Larger London projects can be
+          discussed depending on the job.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="final-cta" id="quote">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <div class="section-label" style="color:#F5DDD2">Start your project</div>
+          <h2>Planning to paint?</h2>
+          <p>
+            Send a few photographs and tell us what you want painted. We can discuss
+            the preparation, paint and scope before you decide how to proceed.
+          </p>
+        </div>
+        <a class="btn" href="../../index.html#contact">
+          Request a quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="logo">EveroDecor</div>
+      <p>Interior painting and decorating across West London, with a focus on preparation, practical advice and clean finishes.</p>
+    </div>
+
+    <div>
+      <h3>Painting</h3>
+      <a href="#services">Painting services</a>
+      <a href="#projects">Projects</a>
+      <a href="#paint-advice">Paint advice</a>
+      <a href="#faq">FAQs</a>
+    </div>
+
+    <div>
+      <h3>London</h3>
+      <a href="https://everodecor.uk/locations/hammersmith/painter-decorator.html">Hammersmith</a>
+      <a href="https://everodecor.uk/locations/shepherds-bush/painter-decorator.html">Shepherd's Bush</a>
+      <a href="https://everodecor.uk/locations/chiswick/painter-decorator.html">Chiswick</a>
+      <a href="https://everodecor.uk/locations/ealing/painter-decorator.html">Ealing</a>
+    </div>
+
+    <div>
+      <h3>EveroDecor</h3>
+      <a href="https://everodecor.uk/">Home</a>
+      <a href="mailto:dielandco@gmail.com">Email</a>
+      <a href="#quote">Request a quote</a>
+    </div>
+  </div>
+
+  <div class="container copyright">
+    © 2026 EveroDecor. Interior painting and decorating in London.
+  </div>
+</footer>
+
+</body>
+</html>
