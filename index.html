@@ -990,6 +990,12 @@
   <a href="#" id="openCookies">Cookie Settings</a>
 </footer>
 
+<!-- ═══ chat Pop-up ═══ -->
+<div id="chatNudge" class="chat-nudge" role="status" aria-live="polite">
+  <button class="chat-nudge-close" id="chatNudgeClose" aria-label="Dismiss">✕</button>
+  <strong> Not sure what you need? 👋</strong>
+  <span>Ask our painter assistant for advice or a rough quote.</span>
+</div>
 <!-- ═══ AI CHAT ═══ -->
 <button id="openAI" aria-label="Open Painter AI chat">Ask Painter</button>
 <div id="chatbox" role="dialog" aria-label="Painter AI">
@@ -1066,39 +1072,74 @@
   
 window.addEventListener("DOMContentLoaded", () => {
 
-setTimeout(() => {
-    banner.classList.add("show");
-    document.body.style.overflow = "hidden";
-}, 800);
+  /* ───── Cookie banner ───── */
+  const banner = document.getElementById("cookieConsent");
 
-    const banner = document.getElementById("cookieConsent");
+  if (!localStorage.getItem("cookieConsent")) {
+    setTimeout(() => {
+      banner.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }, 800);
+  }
 
-    if (!localStorage.getItem("cookieConsent")) {
-        setTimeout(() => {
-            banner.classList.add("show");
-        }, 800);
-    }
-
-    document.getElementById("acceptCookies").addEventListener("click", () => {
-         localStorage.setItem("cookieConsent","accepted");
+  function closeBanner(choice) {
+    localStorage.setItem("cookieConsent", choice);
     banner.classList.remove("show");
     document.body.style.overflow = "";
-    });
+  }
 
-    document.getElementById("rejectCookies").addEventListener("click", () => {
-      localStorage.setItem("cookieConsent","rejected");
-    banner.classList.remove("show");
-     document.body.style.overflow = "";
-    });
+  document.getElementById("acceptCookies").addEventListener("click", () => closeBanner("accepted"));
+  document.getElementById("rejectCookies").addEventListener("click", () => closeBanner("rejected"));
 
-    document.getElementById("openCookies").addEventListener("click", function(e){
-      e.preventDefault();
+  document.getElementById("openCookies").addEventListener("click", e => {
+    e.preventDefault();
     banner.classList.add("show");
     banner.removeAttribute("aria-hidden");
-    });
+  });
 
+  /* ───── Chat nudge ───── */
+  const nudge = document.getElementById("chatNudge");
+  const chat  = document.getElementById("chatbox");
+  const aiBtn = document.getElementById("openAI");
+  const NUDGE_DELAY = 3000;   // ms after page load
 
+  function hideNudge(remember) {
+    nudge.classList.remove("show");
+    aiBtn.classList.remove("pulse");
+    sessionStorage.setItem("chatNudgeSeen", "1");            // don't repeat this visit
+    if (remember) localStorage.setItem("chatNudgeDismissed", "1");  // never again
+  }
+
+  function showNudge() {
+    if (sessionStorage.getItem("chatNudgeSeen")) return;
+    // wait while the cookie banner or the chat is open
+    if (banner.classList.contains("show") || chat.classList.contains("open")) {
+      setTimeout(showNudge, 10000);
+      return;
+    }
+    nudge.classList.add("show");
+    aiBtn.classList.add("pulse");
+    setTimeout(() => hideNudge(false), 12000);
+  }
+sessionStorage.removeItem('chatNudgeSeen'); localStorage.removeItem('chatNudgeDismissed');
+  if (!localStorage.getItem("chatNudgeDismissed") && !sessionStorage.getItem("chatNudgeSeen")) {
+    setTimeout(showNudge, NUDGE_DELAY);
+  }
+
+  document.getElementById("chatNudgeClose").addEventListener("click", e => {
+    e.stopPropagation();
+    hideNudge(true);
+  });
+
+  nudge.addEventListener("click", () => {
+    chat.classList.add("open");
+    hideNudge(true);
+  });
+
+  aiBtn.addEventListener("click", () => hideNudge(false));
 });
+
+
 function initCarousel({ name, speed = 0.4, step = 320 }) {
   const track = document.querySelector(`[data-carousel="${name}"]`);
   const inner = track.querySelector(':scope > div');

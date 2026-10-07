@@ -53,6 +53,32 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 14px;
 }
 
+.chat-nudge{
+  position:fixed; right:20px; bottom:90px; z-index:999;
+  max-width:260px; padding:14px 38px 14px 16px;
+  background:#fff; color:#2b2b2b; border-radius:14px;
+  box-shadow:0 8px 30px rgba(0,0,0,.18);
+  font-size:.92rem; line-height:1.4; cursor:pointer;
+  display:flex; flex-direction:column; gap:4px;
+  opacity:0; transform:translateY(12px); pointer-events:none;
+  transition:opacity .35s ease, transform .35s ease;
+}
+.chat-nudge.show{ opacity:1; transform:translateY(0); pointer-events:auto; }
+.chat-nudge::after{ /* little tail pointing at the button */
+  content:""; position:absolute; bottom:-8px; right:28px;
+  width:16px; height:16px; background:#fff; transform:rotate(45deg);
+  box-shadow:4px 4px 8px rgba(0,0,0,.06);
+}
+.chat-nudge-close{
+  position:absolute; top:6px; right:8px; border:0; background:none;
+  font-size:.9rem; color:#888; cursor:pointer;
+}
+#openAI.pulse{ animation:chatPulse 1.6s ease-in-out 3; }
+@keyframes chatPulse{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.08); }
+}
+@media (prefers-reduced-motion:reduce){ #openAI.pulse{ animation:none; } }
 /* Buttons — bordered rectangle, editorial, not pill/SaaS */
 .btn {
   display: inline-block;
