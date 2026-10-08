@@ -1,0 +1,395 @@
+/* ==========================================================================
+   EveroDecor — service pages (servicesBlog.css)
+   Written for the class names in services/ceiling-painting.html:
+   site-header, service-hero, content-section(.alt), container(.narrow),
+   eyebrow, feature-grid, process-list/process-item/process-number,
+   related-services, details/summary FAQ, service-cta, btn-primary/-secondary.
+
+   Add this to <head> (the page doesn't load fonts yet):
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+   ========================================================================== */
+
+/* ---------- Tokens ---------- */
+:root {
+  --cream:         #f7f4ee;
+  --white:         #ffffff;
+  --charcoal:      #2b2924;
+  --charcoal-soft: #4a463d;
+  --muted:         #766f62;
+  --sage:          #74852f;
+  --sage-dark:     #5a6824;
+  --sage-pale:     #eef0e2;
+  --border:        rgba(43, 41, 36, 0.12);
+  --radius:        4px;
+  --ease:          cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --header-h:      66px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--charcoal-soft);
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+p { margin: 0 0 1.1rem; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--charcoal);
+}
+
+h2 {
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+}
+
+h3 { font-size: 1.4rem; margin-bottom: 8px; }
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Reading column for text-only sections */
+.container.narrow { max-width: 760px; }
+
+.container.narrow p {
+  font-size: 1.05rem;
+  max-width: 64ch;
+}
+
+/* Small label above headings */
+.eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--sage-dark);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: "Jost", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.btn-primary {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: var(--white);
+}
+.btn-primary:hover { background: transparent; color: var(--sage-dark); }
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--charcoal);
+  color: var(--charcoal);
+}
+.btn-secondary:hover { background: var(--charcoal); color: var(--white); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(247, 244, 238, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .container {
+  max-width: 1080px;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--charcoal);
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.site-header nav a {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal-soft);
+  transition: color 0.2s;
+}
+.site-header nav a:hover { color: var(--sage); }
+
+/* ---------- Hero ---------- */
+.service-hero {
+  padding: 100px 0 80px;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-hero h1 {
+  max-width: 13ch;
+  margin-bottom: 28px;
+  font-size: clamp(3rem, 8vw, 5.6rem);
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+
+.hero-intro {
+  max-width: 54ch;
+  margin-bottom: 36px;
+  font-size: 1.12rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Sections ---------- */
+.content-section {
+  padding: 96px 0;
+  background: var(--cream);
+}
+
+.content-section.alt {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Two consecutive sections of the same colour shouldn't double up borders */
+.content-section.alt + .content-section.alt { border-top: 0; }
+
+/* ---------- Feature grid (what's included / common problems) ----------
+   Ruled cells that share borders instead of separate floating cards. */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.feature-grid article {
+  padding: 32px 28px;
+  background: var(--cream);
+  transition: background 0.25s var(--ease);
+}
+
+.content-section.alt .feature-grid article { background: var(--white); }
+.feature-grid article:hover { background: var(--sage-pale); }
+
+.feature-grid h3 { font-size: 1.3rem; }
+
+.feature-grid p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--charcoal-soft);
+}
+
+/* ---------- Process (genuine sequence, so numbered) ---------- */
+.process-list {
+  max-width: 820px;
+  border-top: 1px solid var(--border);
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.process-number {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--sage);
+}
+
+.process-item h3 { margin-bottom: 6px; }
+
+.process-item p {
+  margin: 0;
+  max-width: 58ch;
+  font-size: 0.97rem;
+}
+
+/* ---------- Related services ---------- */
+.related-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.related-services a {
+  display: block;
+  padding: 18px 22px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--sage);
+  border-radius: var(--radius);
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.related-services a:hover {
+  background: var(--sage-pale);
+  border-color: var(--sage);
+  color: var(--sage-dark);
+}
+
+/* ---------- FAQ ---------- */
+details { border-bottom: 1px solid var(--border); }
+details:first-of-type { border-top: 1px solid var(--border); }
+
+summary {
+  position: relative;
+  padding: 20px 44px 20px 0;
+  font-weight: 500;
+  color: var(--charcoal);
+  cursor: pointer;
+  list-style: none;
+}
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--sage);
+}
+details[open] summary::after { content: "\2013"; }
+
+details p {
+  max-width: 62ch;
+  margin: 0 0 22px;
+  font-size: 0.97rem;
+}
+
+/* ---------- Closing CTA ---------- */
+.service-cta {
+  padding: 110px 0;
+  background: var(--charcoal);
+  text-align: center;
+}
+
+.service-cta .eyebrow { color: rgba(255, 255, 255, 0.55); }
+
+.service-cta h2 {
+  max-width: 18ch;
+  margin: 0 auto 16px;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  color: var(--white);
+}
+
+.service-cta p {
+  max-width: 46ch;
+  margin: 0 auto 36px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.service-cta .btn-primary:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--charcoal);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 24px 0;
+  background: var(--charcoal);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+footer p { margin: 0; }
+footer a { color: rgba(255, 255, 255, 0.75); }
+footer a:hover { color: var(--white); }
+
+/* ---------- Accessibility ---------- */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .site-header nav { gap: 18px; }
+  .site-header nav a { font-size: 0.72rem; letter-spacing: 0.06em; }
+  /* "Home" is redundant next to the logo on small screens */
+  .site-header nav a:first-child { display: none; }
+
+  .service-hero { padding: 64px 0 56px; }
+  .content-section { padding: 68px 0; }
+  .service-cta { padding: 80px 0; }
+
+  .process-item { grid-template-columns: 52px 1fr; gap: 12px; }
+  .process-number { font-size: 1.9rem; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 20px; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+  .feature-grid { grid-template-columns: 1fr; }
+}
