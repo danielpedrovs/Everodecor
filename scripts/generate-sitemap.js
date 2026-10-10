@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 /**
- * Regenerates sitemap.xml by scanning /blog and /locations for .html files.
- * lastmod dates come from each file's last git commit date, so they stay
- * accurate automatically — no hand-editing sitemap.xml ever again.
- *
- * Run manually with: node scripts/generate-sitemap.js
- * (Runs automatically in CI via .github/workflows/update-sitemap.yml)
+ * Regenerates sitemap.xml by scanning /blog, /locations and /services.
+ * lastmod comes from each file's last git commit date.
  */
 const fs = require('fs');
 const path = require('path');
@@ -16,25 +12,23 @@ const ROOT = path.join(__dirname, '..');
 
 function lastCommitDate(relPath) {
   try {
-    const out = execSync(`git log -1 --format=%ad --date=short -- "${relPath}"`, {
-      cwd: ROOT,
-    })
+    const out = execSync(`git log -1 --format=%ad --date=short -- "${relPath}"`, { cwd: ROOT })
       .toString()
       .trim();
     return out || new Date().toISOString().slice(0, 10);
   } catch {
-    // File is new / not committed yet, or git isn't available — fall back to today.
     return new Date().toISOString().slice(0, 10);
   }
 }
 
-function listHtml(dir) {
+function walkHtml(dir) {
   const full = path.join(ROOT, dir);
   if (!fs.existsSync(full)) return [];
-  return fs
-    .readdirSync(full)
-    .filter((f) => f.toLowerCase().endsWith('.html'))
-    .sort();
+  return fs.readdirSync(full, { withFileTypes: true }).flatMap((e) => {
+    const rel = path.posix.join(dir, e.name);
+    if (e.isDirectory()) return walkHtml(rel);
+    return e.name.toLowerCase().endsWith('.html') ? [rel] : [];
+  });
 }
 
 function urlEntry(loc, lastmod, changefreq, priority) {
@@ -53,23 +47,24 @@ const entries = [];
 // Homepage
 entries.push(urlEntry(`${SITE}/`, lastCommitDate('index.html'), 'monthly', '1.0'));
 
-// Blog: index page + articles
-const blogFiles = listHtml('blog');
-for (const file of blogFiles) {
-  const rel = `blog/${file}`;
-  const lastmod = lastCommitDate(rel);
-  if (file.toLowerCase() === 'index.html') {
-    entries.push(urlEntry(`${SITE}/blog/index.html`, lastmod, 'weekly', '0.9'));
-  } else {
-    entries.push(urlEntry(`${SITE}/blog/${file}`, lastmod, 'monthly', '0.8'));
-  }
-}
+const sections = [
+  { dir: 'blog',      freq: 'monthly', priority: '0.8' },
+  { dir: 'locations', freq: 'monthly', priority: '0.9' },
+  { dir: 'services',  freq: 'monthly', priority: '0.9' },
+];
 
-// Location landing pages
-const locationFiles = listHtml('locations');
-for (const file of locationFiles) {
-  const rel = `locations/${file}`;
-  entries.push(urlEntry(`${SITE}/locations/${file}`, lastCommitDate(rel), 'monthly', '0.9'));
+for (const { dir, freq, priority } of sections) {
+  for (const rel of walkHtml(dir).sort()) {
+    const isBlogIndex = rel === 'blog/index.html';
+    entries.push(
+      urlEntry(
+        `${SITE}/${rel}`,
+        lastCommitDate(rel),
+        isBlogIndex ? 'weekly' : freq,
+        isBlogIndex ? '0.9' : priority
+      )
+    );
+  }
 }
 
 const xml =

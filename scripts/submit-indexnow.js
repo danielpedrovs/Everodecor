@@ -23,7 +23,7 @@ function changedFiles() {
   try {
     const isRealSha = before && !/^0+$/.test(before);
     const range = isRealSha ? `${before} ${after}` : `${after}~1 ${after}`;
-    const out = execSync(`git diff --name-only ${range}`).toString().trim();
+    const out = execSync(`git diff --name-only --diff-filter=AM ${range}`).toString().trim();
     return out ? out.split('\n') : [];
   } catch (e) {
     console.log('Could not compute git diff, skipping IndexNow submission:', e.message);
@@ -33,7 +33,7 @@ function changedFiles() {
 
 function toUrl(file) {
   if (file === 'index.html') return `${SITE}/`;
-  if (file.startsWith('blog/') || file.startsWith('locations/')) return `${SITE}/${file}`;
+  if (/^(blog|locations|services)\//.test(file)) return `${SITE}/${file}`;
   return null;
 }
 
@@ -48,7 +48,7 @@ if (urls.length === 0) {
   console.log('No changed page URLs to submit to IndexNow.');
   process.exit(0);
 }
-
+if (/^(blog|locations|services)\//.test(file)) return `${SITE}/${file}`;
 // Always let IndexNow know the sitemap itself changed too.
 urls.push(`${SITE}/sitemap.xml`);
 
