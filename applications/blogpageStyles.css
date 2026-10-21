@@ -981,3 +981,10 @@ summary:focus-visible {
     padding-left: 2.6rem;
   }
 }
+
+/* Smaller hero image (e.g. calculator screenshot) */
+.article-wrap .hero-img.hero-img--small {
+  width: 100%;
+  max-width: 480px;   /* change to 400px, 560px, etc. */
+  margin: 0 auto 2rem; /* centred; use "0 0 2rem" to align left */
+}
