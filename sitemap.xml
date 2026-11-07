@@ -17,7 +17,7 @@
 
   <url>
     <loc>https://everodecor.uk/blog/How-to-choose-decorator-london.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -65,8 +65,15 @@
   </url>
 
   <url>
+    <loc>https://everodecor.uk/blog/how-to-calculate-paint-quantity.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://everodecor.uk/blog/index.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -81,6 +88,13 @@
   <url>
     <loc>https://everodecor.uk/blog/mesh-for-wall-cracks.html</loc>
     <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://everodecor.uk/blog/paint-finishes-explained-matt-silk-eggshell-dead-flat.html</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -116,6 +130,13 @@
   <url>
     <loc>https://everodecor.uk/blog/traders-paint.html</loc>
     <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://everodecor.uk/blog/valspar-trade-vs-Dulux-trade.html</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
