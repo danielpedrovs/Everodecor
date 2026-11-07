@@ -197,50 +197,73 @@
     }
 
     /* ── CTA ── */
-    .cta {
-      margin-top: 60px;
-      background: var(--dark);
-      color: #fff;
-      padding: 50px 32px;
-      text-align: center;
-      border-radius: 16px;
-    }
+   
 
-    .cta h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+/* ── BLOG CTA ── */
 
-    .cta p {
-      color: #aaa;
-      margin-bottom: 24px;
-      font-size: 0.95rem;
-    }
+.cta {
+  background: var(--dark);
+  color: var(--cream);
 
-    .cta a {
-      display: inline-block;
-      background: var(--warm-grey);
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: background 0.2s;
-    }
+  width: min(950px, calc(100% - 40px));
+  margin: 3.5rem auto;
+  padding: 3.5rem 4rem;
 
-    .cta a:hover { background: #8a847a; }
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+}
 
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.8rem;
-      color: #aaa;
-    }
+.cta h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--cream);
+  margin: 0 0 1rem;
+}
 
-    footer a { color: var(--warm-grey); text-decoration: none; }
+.cta p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(247, 244, 239, 0.85);
+  max-width: 600px;
+  margin: 0 auto 1.6rem;
+}
+
+.cta a {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--cream);
+  padding: 0.9rem 2.2rem;
+  border: 1px solid var(--accent);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+}
+
+.cta a:hover {
+  background: var(--cream);
+  color: var(--dark);
+  border-color: var(--cream);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cta {
+    width: calc(100% - 32px);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+}
+
   
    /* ==========================================================================
    Article page styles: mesh-for-wall-cracks.html and similar blog articles
@@ -564,50 +587,6 @@
   outline-offset: 3px;
 }
 
-/* Call to action */
-
-.article-page .cta-block {
-  background: var(--charcoal);
-  color: var(--cream);
-  padding: 2rem 1.75rem;
-  margin: 3rem 0;
-}
-
-.article-page .cta-block h2 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 600;
-  color: var(--cream);
-  margin: 0 0 0.75rem;
-  font-size: 1.6rem;
-}
-
-.article-page .cta-block p {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: rgba(244, 239, 230, 0.85);
-  margin: 0 0 1.4rem;
-}
-
-.article-page .cta-block p:last-child {
-  margin-bottom: 0;
-}
-
-.article-page .cta-link {
-  display: inline-block;
-  background: var(--terracotta);
-  color: var(--cream);
-  padding: 0.7rem 1.5rem;
-  border: 0;
-  text-decoration: none;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-weight: 500;
-}
-
-.article-page .cta-block a.cta-link:hover {
-  background: var(--cream);
-  color: var(--charcoal);
-}
 
 /* Related links */
 
@@ -649,10 +628,7 @@
     padding-bottom: 3.5rem;
   }
 
-  .article-page .cta-block {
-    padding: 1.5rem 1.25rem;
-  }
-
+ 
   .article-page .method > li {
     padding-left: 2.6rem;
   }
@@ -663,3 +639,68 @@
     transition: none !important;
   }
 }
+
+ ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer {
+  background: var(--charcoal);
+  padding: 24px 28px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+footer a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+footer a:hover { color: var(--white); }
+
+.social-connect-footer {
+  margin-top: 45px;
+  text-align: center;
+  color: #666;
+}
+
+
+.social-connect-footer a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+
+/* BLOG FOOTER */
+
+.blog-footer {
+  display: block;
+  width: 100%;
+  background: var(--dark);
+  color: var(--warm-grey);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  margin-top: 3rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.blog-footer p {
+  margin-bottom: 0.8rem;
+  color: var(--warm-grey);
+}
+
+.blog-footer .footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.blog-footer a {
+  color: var(--warm-grey);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-footer a:hover {
+  color: var(--cream);
+}
+

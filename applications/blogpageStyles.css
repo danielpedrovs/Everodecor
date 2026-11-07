@@ -762,14 +762,18 @@ details p,
 
 
 /* CTA */
-
 .cta-box,
 .article-page .cta-block {
   background: var(--evero-text);
   color: var(--evero-cream);
   border-radius: var(--evero-radius);
-  padding: 2.25rem 2rem;
-  margin: 3.5rem 0 0;
+
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+
+  padding: 3.5rem 4rem;
+  margin: 3.5rem auto 0;
 }
 
 .cta-box {
@@ -779,20 +783,21 @@ details p,
 .cta-box h3,
 .article-page .cta-block h2 {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1.1;
   color: var(--evero-cream);
-  margin: 0 0 0.7rem;
+  margin: 0 0 1rem;
 }
 
 .cta-box p,
 .article-page .cta-block p {
   font-family: "Jost", sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.75;
   color: rgba(245, 241, 232, 0.86);
-  margin: 0 0 1.4rem;
+  margin: 0 auto 1.8rem;
+  max-width: 650px;
 }
 
 .cta-btn,
@@ -802,13 +807,15 @@ details p,
   color: var(--evero-cream);
   border: 1px solid var(--evero-green);
   border-radius: 0;
-  padding: 0.75rem 1.6rem;
+  padding: 0.9rem 2.2rem;
   font-family: "Jost", sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.07em;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease;
 }
 
 .cta-btn:hover,
@@ -818,6 +825,19 @@ details p,
   border-color: var(--evero-cream);
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .cta-box,
+  .article-page .cta-block {
+    padding: 2.5rem 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .cta-box h3,
+  .article-page .cta-block h2 {
+    font-size: 2rem;
+  }
+}
 
 /* RELATED LINKS AND FOOTER NAVIGATION */
 
@@ -931,11 +951,6 @@ summary:focus-visible {
     margin-bottom: 2rem;
   }
 
-  .cta-box,
-  .article-page .cta-block {
-    padding: 1.75rem 1.25rem;
-  }
-}
 
 @media (max-width: 480px) {
   .site-nav {
@@ -987,4 +1002,4 @@ summary:focus-visible {
   width: 100%;
   max-width: 480px;   /* change to 400px, 560px, etc. */
   margin: 0 auto 2rem; /* centred; use "0 0 2rem" to align left */
-}
+}}
