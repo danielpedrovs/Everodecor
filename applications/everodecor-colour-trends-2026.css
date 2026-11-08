@@ -1,0 +1,886 @@
+/* ==========================================================
+   EVERODECOR — COLOUR TRENDS 2026 · ADDITIONS
+   Append this AFTER the existing edct- block in
+   applications/styles.css. It styles the new Dulux / Benjamin
+   Moore section, the trend tags on the palette cards, and the
+   statement vs everyday picks in "The EveroDecor Take".
+   ========================================================== */
+
+/* Brand Colours of the Year */
+.edct-brands {
+  padding: 100px clamp(25px, 7vw, 100px);
+  background: #f7f6f1;
+}
+.edct-brand-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+.edct-brand-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e8e7e1;
+  background: #fff;
+}
+.edct-brand-swatches { display: flex; min-height: 240px; }
+.edct-brand-swatches span {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px 18px;
+  background: var(--sw);
+  color: var(--ink, #fff);
+  font-size: 11px;
+  letter-spacing: .4px;
+}
+.edct-brand-info { padding: 28px; }
+.edct-brand-info h3 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(25px, 2.6vw, 33px);
+  font-weight: 400;
+  letter-spacing: -.7px;
+}
+.edct-brand-info > p:not(.edct-category) {
+  margin: 0;
+  color: var(--edct-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.edct-brand-list {
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid #ecebe4;
+  color: var(--edct-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.edct-brand-list strong {
+  display: block;
+  color: var(--edct-ink);
+  font-weight: 600;
+}
+.edct-brand-info > p.edct-brand-note {
+  margin-top: 18px;
+  color: #4f4e46;
+  font-size: 12px;
+}
+
+/* Trend tag on each palette card */
+.edct-palette-info > p.edct-trend {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #ecebe4;
+  color: #4f4e46;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.edct-trend strong { font-weight: 600; color: var(--edct-ink); }
+
+/* The EveroDecor Take */
+.edct-prediction > p.edct-prediction-text {
+  max-width: 760px;
+  margin: 22px auto 0;
+  color: #66655d;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.edct-pick-grid {
+  max-width: 860px;
+  margin: 38px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  text-align: left;
+}
+.edct-pick {
+  padding: 26px;
+  border-top: 3px solid var(--pick);
+  background: rgba(255,255,255,.65);
+}
+.edct-pick span {
+  color: #77766d;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+.edct-pick h3 {
+  margin: 10px 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -.5px;
+}
+.edct-pick p { margin: 0; color: var(--edct-muted); font-size: 13px; line-height: 1.8; }
+
+@media (max-width: 850px) {
+  .edct-brand-grid,
+  .edct-pick-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .edct-brands { padding: 70px 18px; }
+  .edct-brand-swatches { min-height: 190px; }
+  .edct-brand-info { padding: 22px; }
+}
+
+/* ==========================================================
+   EVERODECOR — COLOUR TRENDS 2026 · ADDITIONS
+   Append this AFTER the existing edct- block in
+   applications/styles.css. It styles the new Dulux / Benjamin
+   Moore section, the trend tags on the palette cards, and the
+   statement vs everyday picks in "The EveroDecor Take".
+   ========================================================== */
+
+/* Brand Colours of the Year */
+.edct-brands {
+  padding: 100px clamp(25px, 7vw, 100px);
+  background: #f7f6f1;
+}
+.edct-brand-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+.edct-brand-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e8e7e1;
+  background: #fff;
+}
+.edct-brand-swatches { display: flex; min-height: 240px; }
+.edct-brand-swatches span {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px 18px;
+  background: var(--sw);
+  color: var(--ink, #fff);
+  font-size: 11px;
+  letter-spacing: .4px;
+}
+.edct-brand-info { padding: 28px; }
+.edct-brand-info h3 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(25px, 2.6vw, 33px);
+  font-weight: 400;
+  letter-spacing: -.7px;
+}
+.edct-brand-info > p:not(.edct-category) {
+  margin: 0;
+  color: var(--edct-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.edct-brand-list {
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid #ecebe4;
+  color: var(--edct-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.edct-brand-list strong {
+  display: block;
+  color: var(--edct-ink);
+  font-weight: 600;
+}
+.edct-brand-info > p.edct-brand-note {
+  margin-top: 18px;
+  color: #4f4e46;
+  font-size: 12px;
+}
+
+/* Trend tag on each palette card */
+.edct-palette-info > p.edct-trend {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #ecebe4;
+  color: #4f4e46;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.edct-trend strong { font-weight: 600; color: var(--edct-ink); }
+
+/* The EveroDecor Take */
+.edct-prediction > p.edct-prediction-text {
+  max-width: 760px;
+  margin: 22px auto 0;
+  color: #66655d;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.edct-pick-grid {
+  max-width: 860px;
+  margin: 38px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  text-align: left;
+}
+.edct-pick {
+  padding: 26px;
+  border-top: 3px solid var(--pick);
+  background: rgba(255,255,255,.65);
+}
+.edct-pick span {
+  color: #77766d;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+.edct-pick h3 {
+  margin: 10px 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -.5px;
+}
+.edct-pick p { margin: 0; color: var(--edct-muted); font-size: 13px; line-height: 1.8; }
+
+@media (max-width: 850px) {
+  .edct-brand-grid,
+  .edct-pick-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .edct-brands { padding: 70px 18px; }
+  .edct-brand-swatches { min-height: 190px; }
+  .edct-brand-info { padding: 22px; }
+}
+
+
+/* ==========================================================
+   EVERODECOR — COLOUR TRENDS 2026
+   Append this section to applications/styles.css.
+   All selectors are prefixed with edct- to avoid site-wide
+   style conflicts.
+   ========================================================== */
+
+.edct-page {
+  --edct-ink: #24241f;
+  --edct-muted: #6e6c63;
+  --edct-paper: #f7f6f1;
+  --edct-line: #deddd5;
+  --edct-sage: #788665;
+  background: #fff;
+  color: var(--edct-ink);
+  font-family: inherit;
+}
+
+.edct-page *,
+.edct-page *::before,
+.edct-page *::after { box-sizing: border-box; }
+
+.edct-page img { display: block; max-width: 100%; }
+
+.edct-nav {
+  width: 100%;
+  min-height: 76px;
+  padding: 18px clamp(20px, 6vw, 88px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e7e1;
+  background: #fff;
+}
+
+.edct-logo {
+  color: #22231f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  text-decoration: none;
+}
+.edct-logo span { color: #7c896b; }
+
+.edct-back {
+  color: #45453e;
+  font-size: 13px;
+  text-decoration: none;
+}
+.edct-back:hover,
+.edct-footer a:hover { text-decoration: underline; }
+
+.edct-hero {
+  min-height: 590px;
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  background: #f2f0e9;
+}
+.edct-hero-copy {
+  align-self: center;
+  max-width: 700px;
+  padding: 85px clamp(28px, 7vw, 110px);
+}
+.edct-eyebrow {
+  margin: 0 0 22px;
+  color: #77766d;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+  line-height: 1.6;
+}
+.edct-hero h1,
+.edct-intro h2,
+.edct-section-heading h2,
+.edct-advice-heading h2,
+.edct-prediction h2,
+.edct-cta h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1.04;
+}
+.edct-hero h1 { max-width: 600px; font-size: clamp(48px, 6.1vw, 83px); }
+.edct-hero h1 em,
+.edct-pantone h2 em { font-weight: 400; }
+.edct-hero-intro {
+  max-width: 475px;
+  margin: 27px 0 30px;
+  color: #5d5c55;
+  font-size: 16px;
+  line-height: 1.85;
+}
+.edct-text-link {
+  display: inline-flex;
+  gap: 18px;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #34342e;
+  color: #25251f;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.edct-text-link span { font-size: 18px; }
+
+.edct-hero-art {
+  position: relative;
+  min-height: 590px;
+  overflow: hidden;
+  background: #e6e4dc;
+}
+.edct-hero-swatch { position: absolute; }
+.edct-swatch-white { inset: 0 38% 48% 0; background: #f0efe9; }
+.edct-swatch-sage { inset: 0 0 48% 62%; background: #87927b; }
+.edct-swatch-mushroom { inset: 52% 38% 0 0; background: #b5a995; }
+.edct-swatch-blue { inset: 52% 0 0 62%; background: #879a9c; }
+.edct-hero-art-label {
+  position: absolute;
+  inset: 35% 22% 34% 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(250,249,245,.91);
+  text-align: center;
+}
+.edct-hero-art-label span {
+  margin-bottom: 18px;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+.edct-hero-art-label strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.edct-pantone {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: clamp(40px, 8vw, 120px);
+  align-items: center;
+  padding: 110px clamp(25px, 10vw, 150px);
+  background: #fff;
+}
+.edct-pantone-copy { max-width: 570px; }
+.edct-pantone h2 {
+  margin: 0 0 25px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 5vw, 65px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1.08;
+}
+.edct-pantone-copy > p:not(.edct-eyebrow) {
+  color: var(--edct-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+.edct-small-note { font-size: 12px !important; }
+.edct-outline-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 18px;
+  border: 1px solid #33332d;
+  color: #292923;
+  font-size: 12px;
+  text-decoration: none;
+}
+.edct-outline-link:hover { background: #292923; color: #fff; }
+.edct-cloud-card {
+  max-width: 440px;
+  width: 100%;
+  justify-self: center;
+  border: 1px solid #e6e5df;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(30,30,20,.07);
+}
+.edct-cloud-swatch { height: 290px; background: #f0efe9; }
+.edct-cloud-caption {
+  display: grid;
+  gap: 7px;
+  padding: 22px 25px 25px;
+}
+.edct-cloud-caption span:first-child {
+  color: #77766d;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+}
+.edct-cloud-caption strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+.edct-cloud-caption .edct-hex { color: #85837b; font-size: 11px; }
+
+.edct-intro {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 95px 25px 55px;
+  text-align: center;
+}
+.edct-intro h2,
+.edct-section-heading h2,
+.edct-advice-heading h2 { font-size: clamp(42px, 5vw, 62px); }
+.edct-intro > p:last-child {
+  max-width: 610px;
+  margin: 22px auto 0;
+  color: var(--edct-muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.edct-palette-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 25px 110px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+.edct-palette-card {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  min-height: 265px;
+  border: 1px solid #e8e7e1;
+  background: #fff;
+}
+.edct-palette-card-wide { grid-column: 1 / -1; }
+.edct-colour-block {
+  position: relative;
+  min-height: 265px;
+}
+.edct-colour-block > span {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  color: rgba(30,30,25,.65);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.edct-colour-sage { background: linear-gradient(145deg,#aab39d,#657451); }
+.edct-colour-taupe { background: linear-gradient(145deg,#d0c4b2,#928372); }
+.edct-colour-cream { background: linear-gradient(145deg,#f4f2e9,#d8d2c4); }
+.edct-colour-blue { background: linear-gradient(145deg,#b6c4c3,#647f83); }
+.edct-colour-terracotta { background: linear-gradient(145deg,#e0b9a4,#ad765f); }
+.edct-palette-info { align-self: center; padding: 27px; }
+.edct-category {
+  margin: 0 0 11px;
+  color: #89877e;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.edct-palette-info h3 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(23px, 2.4vw, 31px);
+  font-weight: 400;
+  letter-spacing: -.7px;
+}
+.edct-palette-info > p:not(.edct-category) {
+  margin: 0;
+  color: var(--edct-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.edct-chips { display: flex; gap: 7px; margin: 18px 0 13px; }
+.edct-chips i {
+  width: 24px;
+  height: 24px;
+  display: block;
+  border-radius: 50%;
+  background: var(--chip);
+  border: 1px solid rgba(0,0,0,.07);
+}
+.edct-use { color: #77766d; font-size: 10px; line-height: 1.6; }
+
+.edct-projects {
+  padding: 100px clamp(25px, 7vw, 100px);
+  background: #f4f3ee;
+}
+.edct-section-heading {
+  max-width: 1240px;
+  margin: 0 auto 38px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+}
+.edct-section-heading > p {
+  max-width: 390px;
+  margin: 0 0 5px;
+  color: var(--edct-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.edct-project-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 16px;
+}
+.edct-project {
+  position: relative;
+  min-height: 300px;
+  margin: 0;
+  overflow: hidden;
+  background: #ddd9ce;
+}
+.edct-project-large { grid-row: span 2; }
+.edct-project img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+.edct-project:hover img { transform: scale(1.035); }
+.edct-project::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent,rgba(0,0,0,.65));
+}
+.edct-project figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  display: grid;
+  gap: 7px;
+  color: #fff;
+}
+.edct-project figcaption span { font-size: 8px; letter-spacing: 1.7px; }
+.edct-project figcaption strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+.edct-image-note {
+  max-width: 1240px;
+  margin: 17px auto 0;
+  color: #858278;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.edct-advice {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 110px 25px;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 80px;
+}
+.edct-advice-list article {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 20px;
+  padding: 0 0 25px;
+  margin: 0 0 25px;
+  border-bottom: 1px solid var(--edct-line);
+}
+.edct-advice-list article:last-child { margin-bottom: 0; }
+.edct-advice-list article > span {
+  color: #8c8a80;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.edct-advice-list h3 {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+.edct-advice-list p {
+  margin: 0;
+  color: var(--edct-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.edct-prediction {
+  padding: 85px 25px;
+  background: #e9e8df;
+  text-align: center;
+}
+.edct-prediction h2 { font-size: clamp(37px, 4.5vw, 55px); }
+.edct-prediction > p:last-child {
+  max-width: 760px;
+  margin: 22px auto 0;
+  color: #66655d;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.edct-cta {
+  padding: 105px 25px;
+  background: #657451;
+  color: #fff;
+  text-align: center;
+}
+.edct-cta .edct-eyebrow { color: rgba(255,255,255,.75); }
+.edct-cta h2 {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: clamp(42px, 5.4vw, 68px);
+}
+.edct-cta > p:not(.edct-eyebrow) {
+  max-width: 620px;
+  margin: 22px auto 28px;
+  color: rgba(255,255,255,.85);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.edct-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 21px;
+  background: #fff;
+  color: #2c3326;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.edct-cta-button:hover { background: #eeeee7; }
+
+.edct-footer {
+  padding: 40px 20px 30px;
+  border-top: 1px solid #e7e6df;
+  background: #fff;
+  text-align: center;
+}
+.edct-footer .edct-logo { font-size: 23px; }
+.edct-footer p { margin: 10px 0 17px; color: #77766d; font-size: 11px; }
+.edct-footer div { display: flex; justify-content: center; gap: 22px; margin-bottom: 22px; }
+.edct-footer a:not(.edct-logo) { color: #55544d; font-size: 11px; text-decoration: none; }
+.edct-footer small { color: #929087; font-size: 10px; }
+
+@media (max-width: 850px) {
+  .edct-hero { grid-template-columns: 1fr; }
+  .edct-hero-copy { padding: 75px 30px; }
+  .edct-hero-art { min-height: 420px; }
+  .edct-pantone { grid-template-columns: 1fr; padding: 75px 30px; }
+  .edct-cloud-card { max-width: 520px; }
+  .edct-section-heading { display: block; }
+  .edct-section-heading > p { margin-top: 20px; }
+  .edct-project-grid { grid-template-columns: 1fr 1fr; }
+  .edct-project-large { grid-row: auto; }
+  .edct-advice { grid-template-columns: 1fr; gap: 45px; padding: 75px 30px; }
+}
+
+@media (max-width: 600px) {
+  .edct-nav { min-height: 65px; padding: 15px 20px; }
+  .edct-logo { font-size: 22px; }
+  .edct-back { font-size: 11px; }
+  .edct-hero-copy { padding: 62px 24px; }
+  .edct-hero h1 { font-size: 49px; }
+  .edct-hero-art { min-height: 340px; }
+  .edct-hero-art-label { inset: 32% 16%; }
+  .edct-pantone { padding: 65px 24px; }
+  .edct-cloud-swatch { height: 220px; }
+  .edct-intro { padding: 70px 24px 38px; }
+  .edct-palette-grid { grid-template-columns: 1fr; padding: 0 18px 75px; gap: 16px; }
+  .edct-palette-card,
+  .edct-palette-card-wide { grid-column: auto; grid-template-columns: 34% 1fr; min-height: 250px; }
+  .edct-colour-block { min-height: 250px; }
+  .edct-palette-info { padding: 17px; }
+  .edct-palette-info h3 { font-size: 23px; }
+  .edct-palette-info > p:not(.edct-category) { font-size: 11px; }
+  .edct-use { font-size: 9px; }
+  .edct-projects { padding: 70px 18px; }
+  .edct-project-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .edct-project { min-height: 220px; }
+  .edct-project img { min-height: 220px; }
+  .edct-project-large { grid-column: 1 / -1; min-height: 320px; }
+  .edct-project-large img { min-height: 320px; }
+  .edct-project figcaption { right: 12px; bottom: 13px; left: 12px; }
+  .edct-project figcaption strong { font-size: 17px; }
+  .edct-project figcaption span { font-size: 7px; }
+  .edct-prediction { padding: 70px 24px; }
+  .edct-cta { padding: 75px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edct-project img { transition: none; }
+}
+
+
+/* Gallery introduction */
+
+.edct-gallery-intro {
+  max-width: 1240px;
+  margin: 0 auto 38px;
+  padding: 25px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  border-top: 1px solid #deddd5;
+  border-bottom: 1px solid #deddd5;
+}
+
+.edct-gallery-intro p {
+  max-width: 740px;
+  margin: 0;
+  color: #68675f;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.edct-gallery-intro span {
+  flex-shrink: 0;
+  color: #7b796f;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 650px) {
+  .edct-gallery-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 22px 0;
+    margin-bottom: 25px;
+  }
+}
+
+/* ==========================================================
+   EVERODECOR — COLOUR OF THE YEAR SECTION
+   Append to applications/everodecor-colour-trends-2026.css
+   ========================================================== */
+
+.edct-coty {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 100px 25px;
+}
+.edct-coty-main {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(32px, 6vw, 90px);
+  align-items: center;
+}
+.edct-coty-figure { margin: 0; }
+.edct-coty-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #ddd9ce;
+}
+.edct-coty-figure figcaption {
+  margin-top: 10px;
+  color: #85837b;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.edct-coty-copy h2 {
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5.2vw, 68px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+.edct-coty-copy .edct-chips { margin: 0 0 24px; }
+.edct-coty-copy > p:not(.edct-eyebrow) {
+  max-width: 520px;
+  margin: 0 0 16px;
+  color: var(--edct-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.edct-coty-reasons {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+.edct-coty-reasons article {
+  padding-top: 22px;
+  border-top: 3px solid var(--edct-sage);
+}
+.edct-coty-reasons h3 {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -.4px;
+}
+.edct-coty-reasons p {
+  margin: 0;
+  color: var(--edct-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.edct-coty-runnerup {
+  margin: 46px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--edct-line);
+  color: var(--edct-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.edct-coty-runnerup strong { color: var(--edct-ink); font-weight: 600; }
+
+@media (max-width: 850px) {
+  .edct-coty { padding: 75px 30px; }
+  .edct-coty-main,
+  .edct-coty-reasons { grid-template-columns: 1fr; }
+  .edct-coty-main { gap: 36px; }
+}
+@media (max-width: 600px) {
+  .edct-coty { padding: 65px 20px; }
+}
