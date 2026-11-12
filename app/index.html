@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trader Network | EveroDecor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F4EFE6;--ink:#2B2620;--sage:#4B5940;--terra:#C1683F;--line:#ddd5c6;--card:#fbf8f2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.55 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0 0 .4em}
+h1{font-size:2.2rem}h2{font-size:1.6rem}h3{font-size:1.25rem}
+header{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;align-items:center;justify-content:space-between;padding:1rem 1.2rem;border-bottom:1px solid var(--line)}
+header b{font-family:'Cormorant Garamond',serif;font-size:1.5rem}
+nav{display:flex;flex-wrap:wrap;gap:.9rem}
+nav a{color:var(--sage);cursor:pointer;text-decoration:none;font-weight:500}
+nav a:hover{color:var(--terra)}
+main{max-width:860px;margin:0 auto;padding:1.5rem 1.2rem 4rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
+.muted{color:#6d655a;font-size:.92rem}
+label{display:block;margin:.8rem 0 .25rem;font-weight:500;font-size:.92rem}
+input,textarea,select{width:100%;padding:.6rem .7rem;border:1px solid var(--line);border-radius:6px;font:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+button{font:inherit;font-weight:500;border:0;border-radius:6px;padding:.55rem 1rem;cursor:pointer;background:var(--sage);color:#fff;margin:.6rem .4rem 0 0}
+button.alt{background:transparent;color:var(--sage);border:1px solid var(--sage)}
+button.warn{background:var(--terra)}
+button:hover{opacity:.88}
+.tag{display:inline-block;font-size:.78rem;padding:.1rem .55rem;border-radius:99px;background:#e6e9df;color:var(--sage);margin-right:.3rem}
+.tag.pending{background:#f5e3d6;color:var(--terra)}.tag.declined,.tag.cancelled{background:#eee;color:#777}
+.msg{max-width:78%;padding:.5rem .8rem;margin:.35rem 0;border-radius:12px;background:#fff;border:1px solid var(--line);word-wrap:break-word}
+.msg.me{margin-left:auto;background:var(--sage);color:#fff;border-color:var(--sage)}
+#log{height:340px;overflow-y:auto;padding:.5rem;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.row{display:flex;gap:.5rem}.row input{flex:1}
+.note{padding:.7rem 1rem;border-radius:8px;background:#f5e3d6;margin-bottom:1rem}
+</style>
+</head>
+<body>
+<header><b>EveroDecor <span class="muted">Trader Network</span></b><nav id="nav"></nav></header>
+<main id="app">Loading…</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.99.3/dist/umd/supabase.js"></script>
+<script>
+const sb = supabase.createClient('https://ylreddmnprwikmygujfo.supabase.co','sb_publishable_fukUPzOVIdcFTkLf1BVzzQ_lDclVPSy');
+const app = document.getElementById('app'), nav = document.getElementById('nav');
+const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let me = null, profile = null, trader = null, chan = null;
+
+async function loadMe() {
+  const { data: { session } } = await sb.auth.getSession();
+  me = session?.user ?? null; profile = trader = null;
+  if (me) {
+    profile = (await sb.from('profiles').select('*').eq('id', me.id).maybeSingle()).data;
+    if (profile?.role === 'trader') trader = (await sb.from('traders').select('*').eq('id', me.id).maybeSingle()).data;
+  }
+}
+function go(view, arg) {
+  if (chan) { sb.removeChannel(chan); chan = null; }
+  const isT = profile?.role === 'trader';
+  nav.innerHTML = `<a onclick="go('directory')">Find a trader</a>` + (me
+    ? `<a onclick="go('requests')">My requests</a>${isT ? `<a onclick="go('tprofile')">My trader profile</a>` : ''}<a onclick="out()">Sign out</a>`
+    : `<a onclick="go('auth')">Sign in</a>`);
+  ({ directory, auth, request: requestForm, requests, chat, tprofile })[view](arg);
+}
+async function out() { await sb.auth.signOut(); }
+const msg = (t, el) => (el || app).insertAdjacentHTML('afterbegin', `<div class="note">${esc(t)}</div>`);
+
+/* Directory (public) */
+async function directory() {
+  app.innerHTML = `<h1>Find a trader</h1><p class="muted">Verified decorators and tradespeople. Pick one and send your request directly to them.</p><div id="list" class="grid">Loading…</div>`;
+  const { data, error } = await sb.from('traders').select('*').eq('verified', true).order('business_name');
+  const list = document.getElementById('list');
+  if (error) return list.textContent = error.message;
+  if (!data.length) return list.textContent = 'No verified traders yet.';
+  list.innerHTML = data.map(t => `<div class="card"><h3>${esc(t.business_name)}</h3>
+    <span class="tag">${esc(t.trade)}</span><p class="muted">${esc(t.areas.join(', '))}</p>
+    <p>${esc(t.bio)}</p><button onclick='startRequest(${JSON.stringify(t).replace(/'/g, '&#39;')})'>Send request</button></div>`).join('');
+}
+function startRequest(t) {
+  if (!me) return go('auth');
+  if (profile?.role !== 'client') return alert('Only client accounts can send requests.');
+  go('request', t);
+}
+
+/* Auth */
+function auth(mode = 'in') {
+  const up = mode === 'up';
+  app.innerHTML = `<h1>${up ? 'Create account' : 'Sign in'}</h1><div class="card"><form id="f">
+    ${up ? `<label>I am a</label><select name="role"><option value="client">Client looking for a trader</option><option value="trader">Trader wanting to be listed</option></select>
+    <label>Full name</label><input name="name" required>` : ''}
+    <label>Email</label><input name="email" type="email" required>
+    <label>Password</label><input name="pw" type="password" minlength="8" required>
+    <button>${up ? 'Sign up' : 'Sign in'}</button>
+    <button type="button" class="alt" onclick="auth('${up ? 'in' : 'up'}')">${up ? 'I have an account' : 'Create an account'}</button></form></div>`;
+  document.getElementById('f').onsubmit = async e => {
+    e.preventDefault(); const f = new FormData(e.target);
+    const r = up
+      ? await sb.auth.signUp({ email: f.get('email'), password: f.get('pw'), options: { data: { role: f.get('role'), full_name: f.get('name') } } })
+      : await sb.auth.signInWithPassword({ email: f.get('email'), password: f.get('pw') });
+    if (r.error) return msg(r.error.message, e.target.parentNode);
+    if (up && !r.data.session) return app.innerHTML = '<h2>Check your email</h2><p>Confirm your address, then sign in.</p>';
+  };
+}
+
+/* Client: send a request to one trader */
+function requestForm(t) {
+  app.innerHTML = `<h1>Request for ${esc(t.business_name)}</h1><div class="card"><form id="f">
+    <label>What do you need done?</label><input name="title" minlength="3" maxlength="120" required placeholder="e.g. Repaint living room and hallway">
+    <label>Details</label><textarea name="d" maxlength="4000" required placeholder="Rooms, sizes, finish, timing…"></textarea>
+    <label>Postcode</label><input name="pc"><button>Send request</button><button type="button" class="alt" onclick="go('directory')">Cancel</button></form></div>`;
+  document.getElementById('f').onsubmit = async e => {
+    e.preventDefault(); const f = new FormData(e.target);
+    const { error } = await sb.from('requests').insert({ client_id: me.id, trader_id: t.id, title: f.get('title'), description: f.get('d'), postcode: f.get('pc') });
+    error ? msg(error.message, e.target.parentNode) : go('requests');
+  };
+}
+
+/* Requests list (both roles) */
+async function requests() {
+  app.innerHTML = '<h1>My requests</h1><div id="list">Loading…</div>';
+  const { data, error } = await sb.from('requests').select('*,client:profiles!client_id(full_name),trader:traders!trader_id(business_name)').order('created_at', { ascending: false });
+  const list = document.getElementById('list');
+  if (error) return list.textContent = error.message;
+  if (!data.length) return list.textContent = 'Nothing here yet.';
+  const isT = profile.role === 'trader';
+  window._reqs = Object.fromEntries(data.map(r => [r.id, r]));
+  list.innerHTML = data.map(r => {
+    const act = isT
+      ? (r.status === 'pending' ? `<button onclick="setStatus('${r.id}','accepted')">Accept</button><button class="warn" onclick="setStatus('${r.id}','declined')">Decline</button>` : '')
+        + (r.status === 'accepted' ? `<button onclick="setStatus('${r.id}','completed')">Mark completed</button>` : '')
+      : (['pending', 'accepted'].includes(r.status) ? `<button class="warn" onclick="setStatus('${r.id}','cancelled')">Cancel</button>` : '');
+    return `<div class="card" style="margin-bottom:1rem"><h3>${esc(r.title)}</h3>
+      <span class="tag ${r.status}">${r.status}</span><span class="muted">${isT ? 'From ' + esc(r.client?.full_name || 'client') : 'To ' + esc(r.trader?.business_name)} · ${esc(r.postcode || '')} · ${new Date(r.created_at).toLocaleDateString('en-GB')}</span>
+      <p>${esc(r.description)}</p>${act}<button class="alt" onclick="go('chat','${r.id}')">Open chat</button></div>`;
+  }).join('');
+}
+async function setStatus(id, status) {
+  const { error } = await sb.from('requests').update({ status }).eq('id', id);
+  error ? alert(error.message) : requests();
+}
+
+/* Chat (one thread per request, live) */
+async function chat(id) {
+  const r = window._reqs?.[id];
+  app.innerHTML = `<h2>${esc(r?.title || 'Chat')}</h2><div id="log"></div>
+    <form class="row" id="f" style="margin-top:.6rem"><input name="b" maxlength="2000" autocomplete="off" placeholder="Write a message…" required><button style="margin:0">Send</button></form>
+    <button class="alt" onclick="go('requests')">Back</button>`;
+  const log = document.getElementById('log'), seen = new Set();
+  const add = m => {
+    if (seen.has(m.id)) return; seen.add(m.id);
+    log.insertAdjacentHTML('beforeend', `<div class="msg ${m.sender_id === me.id ? 'me' : ''}">${esc(m.body)}</div>`);
+    log.scrollTop = log.scrollHeight;
+  };
+  const { data } = await sb.from('messages').select('*').eq('request_id', id).order('created_at');
+  (data || []).forEach(add);
+  chan = sb.channel('req-' + id).on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages', filter: 'request_id=eq.' + id }, p => add(p.new)).subscribe();
+  document.getElementById('f').onsubmit = async e => {
+    e.preventDefault(); const input = e.target.b;
+    const { data, error } = await sb.from('messages').insert({ request_id: id, sender_id: me.id, body: input.value }).select().single();
+    if (error) return alert(error.message);
+    add(data); input.value = '';
+  };
+}
+
+/* Trader: create / edit listing */
+function tprofile() {
+  if (profile?.role !== 'trader') return go('directory');
+  const t = trader || {};
+  app.innerHTML = `<h1>My trader profile</h1>
+    ${!t.id ? '<div class="note">Create your profile to be listed. Listings appear once EveroDecor has verified you.</div>' : !t.verified ? '<div class="note">Your profile is awaiting verification, so clients can’t see it yet.</div>' : '<p><span class="tag">Verified</span></p>'}
+    <div class="card"><form id="f"><label>Business name</label><input name="bn" required value="${esc(t.business_name)}">
+    <label>Trade</label><input name="tr" value="${esc(t.trade || 'Painter & Decorator')}">
+    <label>Areas covered (comma separated)</label><input name="ar" value="${esc((t.areas || []).join(', '))}" placeholder="Chelsea, Fulham, Ealing">
+    <label>About you</label><textarea name="bio">${esc(t.bio)}</textarea><button>Save</button></form></div>`;
+  document.getElementById('f').onsubmit = async e => {
+    e.preventDefault(); const f = new FormData(e.target);
+    const row = { business_name: f.get('bn'), trade: f.get('tr'), bio: f.get('bio'), areas: f.get('ar').split(',').map(s => s.trim()).filter(Boolean) };
+    const { error } = trader ? await sb.from('traders').update(row).eq('id', me.id) : await sb.from('traders').insert({ id: me.id, ...row });
+    if (error) return msg(error.message, e.target.parentNode);
+    await loadMe(); tprofile(); msg('Saved.');
+  };
+}
+
+/* Boot */
+sb.auth.onAuthStateChange(async (ev) => {
+  if (!['INITIAL_SESSION', 'SIGNED_IN', 'SIGNED_OUT'].includes(ev)) return;
+  await loadMe();
+  me && profile?.role === 'trader' && !trader ? go('tprofile') : go(me ? 'requests' : 'directory');
+});
+</script>
+</body>
+</html>
