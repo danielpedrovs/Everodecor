@@ -43,7 +43,9 @@ button:hover{opacity:.88}
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.99.3/dist/umd/supabase.js"></script>
 <script>
-const sb = supabase.createClient('https://ylreddmnprwikmygujfo.supabase.co','sb_publishable_fukUPzOVIdcFTkLf1BVzzQ_lDclVPSy');
+let recovery = location.hash.includes('type=recovery');
+const linkError = new URLSearchParams(location.hash.slice(1)).get('error_description');
+const sb = supabase.createClient('https://zwkswzqzilwguaknxtke.supabase.co','sb_publishable_fC_lgu2foli-CEjMtKjfIA_pbqU4sY9');
 const app = document.getElementById('app'), nav = document.getElementById('nav');
 const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let me = null, profile = null, trader = null, chan = null;
@@ -62,7 +64,7 @@ function go(view, arg) {
   nav.innerHTML = `<a onclick="go('directory')">Find a trader</a>` + (me
     ? `<a onclick="go('requests')">My requests</a>${isT ? `<a onclick="go('tprofile')">My trader profile</a>` : ''}<a onclick="out()">Sign out</a>`
     : `<a onclick="go('auth')">Sign in</a>`);
-  ({ directory, auth, request: requestForm, requests, chat, tprofile })[view](arg);
+  ({ directory, auth, request: requestForm, requests, chat, tprofile, forgot, reset })[view](arg);
 }
 async function out() { await sb.auth.signOut(); }
 const msg = (t, el) => (el || app).insertAdjacentHTML('afterbegin', `<div class="note">${esc(t)}</div>`);
@@ -93,14 +95,37 @@ function auth(mode = 'in') {
     <label>Email</label><input name="email" type="email" required>
     <label>Password</label><input name="pw" type="password" minlength="8" required>
     <button>${up ? 'Sign up' : 'Sign in'}</button>
-    <button type="button" class="alt" onclick="auth('${up ? 'in' : 'up'}')">${up ? 'I have an account' : 'Create an account'}</button></form></div>`;
+    <button type="button" class="alt" onclick="auth('${up ? 'in' : 'up'}')">${up ? 'I have an account' : 'Create an account'}</button>${up ? '' : `<p class="muted"><a onclick="go('forgot')" style="color:var(--sage);cursor:pointer">Forgot your password?</a></p>`}</form></div>`;
   document.getElementById('f').onsubmit = async e => {
     e.preventDefault(); const f = new FormData(e.target);
     const r = up
-      ? await sb.auth.signUp({ email: f.get('email'), password: f.get('pw'), options: { data: { role: f.get('role'), full_name: f.get('name') } } })
+      ? await sb.auth.signUp({ email: f.get('email'), password: f.get('pw'), options: { emailRedirectTo: 'https://everodecor.uk/app/', data: { role: f.get('role'), full_name: f.get('name') } } })
       : await sb.auth.signInWithPassword({ email: f.get('email'), password: f.get('pw') });
     if (r.error) return msg(r.error.message, e.target.parentNode);
     if (up && !r.data.session) return app.innerHTML = '<h2>Check your email</h2><p>Confirm your address, then sign in.</p>';
+  };
+}
+
+/* Password reset */
+function forgot() {
+  app.innerHTML = `<h1>Reset your password</h1><div class="card"><form id="f"><label>Email</label><input name="email" type="email" required>
+    <button>Send reset link</button><button type="button" class="alt" onclick="go('auth')">Back</button></form></div>`;
+  document.getElementById('f').onsubmit = async e => {
+    e.preventDefault();
+    const { error } = await sb.auth.resetPasswordForEmail(new FormData(e.target).get('email'), { redirectTo: 'https://everodecor.uk/app/' });
+    if (error) return msg(error.message, e.target.parentNode);
+    app.innerHTML = '<h2>Check your email</h2><p>If an account exists for that address, we’ve sent a link to choose a new password.</p>';
+  };
+}
+function reset() {
+  app.innerHTML = `<h1>Choose a new password</h1><div class="card"><form id="f"><label>New password</label>
+    <input name="pw" type="password" minlength="8" required><button>Update password</button></form></div>`;
+  document.getElementById('f').onsubmit = async e => {
+    e.preventDefault();
+    const { error } = await sb.auth.updateUser({ password: new FormData(e.target).get('pw') });
+    if (error) return msg(error.message, e.target.parentNode);
+    recovery = false; history.replaceState(null, '', location.pathname);
+    await loadMe(); go(profile?.role === 'trader' && !trader ? 'tprofile' : 'requests'); msg('Password updated. You’re signed in.');
   };
 }
 
@@ -184,10 +209,12 @@ function tprofile() {
 }
 
 /* Boot */
-sb.auth.onAuthStateChange(async (ev) => {
-  if (!['INITIAL_SESSION', 'SIGNED_IN', 'SIGNED_OUT'].includes(ev)) return;
+sb.auth.onAuthStateChange(async (ev, session) => {
+  if (ev === 'PASSWORD_RECOVERY' || (recovery && session && ['INITIAL_SESSION', 'SIGNED_IN'].includes(ev))) return go('reset');
+  if (recovery || !['INITIAL_SESSION', 'SIGNED_IN', 'SIGNED_OUT'].includes(ev)) return;
   await loadMe();
   me && profile?.role === 'trader' && !trader ? go('tprofile') : go(me ? 'requests' : 'directory');
+  if (linkError && !me) { go('forgot'); msg(linkError + ' Request a new link below.'); }
 });
 </script>
 </body>

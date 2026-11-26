@@ -65,24 +65,36 @@
 <!-- ═══ HEADER ═══ -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo">Evero<span>Decor</span></a>
-    <button class="menu-btn" id="menu-btn" aria-label="Open menu">
-      <svg width="22" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 22 16">
-        <line x1="0" y1="1" x2="22" y2="1"/>
-        <line x1="0" y1="8" x2="22" y2="8"/>
-        <line x1="0" y1="15" x2="22" y2="15"/>
-      </svg>
-    </button>
-    <nav id="menu">
-      <a href="#welcome">About</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="./blog/index.html">Blog</a>
-      <a href="#coverage">Locations</a>
-      <a href="#connect">Social Media</a>
-      <a href="./app/index.html">Find a Tasker</a>
-      <a href="#contact" class="nav-cta">Get a Quote</a>
+    <a class="logo" href="/">Evero<span>Decor</span></a>
+
+    <nav id="site-nav" aria-label="Main">
+      <a href="/#services">Services</a>
+      <a href="/#gallery">Gallery</a>
+      <a href="/locations/">Locations</a>
+
+      <div class="nav-item">
+        <button class="nav-parent" type="button" aria-expanded="false">Marketplace</button>
+        <ul class="nav-sub">
+          <li><a href="./app/marketplace.html">Shop supplies</a></li>
+          <li><a href="./app/index.html">Find a tasker</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-parent" type="button" aria-expanded="false">About</button>
+        <ul class="nav-sub">
+          <li><a href="/#about">Our story</a></li>
+          <li><a href="./blog/index.html">Blog</a></li>
+          <li><a href="#social">Social media</a></li>
+        </ul>
+      </div>
+
+      <a class="nav-cta" href="/#quote">Get a quote</a>
     </nav>
+
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
 </header>
 
@@ -1233,159 +1245,196 @@
   </div>
 </div>
 <script>
-  // Nav toggle
-  document.getElementById('menu-btn').addEventListener('click', () => {
-    document.getElementById('menu').classList.toggle('open');
-  });
+  /* EveroDecor site scripts. Load with:
+   <script src="./applications/main.js" defer></script>
+   Replaces the whole inline <script> block (keep the emailjs and quoteform.js tags). */
 
-  // Close nav on link click (mobile)
-  document.querySelectorAll('#menu a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('menu').classList.remove('open'));
-  });
+/* ───── Gallery modal (called from onclick="openModal(this.src)") ───── */
+function openModal(src) {
+  document.getElementById('modal-img').src = src;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  // Gallery scroll
-  const track = document.getElementById('gallery-track');
-  document.getElementById('nextBtn').addEventListener('click', () => track.scrollBy({ left: 316, behavior: 'smooth' }));
-  document.getElementById('prevBtn').addEventListener('click', () => track.scrollBy({ left: -316, behavior: 'smooth' }));
+/* ───── Header menu + dropdowns ───── */
+(function () {
+  const menuBtn = document.querySelector('.menu-btn');
+  const siteNav = document.getElementById('site-nav');
+  const items = document.querySelectorAll('.nav-item');
+  if (!menuBtn || !siteNav) return;
 
-  // Modal
-  function openModal(src) {
-    document.getElementById('modal-img').src = src;
-    document.getElementById('modal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    document.getElementById('modal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('modal').addEventListener('click', e => {
-    if (e.target === document.getElementById('modal')) closeModal();
-  });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  // AI chat
-  document.getElementById('openAI').addEventListener('click', () => {
-    document.getElementById('chatbox').classList.toggle('open');
-  });
-  document.getElementById('closeChat').addEventListener('click', () => {
-    document.getElementById('chatbox').classList.remove('open');
-  });
-
-  
-window.addEventListener("DOMContentLoaded", () => {
-
-  /* ───── Cookie banner ───── */
-  const banner = document.getElementById("cookieConsent");
-
-  if (!localStorage.getItem("cookieConsent")) {
-    setTimeout(() => {
-      banner.classList.add("show");
-      document.body.style.overflow = "hidden";
-    }, 800);
+  function closeMenus(except) {
+    items.forEach(i => {
+      if (i !== except) {
+        i.classList.remove('open');
+        i.querySelector('.nav-parent').setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
-  function closeBanner(choice) {
-    localStorage.setItem("cookieConsent", choice);
-    banner.classList.remove("show");
-    document.body.style.overflow = "";
-  }
-
-  document.getElementById("acceptCookies").addEventListener("click", () => closeBanner("accepted"));
-  document.getElementById("rejectCookies").addEventListener("click", () => closeBanner("rejected"));
-
-  document.getElementById("openCookies").addEventListener("click", e => {
-    e.preventDefault();
-    banner.classList.add("show");
-    banner.removeAttribute("aria-hidden");
+  menuBtn.addEventListener('click', () => {
+    const open = siteNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
   });
 
-  /* ───── Chat nudge ───── */
-  const nudge = document.getElementById("chatNudge");
-  const chat  = document.getElementById("chatbox");
-  const aiBtn = document.getElementById("openAI");
-  const NUDGE_DELAY = 3000;   // ms after page load
-
-  function hideNudge(remember) {
-    nudge.classList.remove("show");
-    aiBtn.classList.remove("pulse");
-    sessionStorage.setItem("chatNudgeSeen", "1");            // don't repeat this visit
-    if (remember) localStorage.setItem("chatNudgeDismissed", "1");  // never again
-  }
-
-  function showNudge() {
-    if (sessionStorage.getItem("chatNudgeSeen")) return;
-    // wait while the cookie banner or the chat is open
-    if (banner.classList.contains("show") || chat.classList.contains("open")) {
-      setTimeout(showNudge, 10000);
-      return;
+  // Close the mobile menu after choosing a link
+  siteNav.addEventListener('click', e => {
+    if (e.target.closest('a')) {
+      siteNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
     }
-    nudge.classList.add("show");
-    aiBtn.classList.add("pulse");
-    setTimeout(() => hideNudge(false), 12000);
-  }
-sessionStorage.removeItem('chatNudgeSeen'); localStorage.removeItem('chatNudgeDismissed');
-  if (!localStorage.getItem("chatNudgeDismissed") && !sessionStorage.getItem("chatNudgeSeen")) {
-    setTimeout(showNudge, NUDGE_DELAY);
-  }
-
-  document.getElementById("chatNudgeClose").addEventListener("click", e => {
-    e.stopPropagation();
-    hideNudge(true);
   });
 
-  nudge.addEventListener("click", () => {
-    chat.classList.add("open");
-    hideNudge(true);
+  items.forEach(item => {
+    const parent = item.querySelector('.nav-parent');
+    parent.addEventListener('click', e => {
+      e.stopPropagation();
+      closeMenus(item);
+      const open = item.classList.toggle('open');
+      parent.setAttribute('aria-expanded', open);
+    });
+    item.addEventListener('mouseleave', () => {
+      if (matchMedia('(hover:hover)').matches) closeMenus();
+    });
   });
 
-  aiBtn.addEventListener("click", () => hideNudge(false));
+  document.addEventListener('click', () => closeMenus());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenus(); });
+})();
+
+/* ───── AI chat ───── */
+document.getElementById('openAI').addEventListener('click', () => {
+  document.getElementById('chatbox').classList.toggle('open');
+});
+document.getElementById('closeChat').addEventListener('click', () => {
+  document.getElementById('chatbox').classList.remove('open');
 });
 
+/* ───── Carousels (auto-scroll + arrows) ─────
+   Each track holds one or two identical "sets" (child divs). If there is only one,
+   a copy is added so the loop is seamless. Every set is moved together. */
+function initCarousel({ track, prev, next, speed = 0.4, step = 320 }) {
+  const el = document.querySelector(track);
+  if (!el) return;
 
-function initCarousel({ name, speed = 0.4, step = 320 }) {
-  const track = document.querySelector(`[data-carousel="${name}"]`);
-  const inner = track.querySelector(':scope > div');
-  const prevBtn = document.querySelector(`[data-carousel-prev="${name}"]`);
-  const nextBtn = document.querySelector(`[data-carousel-next="${name}"]`);
+  const getSets = () => [...el.children].filter(c => c.tagName === 'DIV');
+  let sets = getSets();
+  if (sets.length === 1) {
+    const copy = sets[0].cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.querySelectorAll('img').forEach(img => { img.alt = ''; });
+    el.appendChild(copy);
+    sets = getSets();
+  }
+
+  const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+  const period = () => sets[0].offsetWidth + gap;       // measured live: images may still be loading
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let pos = 0;
-  let paused = false;
-  let resumeTimer = null;
-  const halfWidth = inner.scrollWidth / 2; // half = one full set of images (before duplicate)
+  let glide = 0;            // distance still to travel after an arrow click
+  let hovering = false;
+  let resumeAt = 0;
 
   function tick() {
-    if (!paused) {
-      pos -= speed;
-      if (Math.abs(pos) >= halfWidth) pos = 0; // seamless loop reset
-      inner.style.transform = `translateX(${pos}px)`;
+    let move = 0;
+    if (!reduceMotion && !hovering && performance.now() > resumeAt) move -= speed;
+    if (Math.abs(glide) > 0.5) { const d = glide * 0.12; glide -= d; move += d; }
+    if (move) {
+      pos += move;
+      const p = period();
+      if (p > 0) { while (pos <= -p) pos += p; while (pos > 0) pos -= p; }
+      sets.forEach(s => { s.style.transform = `translateX(${pos}px)`; });
     }
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 
   function nudge(direction) {
-    pos += direction * -step;
-    if (pos > 0) pos -= halfWidth;
-    if (Math.abs(pos) >= halfWidth) pos = 0;
-    inner.style.transform = `translateX(${pos}px)`;
-
-    paused = true;
-    clearTimeout(resumeTimer);
-    resumeTimer = setTimeout(() => { paused = false; }, 1200); // resume autoplay after a short pause
+    glide += direction * step;
+    resumeAt = performance.now() + 1500;                // let the glide finish before autoplay resumes
   }
+  document.querySelector(prev)?.addEventListener('click', () => nudge(1));
+  document.querySelector(next)?.addEventListener('click', () => nudge(-1));
 
-  prevBtn?.addEventListener('click', () => nudge(-1));
-  nextBtn?.addEventListener('click', () => nudge(1));
-
-  track.addEventListener('mouseenter', () => paused = true);
-  track.addEventListener('mouseleave', () => {
-    clearTimeout(resumeTimer);
-    paused = false;
-  });
+  // Pause on mouse hover only (touch taps would leave it stuck paused)
+  el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hovering = true; });
+  el.addEventListener('pointerleave', () => { hovering = false; });
 }
 
-initCarousel({ name: 'main',  speed: 0.35, step: 320 }); // main gallery: slow
-initCarousel({ name: 'testi', speed: 0.5,  step: 320 }); // testimonials: slightly faster, or match as you like
+initCarousel({ track: '#gallery-track', prev: '#prevBtn', next: '#nextBtn', speed: 0.35 });
+initCarousel({ track: '[data-carousel="testi"]', prev: '[data-carousel-prev="testi"]', next: '[data-carousel-next="testi"]', speed: 0.5 });
+
+/* ───── Cookie banner + chat nudge ───── */
+window.addEventListener('DOMContentLoaded', () => {
+
+  const banner = document.getElementById('cookieConsent');
+
+  if (!localStorage.getItem('cookieConsent')) {
+    setTimeout(() => {
+      banner.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }, 800);
+  }
+
+  function closeBanner(choice) {
+    localStorage.setItem('cookieConsent', choice);
+    banner.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('acceptCookies').addEventListener('click', () => closeBanner('accepted'));
+  document.getElementById('rejectCookies').addEventListener('click', () => closeBanner('rejected'));
+  document.getElementById('openCookies').addEventListener('click', e => {
+    e.preventDefault();
+    banner.classList.add('show');
+  });
+
+  const nudge = document.getElementById('chatNudge');
+  const chat = document.getElementById('chatbox');
+  const aiBtn = document.getElementById('openAI');
+  const NUDGE_DELAY = 3000; // ms after page load
+
+  function hideNudge(remember) {
+    nudge.classList.remove('show');
+    aiBtn.classList.remove('pulse');
+    sessionStorage.setItem('chatNudgeSeen', '1');                    // not again this visit
+    if (remember) localStorage.setItem('chatNudgeDismissed', '1');   // never again
+  }
+
+  function showNudge() {
+    if (sessionStorage.getItem('chatNudgeSeen')) return;
+    // wait while the cookie banner or the chat is open
+    if (banner.classList.contains('show') || chat.classList.contains('open')) {
+      setTimeout(showNudge, 10000);
+      return;
+    }
+    nudge.classList.add('show');
+    aiBtn.classList.add('pulse');
+    setTimeout(() => hideNudge(false), 12000);
+  }
+
+  if (!localStorage.getItem('chatNudgeDismissed') && !sessionStorage.getItem('chatNudgeSeen')) {
+    setTimeout(showNudge, NUDGE_DELAY);
+  }
+
+  document.getElementById('chatNudgeClose').addEventListener('click', e => {
+    e.stopPropagation();
+    hideNudge(true);
+  });
+  nudge.addEventListener('click', () => {
+    chat.classList.add('open');
+    hideNudge(true);
+  });
+  aiBtn.addEventListener('click', () => hideNudge(false));
+});
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="module" src="./applications/quoteform.js"></script>

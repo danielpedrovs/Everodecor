@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketplace | EveroDecor – Decorating Supplies, London</title>
+<meta name="description" content="Buy paint, prep materials and decorating tools from EveroDecor. Pay securely with Apple Pay or card.">
+<link rel="canonical" href="https://everodecor.uk/marketplace.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* All selectors are prefixed evm- so they cannot clash with base.css */
+:root{--evm-cream:#F4EFE6;--evm-char:#2B2620;--evm-sage:#4B5940;--evm-terra:#C1683F;--evm-line:rgba(43,38,32,.18)}
+*{box-sizing:border-box}
+body.evm{margin:0;background:var(--evm-cream);color:var(--evm-char);font:400 1rem/1.6 "DM Sans",system-ui,sans-serif}
+.evm a{color:inherit}
+.evm-bar{display:flex;flex-wrap:wrap;gap:.75rem 2rem;align-items:center;justify-content:space-between;padding:1.1rem clamp(1.25rem,5vw,4rem);border-bottom:1px solid var(--evm-line)}
+.evm-brand{font:600 1.5rem "Cormorant Garamond",Georgia,serif;text-decoration:none}
+.evm-nav{display:flex;flex-wrap:wrap;gap:1.5rem}
+.evm-nav a{text-decoration:none;padding:.25rem 0;border-bottom:2px solid transparent}
+.evm-nav a[aria-current="page"],.evm-nav a:hover{border-color:var(--evm-terra)}
+.evm-hero{padding:clamp(3rem,9vw,6.5rem) clamp(1.25rem,5vw,4rem) 2rem;max-width:62rem}
+.evm-hero h1{font:500 clamp(2.4rem,6.5vw,4.6rem)/1.05 "Cormorant Garamond",Georgia,serif;margin:0 0 1.25rem;letter-spacing:-.01em}
+.evm-hero p{max-width:34rem;margin:0;font-size:1.1rem}
+.evm-chips{display:flex;height:.6rem;max-width:22rem;margin-top:2rem}
+.evm-chips i{flex:1}
+.evm-tools{display:flex;flex-wrap:wrap;gap:.5rem;padding:1.5rem clamp(1.25rem,5vw,4rem) 1rem}
+.evm-filter{font:inherit;background:none;color:inherit;border:1px solid var(--evm-char);padding:.45rem 1.1rem;cursor:pointer;border-radius:999px}
+.evm-filter[aria-pressed="true"]{background:var(--evm-char);color:var(--evm-cream)}
+.evm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1.5rem;padding:1rem clamp(1.25rem,5vw,4rem) 4rem;margin:0;list-style:none}
+.evm-item{display:flex;flex-direction:column;border:1px solid var(--evm-line);background:#fbf8f2}
+.evm-swatch{height:10rem;border-bottom:1px solid var(--evm-line)}
+.evm-body{display:flex;flex-direction:column;flex:1;padding:1.1rem 1.1rem 1.25rem}
+.evm-item h2{font:600 1.4rem/1.2 "Cormorant Garamond",Georgia,serif;margin:0 0 .35rem}
+.evm-item p{margin:0 0 1rem;font-size:.95rem;flex:1}
+.evm-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.evm-price{font-weight:700}
+.evm-price small{font-weight:400;opacity:.75}
+.evm-buy{font:700 .95rem "DM Sans",sans-serif;background:var(--evm-char);color:var(--evm-cream);padding:.65rem 1.25rem;text-decoration:none;border:0;border-radius:6px;cursor:pointer}
+.evm-buy:hover{background:var(--evm-terra)}
+.evm-buy[aria-disabled="true"]{background:transparent;color:var(--evm-char);border:1px dashed var(--evm-char);cursor:not-allowed}
+.evm :focus-visible{outline:3px solid var(--evm-terra);outline-offset:2px}
+.evm-foot{border-top:1px solid var(--evm-line);padding:1.75rem clamp(1.25rem,5vw,4rem);font-size:.9rem;max-width:62rem}
+@media (prefers-reduced-motion:no-preference){.evm-buy,.evm-filter{transition:background .15s,color .15s}}
+
+/* ---- product cards + detail view ---- */
+.evm-item{position:relative;cursor:pointer}
+.evm-item img{display:block;width:100%;height:10rem;object-fit:cover;border-bottom:1px solid var(--evm-line)}
+.evm-open{font:inherit;color:inherit;background:none;border:0;padding:0;text-align:left;cursor:pointer}
+.evm-item:hover .evm-open{text-decoration:underline;text-decoration-color:var(--evm-terra);text-underline-offset:.2em}
+.evm-more{font-size:.85rem;text-decoration:underline;margin:0 0 .8rem}
+.evm-saved{position:absolute;top:.5rem;right:.6rem;color:var(--evm-terra);font-size:1.2rem;text-shadow:0 0 3px var(--evm-cream)}
+body:has(dialog[open]){overflow:hidden}
+.evm-dlg{border:0;padding:0;width:min(72rem,94vw);max-height:92vh;overflow:auto;background:var(--evm-cream);color:var(--evm-char)}
+.evm-dlg::backdrop{background:rgba(43,38,32,.6)}
+.evm-x{position:absolute;top:.75rem;right:.75rem;width:2.5rem;height:2.5rem;font-size:1.6rem;line-height:1;background:var(--evm-cream);color:inherit;border:1px solid var(--evm-char);border-radius:50%;cursor:pointer;z-index:2}
+.evm-detail{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:2rem 3rem;padding:clamp(1.25rem,3vw,2.5rem)}
+@media (max-width:760px){.evm-detail{grid-template-columns:1fr}}
+.evm-left h2{font:500 clamp(1.9rem,4vw,2.8rem)/1.1 "Cormorant Garamond",Georgia,serif;margin:0 3rem .25rem 0}
+.evm-sub{margin:0 0 .5rem;font-size:1.1rem}
+.evm-rate{display:flex;flex-wrap:wrap;gap:.2rem .6rem;align-items:center;margin:0 0 1rem;font-size:.95rem}
+.evm-stars{color:#B8862B;letter-spacing:.08em}
+.evm-main{display:block;width:100%;padding:0;border:1px solid var(--evm-line);overflow:hidden;cursor:zoom-in;background:#fff}
+.evm-main img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+.evm-main.is-zoomed{cursor:zoom-out}
+.evm-main.is-zoomed img{transform:scale(1.9);transform-origin:var(--x,50%) var(--y,50%)}
+.evm-thumbs{display:flex;gap:.5rem;margin-top:.6rem;overflow-x:auto;padding-bottom:.25rem}
+.evm-thumb{flex:0 0 5.5rem;height:4.25rem;padding:0;border:2px solid transparent;background:none;cursor:pointer}
+.evm-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.evm-thumb[aria-current="true"]{border-color:var(--evm-terra)}
+.evm-bigswatch{height:16rem;border:1px solid var(--evm-line)}
+.evm-bigprice{font:600 clamp(2.4rem,5vw,3.4rem)/1 "Cormorant Garamond",Georgia,serif;margin:0 0 1rem;padding-bottom:1rem;border-bottom:1px solid var(--evm-line)}
+.evm-stock{font-weight:700;color:var(--evm-sage);margin:0 0 .25rem}
+.evm-stock::before{content:"";display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--evm-sage);margin-right:.5rem}
+.evm-deliv{margin:0}
+.evm-badges{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;background:#E9E1D2;padding:1rem .5rem;margin:1.25rem 0;text-align:center;font-size:.85rem}
+.evm-badges svg{display:block;margin:0 auto .4rem}
+.evm-right h3{font:600 1.5rem "Cormorant Garamond",Georgia,serif;margin:0 0 .5rem}
+.evm-incl{list-style:none;margin:0 0 1.25rem;padding:0}
+.evm-incl li{position:relative;padding-left:1.5rem}
+.evm-incl li::before{content:"✓";position:absolute;left:0;color:var(--evm-terra);font-weight:700}
+.evm-why{background:#E9E1D2;padding:1rem;margin-bottom:1.25rem;font-size:.95rem}
+.evm-why strong{display:block;margin-bottom:.25rem}
+.evm-buy.big{display:block;text-align:center;font-size:1.1rem;padding:.9rem}
+.evm-note{font-size:.85rem;text-align:center;margin:.6rem 0 0}
+.evm-wish{font:inherit;color:inherit;background:none;border:0;display:flex;align-items:center;gap:.4rem;margin:1rem auto 0;cursor:pointer}
+.evm-wish[aria-pressed="true"] svg{fill:var(--evm-terra);stroke:var(--evm-terra)}
+@media (prefers-reduced-motion:no-preference){.evm-main img{transition:transform .2s}}
+</style>
+</head>
+<body class="evm">
+
+<header class="evm-bar">
+  <a class="evm-brand" href="/">EveroDecor</a>
+  <!-- Copy the nav links from your existing pages so this matches the rest of the site -->
+  <nav class="evm-nav" aria-label="Main">
+    <a href="/">Home</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#coverage">Locations</a>
+    <a href="/blog/">Blog</a>
+    <a href="/marketplace.html" aria-current="page">Marketplace</a>
+  </nav>
+</header>
+
+<main>
+  <section class="evm-hero">
+    <h1>Paint and prep, ready to order</h1>
+    <p>Choose what you need and check out in one tap. Apple Pay and card payments are available at checkout.</p>
+    <div class="evm-chips" aria-hidden="true"><i style="background:#F4EFE6;box-shadow:inset 0 0 0 1px rgba(43,38,32,.18)"></i><i style="background:#4B5940"></i><i style="background:#C1683F"></i><i style="background:#2B2620"></i></div>
+  </section>
+
+  <div class="evm-tools" role="group" aria-label="Filter products" id="filters"></div>
+  <ul class="evm-grid" id="grid"></ul>
+</main>
+
+<footer class="evm-foot">
+  Payments are processed by Stripe, so EveroDecor never sees or stores your card details. Questions about an order? Email <a href="mailto:dielandco@gmail.com">dielandco@gmail.com</a>.
+</footer>
+
+<dialog class="evm-dlg" id="dlg" aria-labelledby="dlg-title">
+  <button class="evm-x" type="button" id="dlg-x" aria-label="Close product details">×</button>
+  <div class="evm-detail" id="dlg-body"></div>
+</dialog>
+
+<script>
+/* ------------------------------------------------------------------
+   EDIT HERE. Sample products and prices.
+   paymentLink: create a Payment Link in the Stripe Dashboard per product
+   and paste its URL. Until then the button shows "Coming soon".
+   Optional detail-view fields: subtitle, images, stock, delivery,
+   badges, included, why, rating + reviews.
+   Only set rating/reviews from genuine customer reviews.
+------------------------------------------------------------------- */
+const PRODUCTS = [
+  {
+    id: "painter-kit", name: "Professional Painter Kit", subtitle: "ProDec Premium Tools – Complete Set",
+    category: "Tools", size: "kit", price: 49.99, swatch: "#C1683F",
+    desc: "Brushes, rollers, tape, sandpaper and a safety knife in one complete set.",
+    images: [  "/images/painter-kit-1.jpg",
+  "/images/painter-kit-2.jpg",
+  "/images/painter-kit-3.jpg",
+  "/images/painter-kit-4.jpg",
+  "/images/painter-kit-5.jpg",
+  "/images/painter-kit-6.jpg"],
+    stock: "In stock", delivery: "Next day available",
+    badges: [["shield", "Premium ProDec Tools"], ["house", "Perfect for DIY & Trade"], ["truck", "Fast UK Delivery"]],
+    included: [`ProDec Cutting In Brush – 1"`, `ProDec Wall Brush – 2"`, "ProDec Small Roller Frame", "ProDec Wall Roller Frame", `ProDec Wall Roller Sleeve – 9"`, `ProDec Roller Pad – 9"`, "Masking Tape – 38mm x 50m", "Sandpaper – 120, 180 & 400 Grit", "Safety Knife"],
+    why: "A complete, professional kit with trusted ProDec tools, ideal for smooth, high-quality results on every project.",
+    rating: null, reviews: null,
+    paymentLink: "https://buy.stripe.com/REPLACE_ME"
+  },
+  { id: "matt-emulsion", name: "Trade matt emulsion", size: "5L", category: "Paint", desc: "Hard-wearing matt for walls, with good coverage on most surfaces.", price: 42, swatch: "#EDE6D8", paymentLink: "https://buy.stripe.com/REPLACE_ME" },
+  { id: "sage-eggshell", name: "Sage green eggshell", size: "2.5L", category: "Paint", desc: "A soft green with a gentle sheen, suited to woodwork and kitchens.", price: 38, swatch: "#4B5940", paymentLink: "https://buy.stripe.com/REPLACE_ME" },
+  { id: "ceiling-white", name: "Ceiling white", size: "10L", category: "Paint", desc: "Dead flat white that hides marks and joins on ceilings.", price: 54, swatch: "#FAF8F3", paymentLink: "https://buy.stripe.com/REPLACE_ME" },
+  { id: "primer", name: "All-surface primer", size: "2.5L", category: "Prep", desc: "Seals bare plaster, wood and previously painted surfaces before topcoat.", price: 29, swatch: "#D9D2C3", paymentLink: "https://buy.stripe.com/REPLACE_ME" },
+  { id: "filler", name: "Ready-mixed filler", size: "1kg", category: "Prep", desc: "Fills cracks and small holes, then sands smooth.", price: 9, swatch: "#CFC6B4", paymentLink: "https://buy.stripe.com/REPLACE_ME" },
+  { id: "masking-tape", name: "Masking tape", size: "6 rolls", category: "Tools", desc: "Low-tack tape that lifts cleanly and gives crisp edges.", price: 14, swatch: "#C1683F", paymentLink: "https://buy.stripe.com/REPLACE_ME" }
+];
+
+const ICONS = {
+  shield: '<path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
+  house: '<path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/>',
+  truck: '<path d="M3 6h11v10H3z"/><path d="M14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/>',
+  heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>'
+};
+const icon = (k, size = 28) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k]}</svg>`;
+
+const money = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", minimumFractionDigits: 0, maximumFractionDigits: 2 });
+const grid = document.getElementById("grid");
+const filters = document.getElementById("filters");
+const dlg = document.getElementById("dlg");
+const body = document.getElementById("dlg-body");
+const categories = ["All", ...new Set(PRODUCTS.map(p => p.category))];
+const byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+let active = "All";
+
+function linkReady(p) { return p.paymentLink && !p.paymentLink.includes("REPLACE_ME"); }
+function buyButton(p, cls = "") {
+  return linkReady(p)
+    ? `<a class="evm-buy ${cls}" href="${p.paymentLink}" rel="noopener">Buy now</a>`
+    : `<span class="evm-buy ${cls}" role="link" aria-disabled="true">Coming soon</span>`;
+}
+
+function wishlist() { try { return JSON.parse(localStorage.getItem("evm-wishlist")) || []; } catch (e) { return []; } }
+function saveWishlist(list) { try { localStorage.setItem("evm-wishlist", JSON.stringify(list)); } catch (e) {} }
+
+function render() {
+  const saved = wishlist();
+  grid.innerHTML = PRODUCTS
+    .filter(p => active === "All" || p.category === active)
+    .map(p => `
+      <li class="evm-item" data-id="${p.id}">
+        ${saved.includes(p.id) ? `<span class="evm-saved" role="img" aria-label="On your wishlist">♥</span>` : ""}
+        ${p.images ? `<img src="${p.images[0]}" alt="" loading="lazy">` : `<div class="evm-swatch" style="background:${p.swatch}" aria-hidden="true"></div>`}
+        <div class="evm-body">
+          <h2><button class="evm-open" type="button" aria-haspopup="dialog">${p.name}</button></h2>
+          <p>${p.desc}</p>
+          <span class="evm-more" aria-hidden="true">View details</span>
+          <div class="evm-row">
+            <span class="evm-price">${money.format(p.price)} <small>/ ${p.size}</small></span>
+            ${buyButton(p)}
+          </div>
+        </div>
+      </li>`).join("");
+}
+
+function openProduct(id) {
+  const p = byId[id];
+  const imgs = p.images || [];
+  const saved = wishlist().includes(id);
+  body.innerHTML = `
+    <div class="evm-left">
+      <h2 id="dlg-title">${p.name}</h2>
+      ${p.subtitle ? `<p class="evm-sub">${p.subtitle}</p>` : ""}
+      ${p.rating ? `<p class="evm-rate"><span class="evm-stars" aria-hidden="true">${"★".repeat(Math.round(p.rating))}</span><span>${p.rating} (${p.reviews} reviews)</span><a href="mailto:dielandco@gmail.com?subject=${encodeURIComponent("Review: " + p.name)}">Write a review</a></p>` : ""}
+      ${imgs.length
+        ? `<button class="evm-main" type="button" aria-label="Zoom in on image"><img src="${imgs[0]}" alt="${p.name}"></button>
+           ${imgs.length > 1 ? `<div class="evm-thumbs">${imgs.map((s, i) => `<button class="evm-thumb" type="button" data-src="${s}" aria-label="Show photo ${i + 1}" aria-current="${i === 0}"><img src="${s}" alt=""></button>`).join("")}</div>` : ""}`
+        : `<div class="evm-bigswatch" style="background:${p.swatch}" aria-hidden="true"></div>`}
+    </div>
+    <div class="evm-right">
+      <p class="evm-bigprice">${money.format(p.price)}</p>
+      ${p.stock ? `<p class="evm-stock">${p.stock}</p>` : ""}
+      ${p.delivery ? `<p class="evm-deliv"><strong>Delivery</strong> ${p.delivery}</p>` : ""}
+      ${p.badges ? `<ul class="evm-badges">${p.badges.map(([k, t]) => `<li>${icon(k)}${t}</li>`).join("")}</ul>` : ""}
+      ${p.included ? `<h3>What’s included?</h3><ul class="evm-incl">${p.included.map(i => `<li>${i}</li>`).join("")}</ul>` : `<p>${p.desc}</p>`}
+      ${p.why ? `<div class="evm-why"><strong>Why choose EveroDecor?</strong>${p.why}</div>` : ""}
+      ${buyButton(p, "big")}
+      <p class="evm-note">Apple Pay and card accepted at checkout.</p>
+      <button class="evm-wish" type="button" data-id="${id}" aria-pressed="${saved}">${icon("heart", 20)}<span>${saved ? "On your wishlist" : "Add to wishlist"}</span></button>
+    </div>`;
+  dlg.showModal();
+  dlg.scrollTop = 0;
+}
+
+filters.innerHTML = categories.map(c => `<button class="evm-filter" type="button" aria-pressed="${c === active}">${c}</button>`).join("");
+filters.addEventListener("click", e => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  active = btn.textContent;
+  filters.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b === btn));
+  render();
+});
+
+grid.addEventListener("click", e => {
+  if (e.target.closest("a")) return;
+  const li = e.target.closest(".evm-item");
+  if (li) openProduct(li.dataset.id);
+});
+
+body.addEventListener("click", e => {
+  const thumb = e.target.closest(".evm-thumb");
+  const main = e.target.closest(".evm-main");
+  const wish = e.target.closest(".evm-wish");
+  if (thumb) {
+    const m = body.querySelector(".evm-main");
+    m.classList.remove("is-zoomed");
+    m.setAttribute("aria-label", "Zoom in on image");
+    m.querySelector("img").src = thumb.dataset.src;
+    body.querySelectorAll(".evm-thumb").forEach(t => t.setAttribute("aria-current", t === thumb));
+  } else if (main) {
+    const r = main.getBoundingClientRect();
+    main.style.setProperty("--x", ((e.clientX - r.left) / r.width * 100) + "%");
+    main.style.setProperty("--y", ((e.clientY - r.top) / r.height * 100) + "%");
+    const on = main.classList.toggle("is-zoomed");
+    main.setAttribute("aria-label", on ? "Zoom out" : "Zoom in on image");
+  } else if (wish) {
+    const id = wish.dataset.id;
+    const list = wishlist();
+    const on = !list.includes(id);
+    saveWishlist(on ? [...list, id] : list.filter(x => x !== id));
+    wish.setAttribute("aria-pressed", on);
+    wish.querySelector("span").textContent = on ? "On your wishlist" : "Add to wishlist";
+    render();
+  }
+});
+
+body.addEventListener("mousemove", e => {
+  const main = e.target.closest(".evm-main");
+  if (!main || !main.classList.contains("is-zoomed")) return;
+  const r = main.getBoundingClientRect();
+  main.style.setProperty("--x", ((e.clientX - r.left) / r.width * 100) + "%");
+  main.style.setProperty("--y", ((e.clientY - r.top) / r.height * 100) + "%");
+});
+
+document.getElementById("dlg-x").addEventListener("click", () => dlg.close());
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+render();
+</script>
+</body>
+</html>
